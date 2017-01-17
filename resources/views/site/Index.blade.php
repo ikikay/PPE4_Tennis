@@ -1,6 +1,6 @@
 @extends('layout_front')
 @section('content')
-<p> OUAAAAAAAAAAAAAAAAAAAAAAAAAAA </p>
+
 <!-- Header Carousel -->
     <header id="myCarousel" class="carousel slide">
         <!-- Indicators -->
