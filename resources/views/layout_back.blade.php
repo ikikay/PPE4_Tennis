@@ -252,11 +252,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ route("admin.dashboard") }}">Ajouter</a></li>
-                                <li><a href="administrerArticle.html">Administrer</a></li>
+                                <li><a href="{{ route("") }}">Ajouter</a></li>
+                                <li><a href="{{ route("") }}">Administrer</a></li>
                             </ul>		  
                         </li>
-                        <a href="images.html"><i class="fa fa-link"></i> <span>Images</span>  </a>
+                        <a href="{{ route("") }}"><i class="fa fa-link"></i> <span>Images</span>  </a>
                     </ul>
                     <!-- /.sidebar-menu -->
 
