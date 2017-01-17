@@ -12,14 +12,13 @@
     <title>Modern Business - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{ url('css/bootstrap_front.css')}}" rel="stylesheet">
-    <!-- Bootstrap Core CSS -->
-    <link href="{{ url('css/starter-template.css')}}" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
     <!-- Custom CSS -->
-    <link href="{{ url('css/modern-business_front.css')}}" rel="stylesheet">
+    <link href="css/modern-business.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="{{ url ('font-awesome_front/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,7 +42,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo_tavaux.jpg" alt="Chania"></a>
+                <a class="navbar-brand" href="index.html">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -88,24 +87,70 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>   
-                    <li>
-                      <a href="{{ route('login') }}">Connexion</a>
-                    </li>  
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-    
-@yield('content')
-   
-<hr>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Documentation</h1>
+                <!-- Image Header -->
+                <img class="img-responsive" src="img\Assemblee-Generale.jpg" alt="">
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Compte rendus Assemblée Générale</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <p>Vous pouvez télécharger les comptes rendus des assemblée générale :</p>
+                <br><img src="img\dl.png"></img><a href="" download="Ag_2013">Compte rendu année 2013</a>
+                <br><img src="img\dl.png"></img><a href="" download="Ag_2014">Compte rendu année 2014</a>
+                <br><img src="img\dl.png"></img><a href="" download="Ag_2015">Compte rendu année 2015</a>
+                <br><img src="img\dl.png"></img><a href="" download="Ag_2016">Compte rendu année 2016</a>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Documentation utile</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <p>Vous pouvez télécharger les documents :</p>
+                <br><img src="img\dl.png"></img><a href="" download="">Réglement</a>
+                <br><img src="img\dl.png"></img><a href="" download="">Les status du club</a>
+                <br><img src="img\dl.png"></img><a href="" download="Ag_2015">Tarifs 2017 hors école de tennis</a>
+                <br><img src="img\dl.png"></img><a href="" download="Ag_2016">Fiche d'inscriptions adultes 2017</a> 
+                <br><img src="img\dl.png"></img><a href="" download="Ag_2016">Fiche d'inscriptions école de tennis 2017</a>
+                <br><img src="img\dl.png"></img><a href="" download="Ag_2016">Tarifs 2017 ecole de tennis</a>
+                <br><img src="img\dl.png"></img><a href="" download="Ag_2016">Inscription championat individuel 30/1 et 30/2</a>
+            </div>
+        </div>
+
+        <hr>
+
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    
+                    <p>Copyright &copy; Your Website 2014</p>
                 </div>
             </div>
         </footer>
@@ -114,17 +159,10 @@
     <!-- /.container -->
 
     <!-- jQuery -->
-    <script src="{{ url('js/jquery_front.js')}}"></script>
+    <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{ url ('js/bootstrap.min_front.js')}}"></script>
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    });
-    </script>
+    <script src="js/bootstrap.min.js"></script>
 
 </body>
 
