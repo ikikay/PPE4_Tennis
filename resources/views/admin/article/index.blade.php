@@ -15,7 +15,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                {!! Form::open(['route' => "galerie.create", 'method' => 'get']) !!}
+                {!! Form::open(['route' => "article.create", 'method' => 'get']) !!}
                 <button type="submit" class="btn btn-success btn-lg btn-block">Ajouter</button>
                 {!! Form::close() !!}
                 <!-- /.box-header -->

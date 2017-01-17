@@ -34,10 +34,10 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body pad">
-                    <form>
+                    
                         <textarea id="editor" name="editor" rows="10" cols="50">
                         </textarea>
-                    </form>
+                    
                 </div>
 
                 <button type="submit" class="btn btn-success btn-lg btn-block">Créer</button>
