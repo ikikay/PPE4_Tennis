@@ -268,16 +268,28 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
-                    <h1>
-                        TODO
-                        <small>Page de test</small>
-                    </h1>
+                    @yield('title')
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
 
-                    <!-- Your Page Content Here -->
+                    @if(Session::has('error'))
+                    <div class="row">
+                        <div class="alert alert-danger">
+                            <center><strong>Erreur : </strong> {{Session::get('error')}}</center>
+                        </div>
+                    </div>
+                    @endif
+                    @if(Session::has('success'))
+                    <div class="row">
+                        <div class="alert alert-success">
+                            <center><strong>Succès : </strong> {{Session::get('success')}}</center>
+                        </div>
+                    </div>
+                    @endif
+
+                    @yield('content')
 
                 </section>
                 <!-- /.content -->
@@ -291,7 +303,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     Club de tennis de Tavaux
                 </div>
                 <!-- Default to the left -->
-                <strong>Copyright &copy; 2016 <a href="#">Club de tennis de Tavaux</a>.</strong> tous droits reservés.
+                <strong>Copyright &copy; 2016 <a href="{{ route("admin.dashboard") }}">Club de tennis de Tavaux</a>.</strong> tous droits reservés.
             </footer>
 
             <!-- Control Sidebar -->
@@ -376,11 +388,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- REQUIRED JS SCRIPTS -->
 
         <!-- jQuery 2.2.3 -->
-        <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="{{url('js/jquery-2.2.3.min.js') }}"></script>
         <!-- Bootstrap 3.3.6 -->
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="{{url('js/bootstrap.min.js') }}"></script>
         <!-- AdminLTE App -->
-        <script src="dist/js/app.min.js"></script>
+        <script src="{{url('js/app.min.js') }}"></script>
 
         <!-- Optionally, you can add Slimscroll and FastClick plugins.
              Both of these plugins are recommended to enhance the

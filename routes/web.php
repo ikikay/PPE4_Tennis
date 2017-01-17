@@ -12,29 +12,18 @@
  */
 
 // Routes pour le front-office
-
+Auth::routes();
 Route::get('index', 'PagesController@index')->name('index');
 Route::get('contact', 'PagesController@contact')->name('contact');
-
-Route::group(['prefix' => 'admin'], function () {
-
-    Route::resource('user', 'UserController');
-});
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index');
 
-
-
-Route::get('/home', 'HomeController@index');
 
 
 // Routes pour le Back-office
 Route::group(['prefix' => 'admin'], function() {
 
     Route::get('/', function () {
-                return view('admin.pages.dashboard');
+                return view('admin.page.dashboard');
             })
             ->name('admin.dashboard');
 
@@ -42,5 +31,6 @@ Route::group(['prefix' => 'admin'], function() {
         route('admin.dashboard');
     });
 
-    //Ajouter Routes articles
+    Route::resource('user', 'UserController');    
+    Route::resource('article', 'ArticleController');
 });
