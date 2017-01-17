@@ -13,7 +13,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ url('css/bootstrap_front.css')}}" rel="stylesheet">
-
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url('css/starter-template.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ url('css/modern-business_front.css')}}" rel="stylesheet">
 
@@ -75,7 +76,7 @@
                         </ul>
                     </li>   
                  <li>
-                      <a href="{{ route('auth.login') }}}">Connexion</a>
+                      <a href="{{ route('login') }}">Connexion</a>
                      </li>  
                 </ul>
             </div>
