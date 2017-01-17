@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Article;
+use App\Models\Galerie;
+use Image;
+Use File;
 
-class ArticleController extends Controller {
+class GalerieController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -13,9 +15,9 @@ class ArticleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $lesArticles = Article::all();
-        return view('admin.article.index')
-                        ->with("tab_articles", $lesArticles);
+        $lesImages = Galerie::all();
+        return view('admin.galerie.index')
+                        ->with("tab_images", $lesImages);
     }
 
     /**
@@ -24,7 +26,7 @@ class ArticleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('admin.article.create');
+        return view('admin.galerie.create');
     }
 
     /**
@@ -34,15 +36,21 @@ class ArticleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $request->session()->flash('success', 'L\'article à été Ajouté !');
+        $request->session()->flash('success', 'L\'image à été Ajouté !');
 
-        $article = new Article();
+        $image = new Galerie();
 
-        $article->titre = $request->get('titre');
-        $article->description = $request->get('editor');
+        $image->name_user = $request->get('name');
+        $image->description = $request->get('description');
 
-        $article->save();
-        return redirect()->route("article.index");
+        $fichier = $request->file('image');
+
+        Image::make($fichier->getRealPath())->save("img/galerie/" . $fichier->getClientOriginalName());
+
+        $image->name_image = $fichier->getClientOriginalName();
+
+        $image->save();
+        return redirect()->route("galerie.index");
     }
 
     /**
@@ -62,9 +70,7 @@ class ArticleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($id) {
-        $lArticle = Article::find($id);
-        return view('admin.article.edit')
-        ->with("article", $lArticle);
+        //
     }
 
     /**
@@ -85,11 +91,13 @@ class ArticleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy(Request $request, $id) {
-        $request->session()->flash('success', 'L\'article à été Supprimé !');
+        $request->session()->flash('success', 'L\'image à été Supprimé !');
 
-        $article = Article::find($id);
+        $lImage = Galerie::find($id);
 
-        $article->delete();
+        File::delete("img/galerie/" . $lImage->name_image);
+
+        $lImage->delete();
 
         return redirect()->route("galerie.index");
     }

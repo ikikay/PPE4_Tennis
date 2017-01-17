@@ -92,7 +92,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                                 <a href="#">
                                                     <div class="pull-left">
                                                         <!-- User Image -->
-                                                        <img src="dist/img/userp-160x160.jpg" class="img-circle" alt="User Image">
+                                                        <img src="{{url('img/userp-160x160.jpg') }}" class="img-circle" alt="User Image">
                                                     </div>
                                                     <!-- Message title and timestamp -->
                                                     <h4>
@@ -176,14 +176,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- The user image in the navbar-->
-                                    <img src="dist/img/userp-160x160.jpg" class="user-image" alt="User Image">
+                                    <img src="{{url('img/userp-160x160.jpg') }}" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <span class="hidden-xs">Sebastien Pernelle</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="dist/img/userp-160x160.jpg" class="img-circle" alt="User Image">
+                                        <img src="{{url('img/userp-160x160.jpg') }}" class="img-circle" alt="User Image">
 
                                         <p>
                                             Sebastien Pernelle - Developper Web
@@ -220,7 +220,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="dist/img/userp-160x160.jpg" class="img-circle" alt="User Image">
+                            <img src="{{url('img/userp-160x160.jpg') }}" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>Sebastien Pernelle</p>
@@ -252,11 +252,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ route("") }}">Ajouter</a></li>
-                                <li><a href="{{ route("") }}">Administrer</a></li>
-                            </ul>		  
+                                <li><a href="{{ route("article.create") }}">Ajouter</a></li>
+                                <li><a href="{{ route("article.index") }}">Administrer</a></li>
+                            </ul>	
+
                         </li>
-                        <a href="{{ route("") }}"><i class="fa fa-link"></i> <span>Images</span>  </a>
+                        <li class="treeview">
+                            <a href="{{ route("galerie.index") }}"><i class="fa fa-link"></i> <span>Galerie</span>  </a>
+                        </li>
                     </ul>
                     <!-- /.sidebar-menu -->
 
@@ -393,6 +396,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <script src="{{url('js/bootstrap.min.js') }}"></script>
         <!-- AdminLTE App -->
         <script src="{{url('js/app.min.js') }}"></script>
+        <!-- CK Editor -->
+        <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+        <!-- BootBox (modals) -->
+        <script src="{{url('js/bootbox.min.js')}}"></script>
+
+        <!-- Mon JavaScript -->
+        <script src="{{url('js/perso.js')}}"></script>
+
+        <script>
+$(function () {
+    // Replace the <textarea id="editor"> with a CKEditor
+    // instance, using default configuration.
+    CKEDITOR.replace('editor');
+    //bootstrap WYSIHTML5 - text editor
+    $(".textarea").wysihtml5();
+});
+        </script>
 
         <!-- Optionally, you can add Slimscroll and FastClick plugins.
              Both of these plugins are recommended to enhance the
