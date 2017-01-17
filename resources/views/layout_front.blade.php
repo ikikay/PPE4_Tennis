@@ -13,7 +13,8 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ url('css/bootstrap_front.css')}}" rel="stylesheet">
-
+    <!-- Bootstrap Core CSS -->
+    <link href="{{ url('css/starter-template.css')}}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ url('css/modern-business_front.css')}}" rel="stylesheet">
 
