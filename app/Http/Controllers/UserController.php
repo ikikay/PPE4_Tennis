@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Http\Requests;
 
 class UserController extends Controller
 {
@@ -13,9 +15,10 @@ class UserController extends Controller
      */
     public function index()
     {
-      $lesUsers = User::all();
+         $lesUsers = User::all();
         
-        return view('site.user.index')->with('lesUsers',$lesUsers);
+        return view('admin.user.index')->with('lesUsers',$lesUsers);
+
 
     }
 
@@ -48,7 +51,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**

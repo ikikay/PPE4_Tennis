@@ -21,10 +21,10 @@ Route::group(['prefix' => 'admin'], function () {
   Route::resource('user', 'UserController');
 });
 
-
+Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index');

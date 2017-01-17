@@ -75,7 +75,7 @@
                         </ul>
                     </li>   
                  <li>
-                      <a href="{{ route('auth.login') }}}">Connexion</a>
+                      <a href="{{ route('login') }}">Connexion</a>
                      </li>  
                 </ul>
             </div>
