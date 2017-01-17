@@ -28,7 +28,7 @@ Route::get('documentation', 'PagesController@documentation')->name('documentatio
 Route::group(['prefix' => 'admin'], function() {
 
     Route::get('/', function () {
-                return view('admin.page.dashboard');
+                return view('Admin.page.dashboard');
             })
             ->name('admin.dashboard');
 
