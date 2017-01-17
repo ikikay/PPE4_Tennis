@@ -16,10 +16,7 @@ Auth::routes();
 Route::get('index', 'PagesController@index')->name('index');
 Route::get('contact', 'PagesController@contact')->name('contact');
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
-Route::group(['prefix' => 'admin'], function () {
 
-    Route::resource('user', 'UserController');
-});
 
 Auth::routes();
 
@@ -31,7 +28,7 @@ Route::get('documentation', 'PagesController@documentation')->name('documentatio
 Route::group(['prefix' => 'admin'], function() {
 
     Route::get('/', function () {
-                return view('admin.page.dashboard');
+                view('admin.page.dashboard');
             })
             ->name('admin.dashboard');
 
