@@ -43,41 +43,54 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="img/logo_tavaux.jpg" alt="Chania"></a>
+                <a class="navbar-brand" href="{{ route('index') }}"><img src="img/logo_tavaux.jpg" alt="Chania"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="about.html">Le club</a>
-                    </li>
-                 
-                    <li>
-                        <a href="contact.html">La compétition</a>
+                        <a href="#">Le club</a>
                     </li>
                     <li>
-                        <a href="contact.html">Infos Adhérents</a>
+                        <a href="#">L'enseignement</a>
                     </li>
                     <li>
-                        <a href="contact.html">Divers</a>
+                        <a href="#">La compétition</a>
+                    </li>
+                    <li>
+                        <a href="#">Infos Adhérents</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Divers<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ route('documentation') }}">Documentation</a>
+                            </li>
+                            <li>
+                                <a href="#">Gallerie</a>
+                            </li>
+                        </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">L'enseignement <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="portfolio-1-col.html">L'équipe pédagogique</a>
+                                <a href="#">L'équipe pédagogique</a>
                             </li>
                             <li>
-                                <a href="portfolio-2-col.html">L'école de tennis</a>
+                                <a href="#">L'école de tennis</a>
                             </li>
                             <li>
-                                <a href="portfolio-3-col.html">Les cours collectifs adultes</a>
+                                <a href="#">Les cours collectifs adultes</a>
                             </li>                            
                         </ul>
+                    </li>
+                    <li>
+                        <a href="{{ route('contact') }}">Contact</a>
                     </li>   
-                 <li>
+                    <li>
                       <a href="{{ route('login') }}">Connexion</a>
-                     </li>  
+                    </li>  
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -92,7 +105,7 @@
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                    
                 </div>
             </div>
         </footer>
