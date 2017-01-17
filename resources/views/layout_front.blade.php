@@ -64,7 +64,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Divers<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="documentation.html">Documentation</a>
+                                <a href="{{ route('documentation') }}">Documentation</a>
                             </li>
                             <li>
                                 <a href="#">Gallerie</a>
@@ -86,7 +86,7 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="{{ route('contact') }}">Contact</a>
                     </li>   
                     <li>
                       <a href="{{ route('login') }}">Connexion</a>

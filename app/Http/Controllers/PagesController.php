@@ -15,5 +15,8 @@ function contact ()
 {
     return view('site.contact');
 }
-
+function documentation ()
+{
+    return view('site.documentation');
+}
 }

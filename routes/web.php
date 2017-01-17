@@ -15,7 +15,7 @@
 
 Route::get('index', 'PagesController@index')->name('index');
 Route::get('contact', 'PagesController@contact')->name('contact');
-
+Route::get('documentation', 'PagesController@documentation')->name('documentation');
 Route::group(['prefix' => 'admin'], function () {
 
     Route::resource('user', 'UserController');
