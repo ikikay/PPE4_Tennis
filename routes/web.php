@@ -13,12 +13,9 @@
 
 // Routes pour le front-office
 Auth::routes();
-Route::get('index', 'PagesController@index')->name('index');
+Route::get('/', 'PagesController@index')->name('index');
 Route::get('contact', 'PagesController@contact')->name('contact');
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
-
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
