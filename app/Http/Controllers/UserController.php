@@ -6,20 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests;
 
-class UserController extends Controller
-{
+class UserController extends Controller {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-         $lesUsers = User::all();
-        
-        return view('admin.user.index')->with('lesUsers',$lesUsers);
+    public function index() {
+        $lesUsers = User::all();
 
-
+        return view('admin.user.index')
+                        ->with('tab_users', $lesUsers);
     }
 
     /**
@@ -27,9 +25,8 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create() {
+        return view('admin.user.create');
     }
 
     /**
@@ -38,9 +35,17 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(Request $request) {
+        $request->session()->flash('success', 'L\'utilisateur à été Ajouté !');
+
+        $user = new User();
+
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->password = $request->get('password');
+
+        $user->save();
+        return redirect()->route("user.index");
     }
 
     /**
@@ -49,8 +54,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         
     }
 
@@ -60,9 +64,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit($id) {
+        $leUser = user::find($id);
+        return view('user.edit')
+                        ->with("user", $leUser);
     }
 
     /**
@@ -72,8 +77,7 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -83,8 +87,14 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Request $request, $id) {
+        $request->session()->flash('success', 'L\'utilisateur à été Supprimé !');
+
+        $user = User::find($id);
+
+        $user->delete();
+
+        return redirect()->route("user.index");
     }
+
 }

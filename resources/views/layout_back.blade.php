@@ -261,6 +261,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="treeview">
                             <a href="{{ route("galerie.index") }}"><i class="fa fa-link"></i> <span>Galerie</span>  </a>
                         </li>
+                        <li class="treeview">
+                            <a href="#"><i class="fa fa-link"></i> <span>Utilisateurs</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{ route("user.create") }}">Ajouter</a></li>
+                                <li><a href="{{ route("user.index") }}">Administrer</a></li>
+                            </ul>	
+
+                        </li>
                     </ul>
                     <!-- /.sidebar-menu -->
 
