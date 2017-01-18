@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Models\Article;
 use App\Models\Galerie;
 
 class PagesController extends Controller {
 
     function index() {
-        return view('site.index');
+        $lesArticles = Article::all();
+        return view('site.index')
+                        ->with("tab_articles", $lesArticles);
     }
 
     function contact() {

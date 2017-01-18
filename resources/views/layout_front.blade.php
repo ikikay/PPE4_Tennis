@@ -157,6 +157,9 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ url ('js/bootstrap.min_front.js')}}"></script>
 
+    <!-- Mon JavaScript -->
+    <script src="{{url('js/perso.js')}}"></script>
+
     <!-- Script to Activate the Carousel -->
     <script>
                                            $('.carousel').carousel({
