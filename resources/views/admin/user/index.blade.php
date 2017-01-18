@@ -15,7 +15,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                {!! Form::open(['route' => "register", 'method' => 'get']) !!}
+                {!! Form::open(['route' => "user.create", 'method' => 'get']) !!}
                 <button type="submit" class="btn btn-success btn-lg btn-block">Inscrire un utilisateur</button>
                 {!! Form::close() !!}
                 <!-- /.box-header -->
