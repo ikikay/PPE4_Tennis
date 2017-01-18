@@ -14,7 +14,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="box box-info">
-            {!! Form::open(['route' => "article.store", 'method' => 'post']) !!}
+            {!! Form::open(['route' => ['article.update', $article["id"]], 'method' => 'put']) !!}               
             <div class="box-header">
                 <h3 class="box-title">  </h3>
 
@@ -34,11 +34,9 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body pad">
-                <form>
                     <textarea id="editor" name="editor" rows="10" cols="50">
                         {{ $article["description"] }}
                     </textarea>
-                </form>
             </div>
 
             <button type="submit" class="btn btn-success btn-lg btn-block">Modifier</button>

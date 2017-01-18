@@ -64,7 +64,7 @@ class ArticleController extends Controller {
     public function edit($id) {
         $lArticle = Article::find($id);
         return view('admin.article.edit')
-        ->with("article", $lArticle);
+                        ->with("article", $lArticle);
     }
 
     /**
@@ -75,7 +75,14 @@ class ArticleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        //
+        $lArticle = Article::find($id);
+
+        $lArticle->titre = $request->get('titre');
+        $lArticle->description = $request->get('editor');
+
+        $lArticle->save();
+
+        return redirect()->route("article.index");
     }
 
     /**
