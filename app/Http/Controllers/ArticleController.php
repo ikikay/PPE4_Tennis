@@ -91,7 +91,7 @@ class ArticleController extends Controller {
 
         $article->delete();
 
-        return redirect()->route("galerie.index");
+        return redirect()->route("article.index");
     }
 
 }
