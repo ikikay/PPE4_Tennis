@@ -33,7 +33,7 @@ Route::group(['prefix' => 'admin'], function() {
         route('admin.dashboard');
     });
 
-    Route::resource('user', 'UserController');    
+    Route::resource('user', 'UserController');
     Route::resource('article', 'ArticleController');
     Route::resource('galerie', 'GalerieController');
 });
