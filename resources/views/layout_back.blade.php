@@ -11,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-        <title>Tennis Tavaux</title>
+    <title>Tennis Tavaux</a></title>
 
         <!-- Bootstrap 3.3.6 -->
         <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
@@ -66,6 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- logo for regular state and mobile devices -->
                     <span class="logo-lg"><b>TENNIS </b>TAVAUX</span>
                 </a>
+                
 
                 <!-- Header Navbar -->
                 <nav class="navbar navbar-static-top" role="navigation">
