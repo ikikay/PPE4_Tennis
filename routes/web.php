@@ -19,7 +19,7 @@ Route::get('documentation', 'PagesController@documentation')->name('documentatio
 
 Route::get('/home', 'HomeController@index');
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
-
+Route::get('galerie', 'PagesController@galerie')->name('galerie');
 
 // Routes pour le Back-office
 Route::group(['prefix' => 'admin'], function() {

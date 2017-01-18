@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Modern Business - Start Bootstrap Template</title>
+        <title>Site du club de Tennis de Tavaux</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{{ url('css/bootstrap_front.css')}}" rel="stylesheet">
@@ -43,7 +43,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ route('index') }}"><img src="img/logo_tavaux.jpg" alt="Chania"></a>
+                    <a class="navbar-brand" href="{{ route('index') }}"><img src="img/logo_tavaux.jpg"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -59,6 +59,9 @@
                         </li>
                         <li>
                             <a href="#">Infos Adhérents</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('galerie') }}">Galerie</a>
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Divers<b class="caret"></b></a>
@@ -101,7 +104,7 @@
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                        onclick="event.preventDefault();
-                                                document.getElementById('logout-form').submit();">
+                                               document.getElementById('logout-form').submit();">
                                         Logout
                                     </a>
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -117,7 +120,7 @@
                             <a href="{{ route('login') }}">Connexion</a>
                         </li> 
                         @endif
-                        
+
 
                     </ul>
                 </div>
@@ -129,11 +132,18 @@
         @yield('content')
 
         <hr>
+
         <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12">
-
+                <div class="col-lg-5">
+                    © FFT - TENNIS CLUB TAVAUX
+                </div>
+                <div class="col-lg-5">
+                    <A target="_blank" href="index_public.php?PHPSESSID=988d71740f75d430862aaaebcceec1fb&us_action=show_note&ui_id_site=1&ui_id_doc=1000200002">Mentions légales</A>   
+                </div>
+                <div class="col-lg-2">
+                    <A target="_blank" href="xml/my_rss_breves_1.rss"><IMG width="16" height="16" border="0" align="absmiddle" src="http://www.club.fft.fr/_adc/sources/lib/sources_adcosoft/commun/img/adm/pics/images_rte/picto_rss.gif"></A>
                 </div>
             </div>
         </footer>
@@ -149,9 +159,9 @@
 
     <!-- Script to Activate the Carousel -->
     <script>
-                                            $('.carousel').carousel({
-                                                interval: 5000 //changes the speed
-                                            });
+                                           $('.carousel').carousel({
+                                               interval: 5000 //changes the speed
+                                           });
     </script>
 
 </body>
