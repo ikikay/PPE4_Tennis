@@ -20,6 +20,18 @@
                 {!! Form::close() !!}
                 <!-- /.box-header -->
                 <div class="box-body">
+                    
+                    <!-- search form (Optional) -->
+                    <form action="#" method="get">
+                        <div class="input-group margin">
+                            <input type="text" name="q" class="form-control" placeholder="Rechercher . . .">
+                            <span class="input-group-btn">
+                                <button type="submit" name="search" id="search-btn" class="btn btn-info btn-flat"><i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form>
+
                     <table class="table table-bordered">
                         <thead class="thead-inverse">
                             <tr>
