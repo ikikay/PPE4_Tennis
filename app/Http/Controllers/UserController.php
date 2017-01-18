@@ -38,13 +38,12 @@ class UserController extends Controller {
     public function store(Request $request) {
         $request->session()->flash('success', 'L\'utilisateur à été Ajouté !');
 
-        $user = new User();
+        User::create([
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => bcrypt($request->get('password')),
+        ]);
 
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-        $user->password = $request->get('password');
-
-        $user->save();
         return redirect()->route("user.index");
     }
 
