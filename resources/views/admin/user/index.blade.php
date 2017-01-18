@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             {!! Form::open(['route' => ["user.destroy", $unUser->id], 'method' => 'delete', 'id' => "form".$unUser->id]) !!}
-                                            <button type="submit" id="{{ $unArticle->id }}" class="btn btn-danger btn-circle jsDeleteButton"><i class="fa fa-times"></i></button>
+                                            <button type="submit" id="{{ $unUser->id }}" class="btn btn-danger btn-circle jsDeleteButton"><i class="fa fa-times"></i></button>
                                             {!! Form::close() !!}
                                         </div>
                                     </div>
