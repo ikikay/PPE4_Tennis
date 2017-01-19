@@ -46,7 +46,7 @@
             <a href="#">{{ $unArticle["titre"] }}</a>
         </h2>
         <p class="lead">
-            by <a href="index.php">Start Bootstrap</a>
+            by <a href="index.php">{{ $unArticle["auteur"] }}</a>
         </p>
         <p><i class="fa fa-clock-o"></i> Posté le {{ $unArticle["created_at"] }}</p>
         <hr>

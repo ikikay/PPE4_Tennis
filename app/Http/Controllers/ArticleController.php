@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
+
 
 class ArticleController extends Controller {
 
@@ -34,12 +36,21 @@ class ArticleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+        $user = Auth::user();
+
         $request->session()->flash('success', 'L\'article à été Ajouté !');
 
         $article = new Article();
 
         $article->titre = $request->get('titre');
         $article->description = $request->get('editor');
+
+        if ($user) {
+            $article->auteur = $user->name;
+        }
+        else {
+            $article->auteur = "Tennis Tavaux";
+        }
 
         $article->save();
         return redirect()->route("article.index");
