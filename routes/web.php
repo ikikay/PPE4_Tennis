@@ -20,6 +20,7 @@ Route::get('documentation', 'PagesController@documentation')->name('documentatio
 Route::get('/home', 'HomeController@index');
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
 Route::get('galerie', 'PagesController@galerie')->name('galerie');
+Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
 
 // Routes pour le Back-office
 Route::group(['prefix' => 'admin'], function() {
@@ -32,8 +33,12 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('dashboard', function () {
         route('admin.dashboard');
     });
+    
+    Route::get('contenu/coordonnee/edit', 'ContenuController@coordonnee_edit')->name('coordonnee_edit');
+    Route::put('contenu/coordonnee', 'ContenuController@coordonnee_update')->name('coordonnee_update');
 
     Route::resource('user', 'UserController');
     Route::resource('article', 'ArticleController');
     Route::resource('galerie', 'GalerieController');
+    Route::resource('contenu', 'ContenuController');
 });

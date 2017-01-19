@@ -16,7 +16,7 @@ class CreateContenusTable extends Migration
         Schema::create('contenus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('page');
-            $table->longtext('skeditor');
+            $table->longtext('ckeditor');
             $table->timestamps();
         });
     }

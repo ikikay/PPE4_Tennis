@@ -3,16 +3,36 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contenu;
 
-class ContenuController extends Controller
-{
+class ContenuController extends Controller {
+
+    /**
+     * Affiche la page de modification des coordonnees
+     *
+     */
+    public function coordonnee_edit() {
+        $contenu = Contenu::where('page', "coordonnee")->get()->first();
+        return view('admin.contenu.coordonnee')
+                        ->with("contenu", $contenu);
+    }
+
+    public function coordonnee_update(Request $request) {
+        $contenu = Contenu::where('page', "coordonnee")->get()->first();
+        
+        $contenu->ckeditor = $request->get('editor');
+
+        $contenu->save();
+
+        return redirect()->route("coordonnee");
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         //
     }
 
@@ -21,8 +41,7 @@ class ContenuController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -32,8 +51,7 @@ class ContenuController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -43,8 +61,7 @@ class ContenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -54,8 +71,7 @@ class ContenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -66,8 +82,7 @@ class ContenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -77,8 +92,8 @@ class ContenuController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
+
 }

@@ -270,8 +270,11 @@ desired effect
                         <ul class="treeview-menu">
                             <li><a href="{{ route("user.create") }}">Ajouter</a></li>
                             <li><a href="{{ route("user.index") }}">Administrer</a></li>
-                        </ul>	
-
+                        </ul>
+                    </li>
+                    <li class="header">Modification Site</li>
+                    <li class="treeview">
+                        <a href="{{ route("coordonnee_edit") }}"><i class="fa fa-link"></i> <span>Coordonnées</span>  </a>
                     </li>
                 </ul>
                 <!-- /.sidebar-menu -->

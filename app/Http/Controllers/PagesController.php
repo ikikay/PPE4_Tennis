@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Galerie;
+use App\Models\Contenu;
 
 class PagesController extends Controller {
 
@@ -23,10 +24,15 @@ class PagesController extends Controller {
     }
 
     function galerie() {
-
         $lesImages = Galerie::all();
         return view('site.galerie')
                         ->with("tab_images", $lesImages);
+    }
+    
+    function coordonnee() {
+        $contenu = Contenu::where('page', "coordonnee")->get()->first();
+        return view('site.coordonnee')
+                        ->with("contenu", $contenu);
     }
 
 }
