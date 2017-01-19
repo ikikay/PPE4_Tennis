@@ -11,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-        <title>Tennis Tavaux</a></title>
+        <title>Tennis Tavaux</title>
 
     <!-- Bootstrap 3.3.6 -->
     <link rel="stylesheet" href="{{ url('css/bootstrap.min.css') }}">
@@ -413,7 +413,7 @@ desired effect
     <!-- AdminLTE App -->
     <script src="{{url('js/app.min.js') }}"></script>
     <!-- CK Editor -->
-    <script src="https://cdn.ckeditor.com/4.5.7/standard/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.5.7/full-all/ckeditor.js"></script>
     <!-- BootBox (modals) -->
     <script src="{{url('js/bootbox.min.js')}}"></script>
 

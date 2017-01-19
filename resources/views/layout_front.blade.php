@@ -131,7 +131,6 @@
 
         @yield('content')
 
-        <hr>
 
         <!-- Footer -->
         <footer>

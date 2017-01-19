@@ -41,8 +41,8 @@
             Les coordonnées
         </h2>
 
-        <hr>
         {!! $contenu["ckeditor"] !!}
+        
         <hr>
 
     </div>
