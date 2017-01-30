@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Galerie;
+use App\Models\Photo;
+use Intervention\Image\ImageManager;
 use Image;
 Use File;
 
-class GalerieController extends Controller {
+class PhotoController extends Controller {
 
     /**
      * Display a listing of the resource.
@@ -15,8 +16,8 @@ class GalerieController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $lesImages = Galerie::all();
-        return view('admin.galerie.index')
+        $lesImages = Photo::all();
+        return view('admin.photo.index')
                         ->with("tab_images", $lesImages);
     }
 
@@ -26,7 +27,7 @@ class GalerieController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('admin.galerie.create');
+        return view('admin.photo.create');
     }
 
     /**
@@ -37,20 +38,31 @@ class GalerieController extends Controller {
      */
     public function store(Request $request) {
         $request->session()->flash('success', 'L\'image à été Ajouté !');
-
-        $image = new Galerie();
+        
+        $image = new Photo();
 
         $image->name_user = $request->get('name');
-        $image->description = $request->get('description');
-
+        $image->description = $request->get('description');  
         $fichier = $request->file('image');
-
+        
+        /*$imagename = time().'.'.$fichier->getClientOriginalExtension(); 
+        $destinationPath = public_path('img/galerie/miniature/');
+        $image = Image::make($fichier->getRealPath())->resize(100, 100);
+        $image->save($destinationPath.'/'.$imagename);
+        $destinationPath = public_path('img/galerie/');
+        $fichier->move($destinationPath, $imagename);*/
+        
+        
+        
+        
+        
         Image::make($fichier->getRealPath())->save("img/galerie/" . $fichier->getClientOriginalName());
-
+        
         $image->name_image = $fichier->getClientOriginalName();
 
         $image->save();
-        return redirect()->route("galerie.index");
+        
+        return redirect()->route("photo.index");
     }
 
     /**
@@ -93,13 +105,13 @@ class GalerieController extends Controller {
     public function destroy(Request $request, $id) {
         $request->session()->flash('success', 'L\'image à été Supprimé !');
 
-        $lImage = Galerie::find($id);
+        $lImage = Photo::find($id);
 
         File::delete("img/galerie/" . $lImage->name_image);
 
         $lImage->delete();
 
-        return redirect()->route("galerie.index");
+        return redirect()->route("photo.index");
     }
 
 }

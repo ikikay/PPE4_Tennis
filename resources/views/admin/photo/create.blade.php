@@ -9,7 +9,7 @@
 
 @section('content')
 
-{!! Form::open(['route' => "galerie.store", 'method' => 'post', 'files' => true]) !!}
+{!! Form::open(['route' => "photo.store", 'method' => 'post', 'files' => true]) !!}
 
 <div class="form-group">
     <label>Nom de l'image : </label>

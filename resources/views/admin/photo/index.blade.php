@@ -15,7 +15,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                {!! Form::open(['route' => "galerie.create", 'method' => 'get']) !!}
+                {!! Form::open(['route' => "photo.create", 'method' => 'get']) !!}
                 <button type="submit" class="btn btn-success btn-lg btn-block">Créer</button>
                 {!! Form::close() !!}
                 <!-- /.box-header -->
@@ -58,7 +58,7 @@
                                     {{ $uneImage["description"] }}
                                 </td>
                                 <td class="col-md-1">
-                                    {!! Form::open(['route' => ["galerie.destroy", $uneImage->id], 'method' => 'delete', 'id' => "form".$uneImage->id]) !!}
+                                    {!! Form::open(['route' => ["photo.destroy", $uneImage->id], 'method' => 'delete', 'id' => "form".$uneImage->id]) !!}
                                         <button type="submit" id="{{ $uneImage->id }}" class="btn btn-danger btn-circle jsDeleteButton"><i class="fa fa-times"></i></button>
                                     {!! Form::close() !!}
                                     </div>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
-use App\Models\Galerie;
+use App\Models\Photo;
 use App\Models\Contenu;
 
 class PagesController extends Controller {
@@ -24,7 +24,7 @@ class PagesController extends Controller {
     }
 
     function galerie() {
-        $lesImages = Galerie::all();
+        $lesImages = Photo::all();
         return view('site.galerie')
                         ->with("tab_images", $lesImages);
     }

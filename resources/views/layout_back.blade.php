@@ -259,7 +259,7 @@ desired effect
 
                     </li>
                     <li class="treeview">
-                        <a href="{{ route("galerie.index") }}"><i class="fa fa-link"></i> <span>Galerie</span>  </a>
+                        <a href="{{ route("photo.index") }}"><i class="fa fa-link"></i> <span>Galerie</span>  </a>
                     </li>
                     <li class="treeview">
                         <a href="#"><i class="fa fa-link"></i> <span>Utilisateurs</span>
