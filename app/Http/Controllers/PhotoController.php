@@ -45,20 +45,14 @@ class PhotoController extends Controller {
         $image->description = $request->get('description');  
         $fichier = $request->file('image');
         
-        /*$imagename = time().'.'.$fichier->getClientOriginalExtension(); 
+        $imagename = time().'.'.$fichier->getClientOriginalExtension(); 
         $destinationPath = public_path('img/galerie/miniature/');
-        $image = Image::make($fichier->getRealPath())->resize(100, 100);
-        $image->save($destinationPath.'/'.$imagename);
+        Image::make($fichier->getRealPath())->resize(100, 100)->save($destinationPath.'/'.$imagename);
+     
         $destinationPath = public_path('img/galerie/');
-        $fichier->move($destinationPath, $imagename);*/
-        
-        
-        
-        
-        
-        Image::make($fichier->getRealPath())->save("img/galerie/" . $fichier->getClientOriginalName());
-        
-        $image->name_image = $fichier->getClientOriginalName();
+        $fichier->move($destinationPath, $imagename);              
+      
+        $image->name_image = $imagename;
 
         $image->save();
         
