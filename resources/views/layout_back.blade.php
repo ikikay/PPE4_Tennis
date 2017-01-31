@@ -262,6 +262,9 @@ desired effect
                         <a href="{{ route("photo.index") }}"><i class="fa fa-link"></i> <span>Galerie</span>  </a>
                     </li>
                     <li class="treeview">
+                        <a href="{{ route("album.index") }}"><i class="fa fa-link"></i> <span>Galerie album</span>  </a>
+                    </li>
+                    <li class="treeview">
                         <a href="#"><i class="fa fa-link"></i> <span>Utilisateurs</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>

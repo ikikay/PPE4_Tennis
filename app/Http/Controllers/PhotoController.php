@@ -100,8 +100,9 @@ class PhotoController extends Controller {
         $request->session()->flash('success', 'L\'image à été Supprimé !');
 
         $lImage = Photo::find($id);
-
-        File::delete("img/galerie/" . $lImage->name_image);
+        
+        File::delete("img/galerie/" . $lImage->name_image, "img/galerie/miniature" . $lImage->name_image);
+        
 
         $lImage->delete();
 

@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    Administration des images
-    <small>- Rechercher, ajouter et supprimer des images</small>
+    Administration des albums
+    <small>- Rechercher, ajoute, modifier et supprimer des albums</small>
 </h1>
 @stop
 
@@ -15,12 +15,12 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                {!! Form::open(['route' => "photo.create", 'method' => 'get']) !!}
-                <button type="submit" class="btn btn-success btn-lg btn-block">Créer</button>
-                {!! Form::close() !!}
+                {!! Form::open(['route' => ["photo.create",$unAlbum->id], 'method' => 'get']) !!}
+                <button type="submit" class="btn btn-success btn-lg btn-block">Ajouter une image a l'album</button>
+                {!! Form::close() !!}  
                 <!-- /.box-header -->
                 <div class="box-body">
-
+                    
                     <!-- search form (Optional) -->
                     <form action="#" method="get">
                         <div class="input-group margin">
@@ -43,7 +43,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($tab_images as $uneImage)
+                            @foreach ($album->Photos as $uneImage)
                             <tr>
                                 <td class="col-md-1">
                                     {{ $uneImage["id"] }}
@@ -74,3 +74,4 @@
 </div>
 
 @stop
+

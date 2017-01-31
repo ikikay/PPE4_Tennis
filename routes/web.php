@@ -40,5 +40,6 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('user', 'UserController');
     Route::resource('article', 'ArticleController');
     Route::resource('photo', 'PhotoController');
+    Route::resource('album', 'AlbumController');
     Route::resource('contenu', 'ContenuController');
 });
