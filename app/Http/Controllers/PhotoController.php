@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Photo;
+use App\Models\Album;
 use Intervention\Image\ImageManager;
 use Image;
 Use File;
@@ -26,8 +27,10 @@ class PhotoController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create() {
-        return view('admin.photo.create');
+    public function create($id) {
+        //$album = Album::find($id);
+        //dd($album);
+        return view('admin.photo.create', compact('album'));
     }
 
     /**
@@ -42,7 +45,8 @@ class PhotoController extends Controller {
         $image = new Photo();
 
         $image->name_user = $request->get('name');
-        $image->description = $request->get('description');  
+        $image->description = $request->get('description');
+        $image->album_id = $request->get('album_id');
         $fichier = $request->file('image');
         
         $imagename = time().'.'.$fichier->getClientOriginalExtension(); 

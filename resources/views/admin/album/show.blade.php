@@ -15,7 +15,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                {!! Form::open(['route' => ["photo.create",$unAlbum->id], 'method' => 'get']) !!}
+                {!! Form::open(['route' => ["photo.create",$album->id], 'method' => 'get']) !!}
                 <button type="submit" class="btn btn-success btn-lg btn-block">Ajouter une image a l'album</button>
                 {!! Form::close() !!}  
                 <!-- /.box-header -->

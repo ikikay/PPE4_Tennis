@@ -17,7 +17,7 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $lesAlbums = Album::all();
+        $lesAlbums = Album::with('Photos')->get();;
         return view('admin.album.index', compact('lesAlbums'));
     }
 
@@ -39,14 +39,20 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
-        $request->session()->flash('success', 'L\'album à été Ajouté !');
-        /*$validator = Validator::make(Input::all(), $rules);
+       /* $rules = array(
+
+      'name_album' => 'required',
+      'name_cover_image'=>'required|image'
+
+        );
+        $validator = Validator::make(Input::all(), $rules);
             if($validator->fails()){
 
-            return Redirect::route('admin.album.create')
-                ->withErrors($validator)
-                ->withInput();
-            }*/
+            return Redirect::route('create_album_form')
+            ->withErrors($validator)
+            ->withInput();
+        }*/
+            
         
         $album = new Album();
 
@@ -61,6 +67,7 @@ class AlbumController extends Controller
         $album->name_cover_image = $imagename;
 
         $album->save();
+        $request->session()->flash('success', 'L\'album à été Ajouté !');
         return redirect()->route("album.index");
     }
 

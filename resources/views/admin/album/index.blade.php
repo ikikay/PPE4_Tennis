@@ -36,6 +36,7 @@
                         <thead class="thead-inverse">
                             <tr>
                                 <th style="width: 10px">#</th>
+                                <th>nombre de photos</th>
                                 <th>nom album</th>
                                 <th>image de couverture</th>
                                 <th>action</th>
@@ -47,7 +48,10 @@
                                 <td class="col-md-1">
                                     {{ $unAlbum["id"] }}
                                 </td>
-                                <td class="col-md-4" id="td{{ $unAlbum["id"] }}">
+                                <td class="col-md-1" id="td{{ $unAlbum["id"] }}">
+                                    {{count($unAlbum->Photos)}}
+                                </td>
+                                <td class="col-md-3" id="td{{ $unAlbum["id"] }}">
                                     {{ $unAlbum["name_album"] }}
                                 </td>
                                 <td class="col-md-4">
@@ -62,7 +66,7 @@
                                         </div>
                                         <div class="col-md-3">
                                             {!! Form::open(['route' => ["album.edit", $unAlbum->id], 'method' => 'get']) !!}
-                                            <button type="submit" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button>
+                                            <button type="submit" class="btn btn-primary btn-circle"><i class="fa fa-pencil"></i></button>
                                             {!! Form::close() !!}
                                         </div>
                                         <div class="col-md-3">
@@ -72,8 +76,8 @@
                                         </div>
                                         <br><br>
                                         <div class="col-md-12">
-                                            {!! Form::open(['route' => ["photo.create",$unAlbum->id], 'method' => 'get']) !!}
-                                            <button type="submit" class="btn btn-success btn-lg btn-block">Ajouter une image a l'album</button>
+                                            {!! Form::open(['route' => ["photo.create", $unAlbum->id], 'method' => 'get']) !!}
+                                            <button type="submit" id="{{ $unAlbum->id }}" class="btn btn-success btn-lg btn-block">Ajouter une image a l'album</button>
                                             {!! Form::close() !!}  
                                         </div>
                                     </div>
