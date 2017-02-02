@@ -10,7 +10,7 @@
 @section('content')
 
 {!! Form::open(['route' => "photo.store", 'method' => 'post', 'files' => true]) !!}
-<input type="hidden" name="album_id"  />
+<input type="hidden" name="album_id" id="{{$album->id}}" />
 <div class="form-group">
     <label>Nom de l'image : </label>
     <input class="form-control" placeholder="Mon image" name="name">

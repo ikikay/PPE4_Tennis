@@ -28,7 +28,7 @@ class PhotoController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create($id) {
-        //$album = Album::find($id);
+        $album = Album::find($id);
         //dd($album);
         return view('admin.photo.create', compact('album'));
     }
