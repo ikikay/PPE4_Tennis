@@ -20,7 +20,6 @@ class CreateAlbumsTable extends Migration
             $table->boolean('actif');
             $table->boolean('couverture');
             $table->integer('rencontres_id')->unsigned();
-            $table->foreign('rencontres_id')->references('id')->on('rencontres');
             $table->timestamps();
             $table->engine="INNODB";
         });

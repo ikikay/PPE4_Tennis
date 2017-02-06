@@ -22,6 +22,7 @@ class CreateMessage extends Migration
             $table->string('auteur_email');
             $table->string('tel');
             $table->timestamps();
+              $table->engine="INNODB";
         });
     }
 

@@ -14,7 +14,7 @@ class CreatePartenaire extends Migration
     public function up()
     {
         Schema::create('partenaires', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id') ;
             $table->string('nom');
             $table->string('fichier');
             $table->string('description');
@@ -25,6 +25,7 @@ class CreatePartenaire extends Migration
             $table->string('site');
             $table->string('facebook');
             $table->timestamps();
+              $table->engine="INNODB";
         });
     }
 

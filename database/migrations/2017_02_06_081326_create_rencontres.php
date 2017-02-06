@@ -19,7 +19,7 @@ class CreateRencontres extends Migration
             $table->string('lieu');
             $table->string('adversaire');
             $table->integer('equipes_id')->unsigned();
-            $table->foreign('equipes_id')->references('id')->on('rencontres');
+            
             $table->timestamps();
             $table->engine="INNODB";
         });

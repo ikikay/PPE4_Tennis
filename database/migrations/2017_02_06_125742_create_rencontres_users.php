@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateResultats extends Migration
+class CreateRencontresUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,14 @@ class CreateResultats extends Migration
      */
     public function up()
     {
-         Schema::create('resultats', function (Blueprint $table) {
-            $table->integer('rencontres_id')->unsigned();
-            $table->foreign('rencontres_id')->references('id')->on('rencontres');
-            $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users');
+        Schema::create('rencontre_user', function (Blueprint $table) {
+         
+             $table->increments('id');
+            
+           $table->integer('rencontre_id')->unsigned();;
+            
+            $table->integer('user_id')->unsigned();; 
+            
             $table->string('confirmation');
             $table->boolean('gagner');
             $table->string('score');
@@ -34,6 +37,6 @@ class CreateResultats extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('resultats');
+        Schema::dropIfExists('rencontre_user');
     }
 }

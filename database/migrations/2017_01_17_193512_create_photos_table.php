@@ -18,8 +18,7 @@ class CreatePhotosTable extends Migration
             $table->string('titre_photo');
             $table->string('fichier');
             $table->string('description');
-            $table->integer('album_id')->unsigned();
-            $table->foreign('album_id')->references('id')->on('albums');
+           $table->integer('album_id')->unsigned();
             $table->timestamps();
             $table->engine="INNODB";
         });
