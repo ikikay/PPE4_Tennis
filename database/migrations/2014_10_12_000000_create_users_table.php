@@ -16,10 +16,17 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('prenom');
             $table->string('email')->unique();
+            $table->string('telephone');
             $table->string('password');
+            $table->string('staut');
+            $table->integer('classement');
+            $table->integer('comites_id')->unsigned();
+            $table->foreign('comites_id')->references('id')->on('comites');
             $table->rememberToken();
             $table->timestamps();
+            $table->engine="INNODB";
         });
     }
 
@@ -30,6 +37,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
+        Schema::dropIfExists('users');
     }
 }

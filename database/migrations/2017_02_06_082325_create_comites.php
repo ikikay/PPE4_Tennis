@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ModifyPhotosTable extends Migration
+class CreateComites extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class ModifyPhotosTable extends Migration
      */
     public function up()
     {
-        Schema::table('photos', function (Blueprint $table) {
-            $table->integer('album_id')->unsigned();
-            $table->foreign('album_id')->references('id')->on('albums');
-             });               
+        Schema::create('comites', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('telephone');
+            $table->string('fonction');
+            $table->timestamps();
+            $table->engine="INNODB";
+        });
     }
 
     /**
@@ -26,6 +29,6 @@ class ModifyPhotosTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('comites');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAlbumsTable extends Migration
+class CreateResultats extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,15 @@ class CreateAlbumsTable extends Migration
      */
     public function up()
     {
-        Schema::create('albums', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('titre_album');  
-            $table->string('description');
-            $table->boolean('actif');
-            $table->boolean('couverture');
+         Schema::create('resultats', function (Blueprint $table) {
             $table->integer('rencontres_id')->unsigned();
             $table->foreign('rencontres_id')->references('id')->on('rencontres');
+            $table->integer('users_id')->unsigned();
+            $table->foreign('users_id')->references('id')->on('users');
+            $table->string('confirmation');
+            $table->boolean('gagner');
+            $table->string('score');
+           
             $table->timestamps();
             $table->engine="INNODB";
         });
@@ -33,6 +34,6 @@ class CreateAlbumsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('albums');
+        Schema::dropIfExists('resultats');
     }
 }
