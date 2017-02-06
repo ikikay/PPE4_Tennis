@@ -4,21 +4,24 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticlesTable extends Migration {
-
+class CreateMessage extends Migration
+{
     /**
      * Run the migrations.
      *
      * @return void
      */
-    public function up() {
-        Schema::create('articles', function (Blueprint $table) {
+    public function up()
+    {
+        Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('date');
             $table->string('titre');
-            $table->longtext('description');
-            $table->string('photo');
+            $table->string('contenu');
+            $table->string('auteur');
+            $table->string('auteur_email');
+            $table->string('tel');
             $table->timestamps();
-            $table->engine="INNODB";
         });
     }
 
@@ -27,8 +30,8 @@ class CreateArticlesTable extends Migration {
      *
      * @return void
      */
-    public function down() {
-        Schema::dropIfExists('articles');
+    public function down()
+    {
+        Schema::dropIfExists('messages');
     }
-
 }

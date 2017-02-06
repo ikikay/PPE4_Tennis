@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePhotosTable extends Migration
+class CreatePartenaire extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,18 @@ class CreatePhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('photos', function (Blueprint $table) {
+        Schema::create('partenaires', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titre_photo');
+            $table->string('nom');
             $table->string('fichier');
             $table->string('description');
-            $table->integer('album_id')->unsigned();
-            $table->foreign('album_id')->references('id')->on('albums');
+            $table->string('adresse');
+            $table->string('cp');
+            $table->string('ville');
+            $table->string('tel');
+            $table->string('site');
+            $table->string('facebook');
             $table->timestamps();
-            $table->engine="INNODB";
         });
     }
 
@@ -32,6 +35,6 @@ class CreatePhotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('photos');
+        Schema::dropIfExists('partenaires');
     }
 }

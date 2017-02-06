@@ -18,6 +18,7 @@ class CreateContenusTable extends Migration
             $table->string('page');
             $table->longtext('ckeditor');
             $table->timestamps();
+            $table->engine="INNODB";
         });
     }
 
