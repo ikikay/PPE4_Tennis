@@ -15,11 +15,10 @@ class CreateAlbumsTable extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titre_album');  
+            $table->string('titre');  
             $table->string('description');
-            $table->boolean('actif');
-            $table->boolean('couverture');
-            $table->integer('rencontres_id')->unsigned();
+            $table->boolean('actif')->default(true);
+            $table->integer('rencontre_id')->unsigned()->nullable();
             $table->timestamps();
             $table->engine="INNODB";
         });

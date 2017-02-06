@@ -17,10 +17,10 @@ class CreateMessage extends Migration
             $table->increments('id');
             $table->date('date');
             $table->string('titre');
-            $table->string('contenu');
+            $table->longtext('contenu');
             $table->string('auteur');
-            $table->string('auteur_email');
-            $table->string('tel');
+            $table->string('email');
+            $table->string('tel')->nullable();
             $table->timestamps();
               $table->engine="INNODB";
         });

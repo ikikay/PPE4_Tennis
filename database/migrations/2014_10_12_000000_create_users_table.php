@@ -20,10 +20,11 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('telephone');
             $table->string('password');
-            $table->string('statut');
-            $table->integer('classement');
+            $table->string('classement');
+            $table->boolean('joueur');
+            $table->boolean('admin');
             $table->rememberToken();
-            $table->integer('comites_id')->unsigned();
+            $table->integer('comite_id')->unsigned()->nullable();
             $table->timestamps();
             $table->engine="INNODB";
         });

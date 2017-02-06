@@ -15,7 +15,6 @@ class CreateComites extends Migration
     {
         Schema::create('comites', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('telephone');
             $table->string('fonction');
             $table->timestamps();
             $table->engine="INNODB";

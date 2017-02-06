@@ -16,14 +16,15 @@ class CreatePartenaire extends Migration
         Schema::create('partenaires', function (Blueprint $table) {
             $table->increments('id') ;
             $table->string('nom');
-            $table->string('fichier');
+            $table->string('logo');
             $table->string('description');
             $table->string('adresse');
             $table->string('cp');
             $table->string('ville');
             $table->string('tel');
-            $table->string('site');
-            $table->string('facebook');
+            $table->string('site')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
             $table->timestamps();
               $table->engine="INNODB";
         });

@@ -15,10 +15,10 @@ class CreatePhotosTable extends Migration
     {
         Schema::create('photos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('titre_photo');
+            $table->string('titre');
             $table->string('fichier');
             $table->string('description');
-           $table->integer('album_id')->unsigned();
+            $table->integer('album_id')->unsigned();
             $table->timestamps();
             $table->engine="INNODB";
         });

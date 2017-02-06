@@ -15,16 +15,12 @@ class CreateRencontresUsers extends Migration
     {
         Schema::create('rencontre_user', function (Blueprint $table) {
          
-             $table->increments('id');
-            
-           $table->integer('rencontre_id')->unsigned();;
-            
-            $table->integer('user_id')->unsigned();; 
-            
-            $table->string('confirmation');
+            $table->increments('id');
+            $table->integer('rencontre_id')->unsigned();
+            $table->integer('user_id')->unsigned();
+            $table->boolean('confirmation');
             $table->boolean('gagner');
             $table->string('score');
-           
             $table->timestamps();
             $table->engine="INNODB";
         });

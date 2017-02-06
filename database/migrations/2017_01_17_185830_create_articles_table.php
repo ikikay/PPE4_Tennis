@@ -16,7 +16,7 @@ class CreateArticlesTable extends Migration {
             $table->increments('id');
             $table->string('titre');
             $table->longtext('description');
-            $table->string('photo');
+            $table->string('photo')->nullable();
             $table->timestamps();
             $table->engine="INNODB";
         });

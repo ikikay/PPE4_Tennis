@@ -17,8 +17,7 @@ class CreateDocuments extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->string('fichier');
-           $table->integer('users_id')->unsigned();
-          
+            $table->integer('user_id')->unsigned()->nullable();
             $table->timestamps();
             $table->engine="INNODB";
         });
