@@ -10,7 +10,9 @@
         <meta name="author" content="">
 
         <title>Site du club de Tennis de Tavaux</title>
-
+        
+        <!-- CSS du site -->
+        <link href="{{ url('css/style_front.css')}}" rel="stylesheet">
         <!-- Bootstrap Core CSS -->
         <link href="{{ url('css/bootstrap_front.css')}}" rel="stylesheet">
         <!-- Bootstrap Core CSS -->

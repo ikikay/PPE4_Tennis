@@ -1,0 +1,13 @@
+/* Décallage du logo en haut à gauche */
+.navbar-brand > img {
+    all: none;
+    
+   position: absolute;
+   top: 20px;
+   left: 20px;
+}
+
+/* Application d'un margin au footer */
+footer {
+    margin-top: 50px;
+}
