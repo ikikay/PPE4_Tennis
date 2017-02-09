@@ -40,7 +40,9 @@ class UserController extends Controller {
 
         User::create([
             'name' => $request->get('name'),
+            'prenom' => $request->get('prenom'),
             'email' => $request->get('email'),
+            'telephone' => $request->get('telephone'),
             'password' => bcrypt($request->get('password')),
         ]);
 
