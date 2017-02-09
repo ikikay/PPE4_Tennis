@@ -67,8 +67,8 @@ class UserController extends Controller {
      */
     public function edit($id) {
         $leUser = user::find($id);
-        return view('user.edit')
-                        ->with("user", $leUser);
+        return view('admin.user.edit')
+                        ->with("leUser", $leUser);
     }
 
     /**
@@ -79,7 +79,17 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-        //
+       $leUser = User::find($id);
+
+       
+        $leUser ->nom = $request->get('nom');
+        $leUser -> prenom = $request->get('prenom');
+        $leUser ->  email = $request->get('email');
+        $leUser -> telephone=$request->get('telephone');
+        $leUser -> password =bcrypt($request->get('password'));
+        $leUser->save();
+
+        return redirect()->route("user.index");
     }
 
     /**

@@ -419,7 +419,7 @@ desired effect
     <!-- AdminLTE App -->
     <script src="{{url('js/app.min.js') }}"></script>
     <!-- CK Editor -->
-    <script src="https://cdn.ckeditor.com/4.5.7/full-all/ckeditor.js"></script>
+    <script src="{{ url('js/ckeditor/ckeditor.js')}}"></script>
     <!-- BootBox (modals) -->
     <script src="{{url('js/bootbox.min.js')}}"></script>
 
