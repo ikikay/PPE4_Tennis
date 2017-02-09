@@ -25,6 +25,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
         On peu le changer par d'autres skin, vérifiez bien d'appliquer la classe du skin, au tag Body pour que ça prenne effet
     -->
     <link rel="stylesheet" href="{{url('css/skins/skin-blue.min.css') }}">
+     
+    <!-- Toggle ON/OFF pour USER -->
+    <link rel="stylesheet" href="{{url('css/bootstrap2-toggle.min.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -280,7 +283,7 @@ desired effect
                     </li>
                     <li class="header">Modification Site</li>
                     <li class="treeview">
-                        <a href="{{ route("coordonnee_edit") }}"><i class="fa fa-link"></i> <span>Coordonnées</span>  </a>
+                        <a href="{{ route("coordonnee.index") }}"><i class="fa fa-link"></i> <span>Coordonnées</span>  </a>
                     </li>
                 </ul>
                 <!-- /.sidebar-menu -->
@@ -422,7 +425,9 @@ desired effect
     <script src="{{ url('js/ckeditor/ckeditor.js')}}"></script>
     <!-- BootBox (modals) -->
     <script src="{{url('js/bootbox.min.js')}}"></script>
-
+<!-- Toggle JS ON/OFF -->
+    <script src="{{url('js/bootstrap2-toggle.min.js')}}"></script>
+   
     <!-- Mon JavaScript -->
     <script src="{{url('js/perso.js')}}"></script>
 

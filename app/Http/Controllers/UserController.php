@@ -38,12 +38,27 @@ class UserController extends Controller {
     public function store(Request $request) {
         $request->session()->flash('success', 'L\'utilisateur à été Ajouté !');
 
+
+        if ($request->get('admin') == null) {
+            $admin = false;
+        } else {
+            $admin = true;
+        }
+
+        if ($request->get('joueur') == null) {
+            $joueur = false;
+        } else {
+            $joueur = true;
+        }
+
         User::create([
             'nom' => $request->get('nom'),
             'prenom' => $request->get('prenom'),
             'email' => $request->get('email'),
             'telephone' => $request->get('telephone'),
             'password' => bcrypt($request->get('password')),
+            'admin' => $admin,
+            'joueur' => $joueur,
         ]);
 
         return redirect()->route("user.index");
@@ -79,14 +94,32 @@ class UserController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id) {
-       $leUser = User::find($id);
+        $leUser = User::find($id);
 
-       
-        $leUser ->nom = $request->get('nom');
-        $leUser -> prenom = $request->get('prenom');
-        $leUser ->  email = $request->get('email');
-        $leUser -> telephone=$request->get('telephone');
-        $leUser -> password =bcrypt($request->get('password'));
+        if ($request->get('admin') == null) {
+            $admin = false;
+        } else {
+            $admin = true;
+        }
+
+        if ($request->get('joueur') == null) {
+            $joueur = false;
+        } else {
+            $joueur = true;
+        }
+
+
+        $leUser->nom = $request->get('nom');
+        $leUser->prenom = $request->get('prenom');
+        $leUser->email = $request->get('email');
+        $leUser->telephone = $request->get('telephone');
+        $leUser->password = bcrypt($request->get('password'));
+        $leUser->joueur = $joueur;
+        $leUser->admin = $admin;
+
+
+
+
         $leUser->save();
 
         return redirect()->route("user.index");
