@@ -12,5 +12,8 @@ class Album extends Model
         return $this->hasMany('App\Models\Photo');
         //return $this->hasMany('photos','album_id');
     }
-    
+    public function Rencontre()
+    {
+        return $this->belongsTo('App\Models\Rencontre');
+    }
 }
