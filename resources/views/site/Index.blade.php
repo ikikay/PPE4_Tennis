@@ -47,9 +47,13 @@
         </h2>
         <p><i class="fa fa-clock-o"></i> Posté le {{ $unArticle["created_at"]->format('d/m/Y à H:i') }}</p>
         <hr>
-        <a href="blog-post.html">
-            <img class="img-responsive img-hover" src="img/articles/{{ $unArticle["photo"] }}" alt="">
+        
+        @if (is_null($unArticle["photo"]) == false)
+        <a href="#"> <!-- Futur lien du "voir plus" -->
+           <img class="img-responsive img-hover" src="img/articles/{{ $unArticle["photo"]}}" alt="">
         </a>
+        @endif
+   
         <br>
         {!! $unArticle["description"] !!}
         <hr>
