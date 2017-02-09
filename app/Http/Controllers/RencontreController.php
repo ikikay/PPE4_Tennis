@@ -82,7 +82,7 @@ class RencontreController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $rencontre = Equipe::find($id);
+        $rencontre = Rencontre::find($id);
 
         $rencontre->date = $request->get('date');
         $rencontre->lieu = $request->get('lieu');
