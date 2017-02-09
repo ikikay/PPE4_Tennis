@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
+use Image;
 
 
 class ArticleController extends Controller {
@@ -44,14 +45,13 @@ class ArticleController extends Controller {
 
         $article->titre = $request->get('titre');
         $article->description = $request->get('editor');
-
-        if ($user) {
-            $article->auteur = $user->name;
-        }
-        else {
-            $article->auteur = "Tennis Tavaux";
-        }
-
+        
+        $fichier = $request->file('image');
+        $imagename = time().'.'.$fichier->getClientOriginalExtension();
+        $destinationPath = public_path('img\articles');
+        Image::make($fichier->getRealPath())->resize(900, 300)->save($destinationPath.'\\'.$imagename);
+        $article->photo = $imagename;
+        
         $article->save();
         return redirect()->route("article.index");
     }
