@@ -39,7 +39,7 @@ class UserController extends Controller {
         $request->session()->flash('success', 'L\'utilisateur à été Ajouté !');
 
         User::create([
-            'name' => $request->get('name'),
+            'nom' => $request->get('nom'),
             'prenom' => $request->get('prenom'),
             'email' => $request->get('email'),
             'telephone' => $request->get('telephone'),

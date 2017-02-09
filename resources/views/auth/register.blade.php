@@ -10,13 +10,13 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
-                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Nom</label>
+                        <div class="form-group{{ $errors->has('nom') ? ' has-error' : '' }}">
+                            <label for="nom" class="col-md-4 control-label">Nom</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                                <input id="nom" type="text" class="form-control" name="nom" value="{{ old('nom') }}" required autofocus>
 
-                                @if ($errors->has('name'))
+                                @if ($errors->has('nom'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
                                     </span>
