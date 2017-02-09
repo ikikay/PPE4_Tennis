@@ -50,20 +50,23 @@
                                 <td class="col-md-5" id="td{{ $uneEquipe["nom"] }}">
                                     {{ $uneEquipe["nom"] }}
                                 </td>
-                                <td class="col-md-5" id="td{{ $uneEquipe["division"] }}">
+                                <td class="col-md-4" id="td{{ $uneEquipe["division"] }}">
                                     {{ $uneEquipe["division"] }}
                                 </td>
-                                <td class="col-md-1">
+                                <td class="col-md-2">
                                     <div class="row">
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             {!! Form::open(['route' => ["equipe.edit", $uneEquipe->id], 'method' => 'get']) !!}
                                             <button type="submit" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button>
                                             {!! Form::close() !!}
                                         </div>
-                                        <div class="col-md-6">
+                                        <div class="col-md-4">
                                             {!! Form::open(['route' => ["equipe.destroy", $uneEquipe->id], 'method' => 'delete', 'id' => "form".$uneEquipe->id]) !!}
                                             <button type="submit" id="{{ $uneEquipe->id }}" class="btn btn-danger btn-circle jsDeleteButton"><i class="fa fa-times"></i></button>
                                             {!! Form::close() !!}
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a class="btn btn-primary btn-circle" href="{{ route("rencontre.index") }}">Ajouter</a>
                                         </div>
                                     </div>
                                 </td>

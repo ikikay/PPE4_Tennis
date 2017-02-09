@@ -59,7 +59,7 @@
                                     {{ $uneRencontre["adversaire"] }}
                                 </td>
                                 <td class="col-md-3" id="td{{ $uneRencontre["equipe_id"] }}">
-                                    {{ $uneRencontre["equipe_id"] }}
+                                    {{ $uneRencontre->equipe->nom }}
                                 </td>
                                 <td class="col-md-1">
                                     <div class="row">

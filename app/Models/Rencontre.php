@@ -5,15 +5,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rencontre extends Model
 {
-    public function Album()
+    public function album()
     {
         return $this->belongsTo('App\Models\Album');
     }
-    public function Equipe()
+    public function equipe()
     {
         return $this->belongsTo('App\Models\Equipe');
     }
-    public function Users()
+    public function users()
     {
         return $this->belongsToMany('App\Models\User');
     }

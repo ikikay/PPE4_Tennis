@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipe extends Model
 {
-    public function Rencontres()
+    public function rencontres()
     {
         return $this->hasMany('App\Models\Rencontre');
     }

@@ -34,8 +34,8 @@ Route::group(['prefix' => 'admin'], function() {
         route('admin.dashboard');
     });
     
-    Route::get('contenu/coordonnee/edit', 'ContenuController@coordonnee_edit')->name('coordonnee_edit');
-    Route::put('contenu/coordonnee', 'ContenuController@coordonnee_update')->name('coordonnee_update');
+    //    Route::get('contenu/coordonnee/edit', 'ContenuController@coordonnee_edit')->name('coordonnee_edit');
+    //    Route::put('contenu/coordonnee', 'ContenuController@coordonnee_update')->name('coordonnee_update');
 
     Route::resource('user', 'UserController');
     Route::resource('article', 'ArticleController');
@@ -44,5 +44,6 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('contenu', 'ContenuController');
     Route::resource('equipe', 'EquipeController');
     Route::resource('rencontre', 'RencontreController');
+    Route::resource('coordonnee', 'CoordonneeController');
     
 });

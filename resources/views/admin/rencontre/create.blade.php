@@ -20,7 +20,7 @@
 
                     <div class="form-group">
                         <label>Date de la rencontre :  </label>
-                        <input class="form-control" placeholder="Date :" name="date"> 
+                        <input type ="date" class="form-control" placeholder="Date :" name="date"> 
                     </div>
                     <div class="form-group">
                         <label>Lieu de la rencontre :  </label>
@@ -31,8 +31,8 @@
                         <input class="form-control" placeholder="Adversaire :" name="adversaire"> 
                     </div>
                     <div class="form-group">
-                        <label>Equipe :  </label>
-                        <input class="form-control" placeholder="Equipe :" name="equipe"> 
+                    {!! Form::label('equipe_id', 'Choisir une équipe : ') !!}
+                    {!! Form::select('equipe_id', $lesEquipes, null, ['class'=>'form-control']) !!}
                     </div>
 
                     <!-- tools box -->

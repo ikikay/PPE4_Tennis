@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comite extends Model
 {
-    public function Users()
+    public function users()
     {
         return $this->hasMany('App\Models\User');
     }
