@@ -278,6 +278,9 @@ desired effect
                     <li class="treeview">
                         <a href="{{ route("equipe.index") }}"><i class="fa fa-link"></i> <span>Equipes</span></a>
                     </li>
+                    <li class="treeview">
+                        <a href="{{ route("rencontre.index") }}"><i class="fa fa-link"></i> <span>Rencontres</span></a>
+                    </li>
                     <li class="header">Modification Site</li>
                     <li class="treeview">
                         <a href="{{ route("coordonnee_edit") }}"><i class="fa fa-link"></i> <span>Coordonnées</span>  </a>

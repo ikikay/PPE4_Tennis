@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Equipe;
+use App\Models\Rencontre;
 use Illuminate\Http\Request;
 
-class EquipeController extends Controller
+class RencontreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class EquipeController extends Controller
      */
     public function index()
     {
-        $lesEquipes = Equipe::all();
-        return view('admin.equipe.index')->with('tab_equipes', $lesEquipes);
+        $lesRencontres = Rencontre::all();
+        return view('admin.rencontre.index')->with('tab_rencontres', $lesRencontres);
     }
 
     /**
@@ -24,7 +24,7 @@ class EquipeController extends Controller
      */
     public function create()
     {
-        return view('admin.equipe.create');
+        return view('admin.rencontre.create');
     }
 
     /**
@@ -35,13 +35,15 @@ class EquipeController extends Controller
      */
     public function store(Request $request)
     {
-        $request->session()->flash('success', 'L\'équipe à été ajoutée !');
-        $equipe = new Equipe();
+        $request->session()->flash('success', 'La rencontre à été ajoutée !');
+        $rencontre = new Rencontre();
 
-        $equipe->nom = $request->get('nom');
-        $equipe->division = $request->get('division');
-        $equipe->save();
-        return redirect()->route("equipe.index");
+        $rencontre->date = $request->get('date');
+        $rencontre->lieu = $request->get('lieu');
+        $rencontre->adversaire = $request->get('adversaire');
+        $rencontre->equipe_id = $request->get('equipe_id');
+        $rencontre->save();
+        return redirect()->route("rencontre.index");
     }
 
     /**
@@ -63,8 +65,8 @@ class EquipeController extends Controller
      */
     public function edit($id)
     {
-        $equipe = Equipe::find($id);
-        return view('admin.equipe.edit')->with("equipe", $equipe);
+        $rencontre = Rencontre::find($id);
+        return view('admin.rencontre.edit')->with("rencontre", $rencontre);
     }
 
     /**
@@ -76,14 +78,16 @@ class EquipeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $equipe = Equipe::find($id);
+        $rencontre = Equipe::find($id);
 
-        $equipe->nom = $request->get('nom');
-        $equipe->division = $request->get('division');
+        $rencontre->date = $request->get('date');
+        $rencontre->lieu = $request->get('lieu');
+        $rencontre->adversaire = $request->get('adversaire');
+        $rencontre->equipe_id= $request->get('equipe_id');
 
-        $equipe->save();
+        $rencontre->save();
 
-        return redirect()->route("equipe.index");
+        return redirect()->route("rencontre.index");
     }
 
     /**
@@ -94,12 +98,12 @@ class EquipeController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $request->session()->flash('success', 'L\'équipe à été supprimée !');
+        $request->session()->flash('success', 'La rencontre à été supprimée !');
 
-        $equipe = Equipe::find($id);
+        $rencontre = Rencontre::find($id);
 
-        $equipe->delete();
+        $rencontre->delete();
 
-        return redirect()->route("equipe.index");
+        return redirect()->route("rencontre.index");
     }
 }
