@@ -47,7 +47,7 @@
                                     {{ $unUser["id"] }}
                                 </td>
                                 <td class="col-md-10" id="td{{ $unUser["id"] }}">
-                                    {{ $unUser["name"] }}
+                                    {{ $unUser["nom"] }}
                                 </td>
                                 <td class="col-md-1">
                                     <div class="row">
