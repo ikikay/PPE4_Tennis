@@ -37,8 +37,6 @@ class ArticleController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $user = Auth::user();
-
         $request->session()->flash('success', 'L\'article à été Ajouté !');
 
         $article = new Article();

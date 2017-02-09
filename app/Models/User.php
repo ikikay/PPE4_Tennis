@@ -31,16 +31,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
     
-    public function Comite()
+    public function comite()
     {
         return $this->belongsTo('App\Models\Comite');
     }
     
-    public function Documents()
+    public function documents()
     {
         return $this->hasMany('App\Models\Document');
     }
-    public function Rencontres()
+    public function rencontres()
     {
         return $this->belongsToMany('App\Models\Rencontre');
     }
