@@ -45,15 +45,12 @@
         <h2>
             <a href="#">{{ $unArticle["titre"] }}</a>
         </h2>
-        <p class="lead">
-            by <a href="index.php">{{ $unArticle["auteur"] }}</a>
-        </p>
-        <p><i class="fa fa-clock-o"></i> Posté le {{ $unArticle["created_at"] }}</p>
+        <p><i class="fa fa-clock-o"></i> Posté le {{ $unArticle["created_at"]->format('d/m/Y à H:i') }}</p>
         <hr>
         <a href="blog-post.html">
-            <img class="img-responsive img-hover" src="img/post.png" alt="">
+            <img class="img-responsive img-hover" src="img/articles/{{ $unArticle["photo"] }}" alt="">
         </a>
-        <hr>
+        <br>
         {!! $unArticle["description"] !!}
         <hr>
         @endforeach
