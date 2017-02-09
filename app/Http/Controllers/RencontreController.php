@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Rencontre;
+use App\Models\Equipe;
 use Illuminate\Http\Request;
 
 class RencontreController extends Controller
@@ -24,7 +25,8 @@ class RencontreController extends Controller
      */
     public function create()
     {
-        return view('admin.rencontre.create');
+        $lesEquipes = Equipe::pluck('nom', 'id');
+        return view('admin.rencontre.create', compact('lesEquipes'));
     }
 
     /**
@@ -66,7 +68,9 @@ class RencontreController extends Controller
     public function edit($id)
     {
         $rencontre = Rencontre::find($id);
-        return view('admin.rencontre.edit')->with("rencontre", $rencontre);
+        $lesEquipes = Equipe::pluck('nom', 'id');
+        return view('admin.rencontre.edit', compact('rencontre', 'lesEquipes'));
+        //->with("rencontre", $rencontre)
     }
 
     /**
