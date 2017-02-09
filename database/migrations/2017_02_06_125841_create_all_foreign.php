@@ -23,7 +23,7 @@ class CreateAllForeign extends Migration
         });
         
             Schema::table('photos', function (Blueprint $table) {
-        $table->foreign('album_id')->references('id')->on('albums');
+        $table->foreign('album_id')->references('id')->on('albums')->onDelete('CASCADE')->onUpdate('CASCADE');
         });
         
             Schema::table('rencontres', function (Blueprint $table) {
