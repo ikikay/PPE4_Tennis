@@ -10,7 +10,8 @@ use App\Models\Contenu;
 class PagesController extends Controller {
 
     function index() {
-        $lesArticles = Article::all();
+        $lesArticles = Article::all()->sortByDesc("created_at");
+
         return view('site.index')
                         ->with("tab_articles", $lesArticles);
     }
