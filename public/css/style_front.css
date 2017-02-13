@@ -1,13 +1,33 @@
 /* Décallage du logo en haut à gauche */
 .navbar-brand > img {
     all: none;
-    
-   position: absolute;
-   top: 20px;
-   left: 20px;
+
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 
 /* Application d'un margin au footer */
 footer {
     margin-top: 50px;
+}
+
+.navbar-inverse {
+    background-color: #333399;
+    border-color: #666688;
+    padding: 10px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #ffffff;
+    font-size: 17px;
+    font-family: 'Open Sans', Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.contenu {
+    background-color: #ffffff;
+}
+
+body {
+    color: #998866;
 }
