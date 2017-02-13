@@ -45,5 +45,5 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('equipe', 'EquipeController');
     Route::resource('rencontre', 'RencontreController');
     Route::resource('coordonnee', 'CoordonneeController');
-    
+    Route::resource('document', 'DocumentController');
 });

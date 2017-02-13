@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Document extends Model
 {
-    public function user()
+    public function users()
     {
         return $this->belongsTo('App\Models\User');
     }
