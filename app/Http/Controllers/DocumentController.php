@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Models\Document;
 use Illuminate\Http\Request;
+use Image;
+Use File;
 
 class DocumentController extends Controller
 {
@@ -15,7 +17,7 @@ class DocumentController extends Controller
     {
        $lesDocs = Document::all();
 
-        return view('admin.document.index')
+        return view('site.document.index')
                         ->with('tab_docs', $lesDocs);
     }
 
@@ -26,7 +28,7 @@ class DocumentController extends Controller
      */
     public function create()
     {
-        //
+         return view('site.document.create'); //
     }
 
     /**
@@ -37,7 +39,28 @@ class DocumentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->session()->flash('success', 'Le fichier à été Ajouté !');
+        
+        $image = new Document();
+
+        $image->nom = $request->get('nom');
+        
+       
+        $fichier = $request->file('document');
+        
+        $imagename = time().'.'.$fichier->getClientOriginalName(); 
+      
+          
+     
+        $destinationPath = public_path('doc/');
+           
+        $fichier->move($destinationPath, $imagename);              
+      
+        $image->fichier = $imagename;
+
+        $image->save();
+        
+        return redirect()->route("document.index");
     }
 
     /**
@@ -80,8 +103,17 @@ class DocumentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+         $request->session()->flash('success', 'Le doc à été Supprimé !');
+
+        $doc = Document::find($id);
+        
+        File::delete("doc/" . $doc->fichier);
+        
+
+        $doc->delete();
+
+        return redirect()->route("document.index");
     }
 }

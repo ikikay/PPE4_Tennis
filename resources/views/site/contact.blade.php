@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Contact
-                    <small>Tenis Club Tavaux</small>
+                    <small>Tennis Club Tavaux</small>
                 </h1>
             </div>
         </div>

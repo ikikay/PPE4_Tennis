@@ -90,6 +90,9 @@
                                 </li>                            
                             </ul>
                         </li>
+                      
+                        
+                       
                         <li>
                             <a href="{{ route('contact') }}">Contact</a>
                         </li>                        
@@ -99,9 +102,16 @@
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 <i class="fa fa-user fa-fw"></i>{!!Auth::user()->name!!}&nbsp<i class="fa fa-caret-down"></i>
                             </a>
+                           
                             <ul class="dropdown-menu dropdown-user">
+
+                                <li>
+                                    <a href="{{ route('document.index') }}">Profil</a>
+                                </li> 
+                                @if (Auth::user()->admin)         
                                 <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-gear fa-fw"></i> Administration</a>
                                 </li>
+                                @endif
                                 <li class="divider"></li>
                                 <li>
                                     <a href="{{ url('/logout') }}"
@@ -157,9 +167,11 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ url ('js/bootstrap.min_front.js')}}"></script>
-
+<!-- BootBox (modals) -->
+    <script src="{{url('js/bootbox.min.js')}}"></script>
     <!-- Mon JavaScript -->
     <script src="{{url('js/perso.js')}}"></script>
+    
 
     <!-- Script to Activate the Carousel -->
     <script>
