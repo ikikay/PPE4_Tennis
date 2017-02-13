@@ -37,9 +37,13 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('contenu/coordonnee/edit', 'ContenuController@coordonnee_edit')->name('coordonnee_edit');
     Route::put('contenu/coordonnee', 'ContenuController@coordonnee_update')->name('coordonnee_update');
 
+    Route::get('photo/create/{album_id}', 'PhotoController@create')->name('photo.create')->where('album_id', '[0-9]+');
+    Route::post('photo', 'PhotoController@store')->name('photo.store');
+Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->where('id', '[0-9]+');
+    
     Route::resource('user', 'UserController');
     Route::resource('article', 'ArticleController');
-    Route::resource('photo', 'PhotoController');
+    //Route::resource('photo', 'PhotoController');
     Route::resource('album', 'AlbumController');
     Route::resource('contenu', 'ContenuController');
     

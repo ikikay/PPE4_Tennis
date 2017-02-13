@@ -61,6 +61,11 @@ return [
             'region' => 'your-region',
             'bucket' => 'your-bucket',
         ],
+        
+        'image' => [
+            'driver' => 'local',
+            'root'   => public_path().'/img/galerie'
+        ],
 
     ],
 

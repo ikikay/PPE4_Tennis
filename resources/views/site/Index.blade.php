@@ -38,7 +38,8 @@
 
 
 
-    <div class="col-md-8">
+    <div class="col-md-12">
+        <div class="col-md-8">
 
         @foreach ($tab_articles as $unArticle)
         <!-- First Blog Post -->
@@ -57,7 +58,7 @@
         {!! $unArticle["description"] !!}
         <hr>
         @endforeach
-
+        </div>
         <div class="col-md-4">
             <!-- Side Widget Well -->
             <div class="well">
@@ -68,7 +69,7 @@
         </div>
 
 
-        <!-- Pager -->
+        <!-- Pager
         <ul class="pager">
             <li class="previous">
                 <a href="#">← Older</a>
@@ -76,7 +77,7 @@
             <li class="next">
                 <a href="#">Newer →</a>
             </li>
-        </ul>
+        </ul> -->
 
     </div>
 

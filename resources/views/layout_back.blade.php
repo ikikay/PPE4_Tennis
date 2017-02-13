@@ -25,6 +25,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         On peu le changer par d'autres skin, vérifiez bien d'appliquer la classe du skin, au tag Body pour que ça prenne effet
     -->
     <link rel="stylesheet" href="{{url('css/skins/skin-blue.min.css') }}">
+    
+    <link rel="stylesheet" href="{{url('css/dropzone.css') }}" >
+    
+    <link rel="stylesheet" href="{{url('css/style_back.css') }}" >
+
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -258,9 +263,7 @@ desired effect
                         </ul>	
 
                     </li>
-                    <li class="treeview">
-                        <a href="{{ route("photo.index") }}"><i class="fa fa-link"></i> <span>Galerie</span>  </a>
-                    </li>
+                   
                     <li class="treeview">
                         <a href="{{ route("album.index") }}"><i class="fa fa-link"></i> <span>Galerie album</span>  </a>
                     </li>
@@ -422,6 +425,8 @@ desired effect
 
     <!-- Mon JavaScript -->
     <script src="{{url('js/perso.js')}}"></script>
+    
+    <script src="{{url('js/dropzone.js')}}"></script>
 
     <script>
 $(function () {
