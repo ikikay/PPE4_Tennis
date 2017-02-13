@@ -25,13 +25,13 @@ $(".jsDeleteButton").click(function ()
                             confirm:
                                     {
                                         label: 'Oui',
-                                        className: 'btn-danger'
+                                        className: 'btn-success'
                                     },
 
                             cancel:
                                     {
                                         label: 'Non',
-                                        className: 'btn-success'
+                                        className: 'btn-danger'
                                     }
                         },
 

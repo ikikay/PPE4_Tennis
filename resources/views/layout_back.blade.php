@@ -30,6 +30,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
     <link rel="stylesheet" href="{{url('css/style_back.css') }}" >
 
+     
+    <!-- Toggle ON/OFF pour USER -->
+    <link rel="stylesheet" href="{{url('css/bootstrap2-toggle.min.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -278,9 +281,12 @@ desired effect
                             <li><a href="{{ route("user.index") }}">Administrer</a></li>
                         </ul>
                     </li>
+                    <li class="treeview">
+                        <a href="{{ route("equipe.index") }}"><i class="fa fa-link"></i> <span>Equipes</span></a>
+                    </li>
                     <li class="header">Modification Site</li>
                     <li class="treeview">
-                        <a href="{{ route("coordonnee_edit") }}"><i class="fa fa-link"></i> <span>Coordonnées</span>  </a>
+                        <a href="{{ route("coordonnee.index") }}"><i class="fa fa-link"></i> <span>Coordonnées</span>  </a>
                     </li>
                 </ul>
                 <!-- /.sidebar-menu -->
@@ -419,10 +425,12 @@ desired effect
     <!-- AdminLTE App -->
     <script src="{{url('js/app.min.js') }}"></script>
     <!-- CK Editor -->
-    <script src="https://cdn.ckeditor.com/4.5.7/full-all/ckeditor.js"></script>
+    <script src="{{ url('js/ckeditor/ckeditor.js')}}"></script>
     <!-- BootBox (modals) -->
     <script src="{{url('js/bootbox.min.js')}}"></script>
-
+<!-- Toggle JS ON/OFF -->
+    <script src="{{url('js/bootstrap2-toggle.min.js')}}"></script>
+   
     <!-- Mon JavaScript -->
     <script src="{{url('js/perso.js')}}"></script>
     

@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Album extends Model
 {
     protected $table = 'albums';
-    public function Photos()
+    public function photos()
     {
         return $this->hasMany('App\Models\Photo');
         //return $this->hasMany('photos','album_id');
     }
-    public function Rencontre()
+    public function rencontre()
     {
         return $this->belongsTo('App\Models\Rencontre');
     }
