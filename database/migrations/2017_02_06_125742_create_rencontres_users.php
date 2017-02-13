@@ -18,9 +18,9 @@ class CreateRencontresUsers extends Migration
             $table->increments('id');
             $table->integer('rencontre_id')->unsigned();
             $table->integer('user_id')->unsigned();
-            $table->boolean('confirmation');
-            $table->boolean('gagner');
-            $table->string('score');
+            $table->boolean('confirmation')->default(false);
+            $table->boolean('gagner')->nullable();
+            $table->string('score')->nullable();
             $table->timestamps();
             $table->engine="INNODB";
         });

@@ -44,5 +44,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Models\Rencontre');
     }
+    public function resulats()
+    {
+        return $this->belongsToMany('App\Models\Resultat');
+    }
 }
 

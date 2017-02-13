@@ -12,6 +12,7 @@
  */
 
 // Routes pour le front-office
+
 Auth::routes();
 Route::get('/', 'PagesController@index')->name('index');
 Route::get('contact', 'PagesController@contact')->name('contact');
@@ -21,9 +22,11 @@ Route::get('/home', 'HomeController@index');
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
 Route::get('galerie', 'PagesController@galerie')->name('galerie');
 Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
+Route::resource('document', 'DocumentController');
+
 
 // Routes pour le Back-office
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     Route::get('/', function () {
                 return view('Admin.page.dashboard');
@@ -50,4 +53,7 @@ Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->w
     Route::resource('rencontre', 'RencontreController');
     Route::resource('coordonnee', 'CoordonneeController');
     Route::post('coordonnee/addUserStatut/{id}', 'CoordonneeController@addUserStatut')->name('add_user_statut');
+    Route::resource('document', 'DocumentController');
+    Route::resource('resultat', 'ResultatController');
 });
+

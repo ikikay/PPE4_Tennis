@@ -1,13 +1,19 @@
-@extends('layout_back')
-
-@section('title')
-<h1>
-    Administration des utilisateurs
-    <small>- Rechercher, Modifier et supprimer des utilisateurs</small>
-</h1>
-@stop
-
+@extends('layout_front')
 @section('content')
+
+<!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Profil
+                    <small>Tennis Club Tavaux</small>
+                </h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
 
 
 <!-- Main content -->
@@ -15,12 +21,12 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                {!! Form::open(['route' => "user.create", 'method' => 'get']) !!}
-                <button type="submit" class="btn btn-success btn-lg btn-block">Inscrire un utilisateur</button>
+                {!! Form::open(['route' => "document.create", 'method' => 'get']) !!}
+                <button type="submit" class="btn btn-success btn-lg btn-block">Créer</button>
                 {!! Form::close() !!}
                 <!-- /.box-header -->
                 <div class="box-body">
-                    
+
                     <!-- search form (Optional) -->
                     <form action="#" method="get">
                         <div class="input-group margin">
@@ -35,35 +41,31 @@
                     <table class="table table-bordered">
                         <thead class="thead-inverse">
                             <tr>
-                                <th style="width: 10px">#</th>
-                                <th>Noms d'utilisateur</th>
+                              
+                                <th>Titre</th>
+                                <th>fichier</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($tab_users as $unUser)
+                            @foreach ($tab_docs as $unDoc)
                             <tr>
                                 <td class="col-md-1">
-                                    {{ $unUser["id"] }}
+                                    {{ $unDoc["nom"] }}
                                 </td>
-                                <td class="col-md-10" id="td{{ $unUser["id"] }}">
-                                    {{ $unUser["nom"] }}
-                                </td>
+                                <td>
+                                    <center><objet  data="{{ url('doc/') ."/". $unDoc["fichier"] }}" alt="img{{ $unDoc["id"] }}"><a href="{{ url('doc/') ."/". $unDoc["fichier"] }}">{{ $unDoc["fichier"]}}</a> </objet></center>
+                                </td>               
                                 <td class="col-md-1">
-                                    <div class="row">
+                                      <div class="row">
+                                       
                                         <div class="col-md-6">
-                                            {!! Form::open(['route' => ["user.edit", $unUser->id], 'method' => 'get']) !!}
-                                            <button type="submit" class="btn btn-primary btn-circle"><i class="fa fa-list"></i></button>
-                                            {!! Form::close() !!}
-                                        </div>
-                                        <div class="col-md-6">
-                                            {!! Form::open(['route' => ["user.destroy", $unUser->id], 'method' => 'delete', 'id' => "form".$unUser->id]) !!}
-                                            <button type="submit" id="{{ $unUser->id }}" class="jsDeleteButton btn btn-danger btn-circle "><i class="fa fa-times"></i></button>
+                                            {!! Form::open(['route' => ["document.destroy", $unDoc->id], 'method' => 'delete', 'id' => "form".$unDoc->id]) !!}
+                                            <button type="submit" id="{{ $unDoc->id }}" class="jsDeleteButton btn btn-danger btn-circle "><i class="fa fa-times"></i></button>
                                             {!! Form::close() !!}
                                         </div>
                                     </div>
                                 </td>
-                               
                             </tr>
                             @endforeach
                         </tbody> 
@@ -75,4 +77,23 @@
 </div>
 
 @stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
