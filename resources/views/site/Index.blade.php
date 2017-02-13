@@ -47,7 +47,6 @@
             <a href="#">{{ $unArticle["titre"] }}</a>
         </h2>
         <p><i class="fa fa-clock-o"></i> Posté le {{ $unArticle["created_at"]->format('d/m/Y à H:i') }}</p>
-        <hr>
         
         @if (is_null($unArticle["photo"]) == false)
         <a href="#"> <!-- Futur lien du "voir plus" -->

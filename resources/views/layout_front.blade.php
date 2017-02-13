@@ -10,15 +10,15 @@
         <meta name="author" content="">
 
         <title>Site du club de Tennis de Tavaux</title>
-        
-        <!-- CSS du site -->
-        <link href="{{ url('css/style_front.css')}}" rel="stylesheet">
+
         <!-- Bootstrap Core CSS -->
         <link href="{{ url('css/bootstrap_front.css')}}" rel="stylesheet">
         <!-- Bootstrap Core CSS -->
         <link href="{{ url('css/starter-template.css')}}" rel="stylesheet">
         <!-- Custom CSS -->
-        <link href="{{ url('css/modern-business_front.css')}}" rel="stylesheet">
+        <link href="{{ url('css/modern-business_front.css')}}" rel="stylesheet">        
+        <!-- CSS du site -->
+        <link href="{{ url('css/style_front.css')}}" rel="stylesheet">
 
         <!-- Custom Fonts -->
         <link href="{{ url ('font-awesome_front/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
@@ -131,8 +131,8 @@
             <!-- /.container -->
         </nav>
 
-        @yield('content')
-
+            @yield('content')
+            
 
         <!-- Footer -->
         <footer>

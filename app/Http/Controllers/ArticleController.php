@@ -92,6 +92,16 @@ class ArticleController extends Controller {
         $lArticle->titre = $request->get('titre');
         $lArticle->description = $request->get('editor');
 
+        if ($request->file('image') <> null) {
+            $fichier = $request->file('image');
+            $imagename = time() . '.' . $fichier->getClientOriginalExtension();
+            $destinationPath = public_path('img\articles');
+            Image::make($fichier->getRealPath())->resize(900, 300)->save($destinationPath . '\\' . $imagename);
+            $lArticle->photo = $imagename;
+        } else {
+            $lArticle->photo = $lArticle->photo;
+        }
+
         $lArticle->save();
 
         return redirect()->route("article.index");
