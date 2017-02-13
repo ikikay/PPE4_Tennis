@@ -55,7 +55,7 @@
                                     {{ $unAlbum["name_album"] }}
                                 </td>
                                 <td class="col-md-4">
-                                    <center><img src="{{ url('img\galerie\miniature') ."/". $unAlbum["name_cover_image"] }}" alt="img{{ $unAlbum["id"] }}"></center>
+                                    <center><img src="{{ url('img/galerie/miniature') ."/". $unAlbum["name_cover_image"] }}" alt="img{{ $unAlbum["id"] }}"></center>
                                 </td>
                                 <td class="col-md-3">
                                     <div class="row">

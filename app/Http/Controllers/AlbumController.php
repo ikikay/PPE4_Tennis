@@ -56,16 +56,11 @@ class AlbumController extends Controller
         
         $album = new Album();
 
-        $album->name_album = $request->get('name');
-        $fichier = $request->file('image');
+        $album->titre = $request->get('name');
+        $album->description = "description";
+        $album->actif = true;
         
-        $imagename = time().$fichier->getClientOriginalName(); 
-        $destinationPath = public_path('img/galerie/miniature');
-        Image::make($fichier->getRealPath())->resize(100, 100)->save($destinationPath.'/'.$imagename);        
-        $destinationPath = public_path('img/galerie/');
-        $fichier->move($destinationPath, $imagename);        
-        $album->name_cover_image = $imagename;
-
+       
         $album->save();
         $request->session()->flash('success', 'L\'album à été Ajouté !');
         return redirect()->route("album.index");
@@ -108,8 +103,10 @@ class AlbumController extends Controller
         
         $album = Album::find($id);
 
-        $album->name_album = $request->get('name');
-        $fichier = $request->file('image');
+        $album->tire = $request->get('name');
+        $album->descrition = "description";
+        $album->actif = true;
+        /*$fichier = $request->file('image');
         
         $imagename = time().$fichier->getClientOriginalName(); 
          
@@ -125,7 +122,7 @@ class AlbumController extends Controller
         $destinationPath = public_path('img/galerie/');
         $fichier->move($destinationPath, $imagename);        
         $album->name_cover_image = $imagename;
-        }
+        }*/
        
                 
 

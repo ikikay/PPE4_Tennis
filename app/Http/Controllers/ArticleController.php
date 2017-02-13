@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
 use Image;
 
-
 class ArticleController extends Controller {
 
     /**
@@ -43,13 +42,17 @@ class ArticleController extends Controller {
 
         $article->titre = $request->get('titre');
         $article->description = $request->get('editor');
-        
-        $fichier = $request->file('image');
-        $imagename = time().'.'.$fichier->getClientOriginalExtension();
-        $destinationPath = public_path('img\articles');
-        Image::make($fichier->getRealPath())->resize(900, 300)->save($destinationPath.'\\'.$imagename);
-        $article->photo = $imagename;
-        
+
+        if ($request->file('image') <> null) {
+            $fichier = $request->file('image');
+            $imagename = time() . '.' . $fichier->getClientOriginalExtension();
+            $destinationPath = public_path('img\articles');
+            Image::make($fichier->getRealPath())->resize(900, 300)->save($destinationPath . '\\' . $imagename);
+            $article->photo = $imagename;
+        } else {
+            $article->photo = null;
+        }
+
         $article->save();
         return redirect()->route("article.index");
     }

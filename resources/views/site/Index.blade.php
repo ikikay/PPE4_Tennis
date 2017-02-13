@@ -38,7 +38,8 @@
 
 
 
-    <div class="col-md-8">
+    <div class="col-md-12">
+        <div class="col-md-8">
 
         @foreach ($tab_articles as $unArticle)
         <!-- First Blog Post -->
@@ -47,14 +48,18 @@
         </h2>
         <p><i class="fa fa-clock-o"></i> Posté le {{ $unArticle["created_at"]->format('d/m/Y à H:i') }}</p>
         <hr>
-        <a href="blog-post.html">
-            <img class="img-responsive img-hover" src="img/articles/{{ $unArticle["photo"] }}" alt="">
+        
+        @if (is_null($unArticle["photo"]) == false)
+        <a href="#"> <!-- Futur lien du "voir plus" -->
+           <img class="img-responsive img-hover" src="img/articles/{{ $unArticle["photo"]}}" alt="">
         </a>
+        @endif
+   
         <br>
         {!! $unArticle["description"] !!}
         <hr>
         @endforeach
-
+        </div>
         <div class="col-md-4">
             <!-- Side Widget Well -->
             <div class="well">
@@ -65,7 +70,7 @@
         </div>
 
 
-        <!-- Pager -->
+        <!-- Pager
         <ul class="pager">
             <li class="previous">
                 <a href="#">← Older</a>
@@ -73,7 +78,7 @@
             <li class="next">
                 <a href="#">Newer →</a>
             </li>
-        </ul>
+        </ul> -->
 
     </div>
 

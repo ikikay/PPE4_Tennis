@@ -49,7 +49,7 @@
                                     {{ $uneImage["id"] }}
                                 </td>
                                 <td>
-                                    <center><img src="{{ url('img\galerie\miniature') ."/". $uneImage["name_image"] }}" alt="img{{ $uneImage["id"] }}"></center>
+                                    <center><img src="{{ url('img/galerie/miniature') ."/". $uneImage["fichier"] }}" alt="img{{ $uneImage["id"] }}"></center>
                                 </td>
                                 <td class="col-md-2" id="td{{ $uneImage["id"] }}">
                                     {{ $uneImage["name_user"] }}
