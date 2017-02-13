@@ -50,4 +50,5 @@ Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->w
     Route::resource('rencontre', 'RencontreController');
     Route::resource('coordonnee', 'CoordonneeController');
     Route::resource('document', 'DocumentController');
+    Route::resource('resultat', 'ResultatController');
 });

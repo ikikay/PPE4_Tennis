@@ -17,4 +17,8 @@ class Rencontre extends Model
     {
         return $this->belongsToMany('App\Models\User');
     }
+    public function resulats()
+    {
+        return $this->belongsTo('App\Models\Resultat');
+    }
 }
