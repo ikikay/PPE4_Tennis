@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('site.index');
+       $lesArticles = Article::all()->sortByDesc("created_at");
+
+        return view('site.index')
+                        ->with("tab_articles", $lesArticles);
     }
 }

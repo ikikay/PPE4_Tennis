@@ -90,19 +90,13 @@
                                 </li>                            
                             </ul>
                         </li>
-                      
-                        
-                       
-                        <li>
-                            <a href="{{ route('contact') }}">Contact</a>
-                        </li>                        
-
-                        @if (Auth::check())                
+                        @if(Auth::check())
+                        @if ( Auth::user()->valider)
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 <i class="fa fa-user fa-fw"></i>{!!Auth::user()->name!!}&nbsp<i class="fa fa-caret-down"></i>
                             </a>
-                           
+
                             <ul class="dropdown-menu dropdown-user">
 
                                 <li>
@@ -127,12 +121,17 @@
                             <!-- /.dropdown-user -->
                         </li>  
                         <!-- /.navbar-top-links -->
+
+                        @endif
                         @else
                         <li>
                             <a href="{{ route('login') }}">Connexion</a>
                         </li> 
                         @endif
 
+
+                       
+                        
 
                     </ul>
                 </div>
@@ -141,8 +140,8 @@
             <!-- /.container -->
         </nav>
 
-            @yield('content')
-            
+        @yield('content')
+
 
         <!-- Footer -->
         <footer>
@@ -167,11 +166,11 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ url ('js/bootstrap.min_front.js')}}"></script>
-<!-- BootBox (modals) -->
+    <!-- BootBox (modals) -->
     <script src="{{url('js/bootbox.min.js')}}"></script>
     <!-- Mon JavaScript -->
     <script src="{{url('js/perso.js')}}"></script>
-    
+
 
     <!-- Script to Activate the Carousel -->
     <script>

@@ -129,7 +129,19 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group{{ $errors->has('valider') ? ' has-error' : '' }}">
+                            <label for="valider" class="col-md-4 control-label">Autorisé ?</label>
 
+                            <div class="checkbox">
+                                <input data-toggle="toggle" type="checkbox"  data-onstyle="success" name="valider" >
+
+                                @if ($errors->has('valider'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('valider') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">

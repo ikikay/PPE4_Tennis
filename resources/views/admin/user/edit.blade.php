@@ -74,6 +74,25 @@
                 @endif
             </div>
         </div>
+
+<div class="form-group{{ $errors->has('valider') ? ' has-error' : '' }}">
+    <label for="valider" class="col-md-4 control-label">Autorisé?</label>
+
+   @if ( $leUser->valider == 1)
+            <div class="checkbox">
+                <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="valider" checked >
+@else
+       
+            <div class="checkbox">
+                <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="valider" >
+@endif           
+                @if ($errors->has('valider'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('valider') }}</strong>
+                </span>
+                @endif
+            </div>
+        </div>
         {!! Form::submit('Valider', ['class'=> 'btn btn-info']) !!}
 
         {!! Form::close()!!}

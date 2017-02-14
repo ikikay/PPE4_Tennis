@@ -84,7 +84,11 @@ class DocumentController extends Controller
     {
         //
     }
-
+  
+    public function demande($id)
+    {
+        //
+    }
     /**
      * Update the specified resource in storage.
      *

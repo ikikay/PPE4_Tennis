@@ -3,7 +3,7 @@
 @section('title')
 <h1>
    DOC
-    <small>- ajoute des images dans la galerie</small>
+    <small>- ajoute des documents</small>
 </h1>
 
 

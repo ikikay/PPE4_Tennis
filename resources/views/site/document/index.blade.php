@@ -54,7 +54,7 @@
                                     {{ $unDoc["nom"] }}
                                 </td>
                                 <td>
-                                    <center><objet  data="{{ url('doc/') ."/". $unDoc["fichier"] }}" alt="img{{ $unDoc["id"] }}"><a href="{{ url('doc/') ."/". $unDoc["fichier"] }}">{{ $unDoc["fichier"]}}</a> </objet></center>
+                                    <center><objet  data="{{ url('doc/') ."/". $unDoc["fichier"] }}" alt="img{{ $unDoc["id"] }}" ><a href="{{ url('doc/') ."/". $unDoc["fichier"] }}" target="_blank" >{{ $unDoc["fichier"]}}</a> </objet></center>
                                 </td>               
                                 <td class="col-md-1">
                                       <div class="row">

@@ -37,6 +37,7 @@
                             <tr>
                                 <th style="width: 10px">#</th>
                                 <th>Noms d'utilisateur</th>
+                                <th>Statut </th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -46,9 +47,26 @@
                                 <td class="col-md-1">
                                     {{ $unUser["id"] }}
                                 </td>
-                                <td class="col-md-10" id="td{{ $unUser["id"] }}">
+                                <td class="col-md-9" id="td{{ $unUser["id"] }}">
                                     {{ $unUser["nom"] }}
                                 </td>
+                                <td class="col-md-1"> 
+                                    @if ( $unUser->valider == 1)
+                                     
+                                          
+                                          
+                                    
+                                    <button  class="btn  btn-success btn-circle" checked ><i class="fa fa-check  "></i></button>
+                                    
+                                    @else
+
+                                    
+                                        {!! Form::open(['route' => ["user.edit", $unUser->id], 'method' => 'get']) !!}
+                                        <button type="submit" class="btn btn-danger btn-circle" ><i class="fa fa-times"></i></button>
+                                        {!! Form::close() !!}
+                                        @endif           
+                                
+                                
                                 <td class="col-md-1">
                                     <div class="row">
                                         <div class="col-md-6">

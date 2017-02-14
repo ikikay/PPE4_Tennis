@@ -279,6 +279,7 @@ desired effect
                         <ul class="treeview-menu">
                             <li><a href="{{ route("user.create") }}">Ajouter</a></li>
                             <li><a href="{{ route("user.index") }}">Administrer</a></li>
+                            
                         </ul>
                     </li>
                     <li class="treeview">

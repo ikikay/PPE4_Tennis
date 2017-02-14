@@ -26,7 +26,7 @@ Route::resource('document', 'DocumentController');
 
 
 // Routes pour le Back-office
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
 
     Route::get('/', function () {
                 return view('Admin.page.dashboard');
@@ -52,6 +52,6 @@ Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->w
     Route::resource('equipe', 'EquipeController');
     Route::resource('rencontre', 'RencontreController');
     Route::resource('coordonnee', 'CoordonneeController');
-    Route::resource('document', 'DocumentController');
+  
 });
 
