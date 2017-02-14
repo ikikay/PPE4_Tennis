@@ -15,10 +15,6 @@ class Rencontre extends Model
     }
     public function users()
     {
-        return $this->belongsToMany('App\Models\User');
-    }
-    public function resulats()
-    {
-        return $this->belongsTo('App\Models\Resultat');
+        return $this->belongsToMany('App\Models\User')->withPivot('confirmation');
     }
 }
