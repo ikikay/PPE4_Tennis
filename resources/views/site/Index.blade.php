@@ -39,7 +39,7 @@
 
 
     <div class="col-md-12">
-        <div class="col-md-8">
+        <div class="col-md-8 contenu">
 
         @foreach ($tab_articles as $unArticle)
         <!-- First Blog Post -->

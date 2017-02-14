@@ -74,7 +74,7 @@
                                             {!! Form::close() !!}
                                         </div>
                                         <div class="col-md-8">
-                                            <a class="btn btn-primary btn-circle" href="{{ route("resultat.create") }}">Ajouter des joueurs</a>
+                                            <a class="btn btn-primary btn-circle" href="{{ route("rencontre.convoquer",$uneRencontre->id) }}">Convoquer des joueurs</a>
                                         </div>
                                     </div>
                                 </td>
