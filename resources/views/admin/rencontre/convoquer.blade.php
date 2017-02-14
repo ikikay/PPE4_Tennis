@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    Ajouter des joueurs
-    <small>- Page de création de rencontres</small>
+    Convoquer des joueurs pour la rencontre qui aura lieu à : {{ $rencontre->lieu }}
+    <small>- Cocher pour convoquer les joueurs</small>
 </h1>
 @stop
 
@@ -14,7 +14,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="box box-info">
-            {!! Form::open(['route' => "resultat.store", 'method' => 'post']) !!}
+            {!! Form::open(['route' =>[ "rencontre.convoquerstore",$rencontre->id], 'method' => 'post']) !!}
                 <div class="box-header">
                     <h3 class="box-title">  </h3>
                     <div class="table-responsive">
@@ -22,7 +22,6 @@
                         <thead class="thead-inverse">
                             <tr>
                                 <th style="width: 10px">#</th>
-                                <th>Lieu</th>
                                 <th>Nom</th>
                                 <th>Prénom</th>
                                 <th>Séléction joueurs</th>
@@ -34,18 +33,15 @@
                                 <td class="col-md-1">
                                     {{ $unJoueur["id"] }}
                                 </td>
-                                <td class="col-md-3">
-                                    {{ $unJoueur->rencontre->lieu }}
-                                </td>
-                                <td class="col-md-3" id="td{{ $unJoueur["nom"] }}">
+                                <td class="col-md-4" id="td{{ $unJoueur["nom"] }}">
                                     {{ $unJoueur["nom"] }}
                                 </td>
-                                <td class="col-md-3" id="td{{ $unJoueur["prenom"] }}">
+                                <td class="col-md-4" id="td{{ $unJoueur["prenom"] }}">
                                     {{ $unJoueur["prenom"] }}
                                 </td>
-                                <td>
-                                    <div class="checkbox">
-                                    <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation" >
+                                <td class="col-md-4" id="td{{ $unJoueur["confirmation"] }}">
+                                    <div class="checkbox" style="text-align:center">
+                                    <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation{{$unJoueur["id"]}}" >
                                 </td>
                             </tr>
                             @endforeach
@@ -58,7 +54,7 @@
                 <!-- /.box-header -->
                 
 
-                <button type="submit" class="btn btn-success btn-lg btn-block">Créer</button>
+                <button type="submit" class="btn btn-success btn-lg btn-block">Convoquer les joueurs</button>
 
             {!! Form::close() !!}
         </div>
