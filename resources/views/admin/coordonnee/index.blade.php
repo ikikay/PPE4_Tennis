@@ -10,24 +10,9 @@
 <div class="row">
     <div class="col-md-12">
         <div class="box">
-            <div class="box-header with-border">
-<!--                {!! Form::open(['route' => "article.create", 'method' => 'get']) !!}
-                <button type="submit" class="btn btn-success btn-lg btn-block">Ajouter</button>
-                {!! Form::close() !!}-->
+            <div class="box-header with-border">                
                 <!-- /.box-header -->
-                <div class="box-body">
-
-                    <!-- search form (Optional) -->
-                    <form action="#" method="get">
-                        <div class="input-group margin">
-                            <input type="text" name="q" class="form-control" placeholder="Rechercher . . .">
-                            <span class="input-group-btn">
-                                <button type="submit" name="search" id="search-btn" class="btn btn-info btn-flat"><i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
-
+                <div class="box-body">     
                     <table class="table table-bordered">
                         <thead class="thead-inverse">
                             <tr>
@@ -60,45 +45,46 @@
                                     </button>
 
 
-                                    
+
                                 </td>                                
                             </tr>
                             <!-- Modal -->
-                                    {!! Form::open(['route' => ["add_user_statut", $unStatut->id], 'method' => 'post']) !!}
+                            {!! Form::open(['route' => ["add_user_statut", $unStatut->id], 'method' => 'post']) !!}
 
-                                    <div class="modal fade" id="myModal{{ $unStatut->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel{{ $unStatut->id}}">Ajouter {{ $unStatut->fonction }}</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="form-group">
-                                                        <label for="sel1">Select list:</label>
-                                                        
-                                                        {{ Form::select('user'.$unStatut->id,$lesUsers) }}
-                                                        
-                                               
-                                                        
-                                                    </div>
-                                                    
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                   
-                                                            <button type="submit" class="btn btn-primary">Save changes</button>
-                                    
-                                                </div>
-                                            </div>
+                        <div class="modal fade" id="myModal{{ $unStatut->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel{{ $unStatut->id}}">Ajouter {{ $unStatut->fonction }}</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form-group">
+                                            <p class="text-center">
+                                                <label>Liste d'utilisateur: </label>
+
+                                                {{ Form::select('user'.$unStatut->id,$lesUsers) }}
+
+                                            </p>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+
+                                            <button type="submit" class="btn btn-success">Ajouter</button>
+
                                         </div>
                                     </div>
-                                    {!! Form::close() !!}
+                                </div>
+                            </div>
+                            {!! Form::close() !!}
                             @endforeach
-                        </tbody> 
+                            </tbody> 
                     </table>
-                    
-
+                    </br>
+                    {!! Form::open(['route' => "coordonnee.create", 'method' => 'get']) !!}
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Modifier les statuts</button>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>
@@ -108,4 +94,4 @@
 
 
 @section('script')
-    @endsection
+@endsection

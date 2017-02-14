@@ -53,6 +53,7 @@ Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->w
     Route::resource('rencontre', 'RencontreController');
     Route::resource('coordonnee', 'CoordonneeController');
     Route::post('coordonnee/addUserStatut/{id}', 'CoordonneeController@addUserStatut')->name('add_user_statut');
+    Route::delete('coordonnee/deleteStatut/{id}', 'CoordonneeController@deleteStatut')->name('deleteStatut');
     Route::resource('document', 'DocumentController');
     Route::resource('resultat', 'ResultatController');
 });

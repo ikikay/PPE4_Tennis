@@ -27,7 +27,8 @@ class CoordonneeController extends Controller
      */
     public function create()
     {
-        //
+        $leComite = Comite::all();
+        return view('admin.coordonnee.create')->with("leComite", $leComite);
     }
 
     /**
@@ -38,7 +39,10 @@ class CoordonneeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comite = new Comite();
+        $comite->fonction = $request->get('statut');
+        $comite->save();
+        return redirect()->route("coordonnee.create");
     }
 
     /**
@@ -103,5 +107,15 @@ class CoordonneeController extends Controller
         $user->comite_id = $id;
         $user->save();
         return redirect()->route("coordonnee.index");
+    }
+    
+    public function deleteStatut($id,Request $request)
+    {
+        
+        $statut = Comite::find($id);
+        User::where('comite_id',$id)->update(['comite_id'=>NULL]);        
+        $statut->delete();
+
+        return redirect()->route("coordonnee.create");
     }
 }
