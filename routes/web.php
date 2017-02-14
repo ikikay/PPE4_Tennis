@@ -56,4 +56,3 @@ Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->w
     Route::resource('document', 'DocumentController');
     Route::resource('resultat', 'ResultatController');
 });
-
