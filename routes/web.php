@@ -51,7 +51,10 @@ Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->w
     Route::resource('contenu', 'ContenuController');
     Route::resource('equipe', 'EquipeController');
     Route::resource('rencontre', 'RencontreController');
+    Route::get('rencontre/convoquer/{id}', 'RencontreController@convoquer')->name('rencontre.convoquer')->where('id', '[0-9]+');
+    Route::post('rencontre/convoquerstore/{id}', 'RencontreController@convoquerstore')->name('rencontre.convoquerstore');
     Route::resource('coordonnee', 'CoordonneeController');
-  
+    Route::post('coordonnee/addUserStatut/{id}', 'CoordonneeController@addUserStatut')->name('add_user_statut');
+    Route::delete('coordonnee/deleteStatut/{id}', 'CoordonneeController@deleteStatut')->name('deleteStatut');
+    Route::resource('document', 'DocumentController');
 });
-

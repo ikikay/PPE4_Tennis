@@ -20,14 +20,45 @@ footer {
 
 .navbar-inverse .navbar-nav > li > a {
     color: #ffffff;
-    font-size: 17px;
+    Font-Weight: Bold;
+    font-size: 16px;
     font-family: 'Open Sans', Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.navbar-inverse .navbar-nav > li > a:hover { 
+    color: #333399;
+    Font-Weight: Bold;
+    background: #ddff00;
+}
+
+body {
+    color: #001122;
+    background-image:url(../img/background.png);
 }
 
 .contenu {
     background-color: #ffffff;
 }
 
-body {
-    color: #998866;
+a {
+    color: #dd5500;
 }
+
+h2 > a {
+    Font-Weight: Bold;
+}
+
+/* Media queries */
+@media (min-width: 1200px) {
+    .navbar-toggle {
+        display: none; 
+    } 
+}
+@media (max-width: 1400px) {
+    .navbar-brand > img {
+        display: none;
+    }
+}
+@media (max-width: 1200px) {
+    /* Cacher le menu, et afficher le bouton  */
+}
+

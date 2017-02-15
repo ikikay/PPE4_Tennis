@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Rencontre;
 use App\Models\Equipe;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RencontreController extends Controller
@@ -108,6 +109,33 @@ class RencontreController extends Controller
 
         $rencontre->delete();
 
+        return redirect()->route("rencontre.index");
+    }
+    
+        public function convoquer($rencontre_id)
+    {
+       $rencontre = Rencontre::find($rencontre_id);
+       $lesUsers = User::all();
+       return view('admin.rencontre.convoquer')->with('tab_joueurs', $lesUsers)->with('rencontre', $rencontre);
+    }
+    
+    public function convoquerstore($id,Request $request)
+    {
+         $request->session()->flash('success', 'Les joueurs sont notifiés de la rencontre !');
+        $rencontre = Rencontre::find($id);
+      
+        $lesUser = User::all();
+        
+        foreach($lesUser as $user){
+            var_dump($request->get('confirmation'.$user->id));
+            if ($request->get('confirmation'.$user->id)=='on')
+            {
+                $rencontre->users()->attach($user,['confirmation'=>false]);
+            }
+        }
+  
+      
+        $rencontre->save();
         return redirect()->route("rencontre.index");
     }
 }

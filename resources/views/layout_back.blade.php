@@ -441,13 +441,17 @@ desired effect
 
     <script>
 $(function () {
-// Replace the <textarea id="editor"> with a CKEditor
-// instance, using default configuration.
-    CKEDITOR.replace('editor');
-//bootstrap WYSIHTML5 - text editor
-    $(".textarea").wysihtml5();
+    // Replace the <textarea id="editor"> with a CKEditor
+    // instance, using default configuration.
+        CKEDITOR.replace('editor');
+    //bootstrap WYSIHTML5 - text editor
+        $(".textarea").wysihtml5();
+    
 });
+
+
     </script>
+    @yield('script')
 
     <!-- Optionally, you can add Slimscroll and FastClick plugins.
          Both of these plugins are recommended to enhance the
