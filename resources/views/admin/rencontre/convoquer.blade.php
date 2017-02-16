@@ -33,15 +33,20 @@
                                 <td class="col-md-1">
                                     {{ $unJoueur["id"] }}
                                 </td>
-                                <td class="col-md-4" id="td{{ $unJoueur["nom"] }}">
+                                <td class="col-md-4">
                                     {{ $unJoueur["nom"] }}
                                 </td>
-                                <td class="col-md-4" id="td{{ $unJoueur["prenom"] }}">
+                                <td class="col-md-4">
                                     {{ $unJoueur["prenom"] }}
                                 </td>
-                                <td class="col-md-4" id="td{{ $unJoueur["confirmation"] }}">
+                                <td class="col-md-4">
+                                @if ( $unJoueur->confirmation == 1)
                                     <div class="checkbox" style="text-align:center">
-                                    <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation{{$unJoueur["id"]}}" >
+                                    <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation{{$unJoueur["id"]}}" checked>
+                                @else
+                                    <div class="checkbox" style="text-align:center">
+                                    <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation{{$unJoueur["id"]}}">
+                                @endif   
                                 </td>
                             </tr>
                             @endforeach

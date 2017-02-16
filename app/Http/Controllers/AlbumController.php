@@ -17,7 +17,7 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        $lesAlbums = Album::with('photos')->get();;
+        $lesAlbums = Album::with('photos')->get();
         return view('admin.album.index', compact('lesAlbums'));
     }
 
