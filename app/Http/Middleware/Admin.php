@@ -44,9 +44,7 @@ class Admin {
                 } 
         } 
 
-                return redirect()->route('login');
-            }
-        }
+                
         return $next($request);
     }
 }
