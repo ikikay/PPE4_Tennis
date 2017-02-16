@@ -23,7 +23,7 @@
 {!! Form::text('telephone', $leUser->telephone,['class'=> 'form-control'] ) !!}
 
 {!! Form::label('password', 'password') !!}
-{!! Form::text('password', $leUser->password,['class'=> 'form-control'] ) !!}
+<input id="password" type="password" class="form-control" name="password" value="" >
 
 
 

@@ -18,7 +18,7 @@ Route::get('/', 'PagesController@index')->name('index');
 Route::get('contact', 'PagesController@contact')->name('contact');
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
 
-Route::get('/home', 'HomeController@index');
+//Route::get('/home', 'HomeController@index');
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
 Route::get('galerie', 'PagesController@galerie')->name('galerie');
 Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
@@ -29,7 +29,7 @@ Route::resource('document', 'DocumentController');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
 
     Route::get('/', function () {
-                return view('Admin.page.dashboard');
+                return view('admin.page.dashboard');
             })
             ->name('admin.dashboard');
 
