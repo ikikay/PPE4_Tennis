@@ -51,11 +51,10 @@ class UserController extends Controller {
         } else {
             $joueur = true;
         }
-        if ($request->get('valider') == null) {
-            $valider = false;
-        } else {
-            $valider = true;
-        }
+      
+        
+        
+        
         User::create([
             'nom' => $request->get('nom'),
             'prenom' => $request->get('prenom'),
@@ -64,7 +63,8 @@ class UserController extends Controller {
             'password' => bcrypt($request->get('password')),
             'admin' => $admin,
             'joueur' => $joueur,
-            'valider'=>$valider,
+            'valider'=> true,   
+            
         ]);
 
         return redirect()->route("user.index");
@@ -118,12 +118,18 @@ class UserController extends Controller {
         } else {
             $valider = true;
         }
-
+     
+     
+        
         $leUser->nom = $request->get('nom');
         $leUser->prenom = $request->get('prenom');
         $leUser->email = $request->get('email');
         $leUser->telephone = $request->get('telephone');
-        $leUser->password = bcrypt($request->get('password'));
+     
+        if ($request->get('password') !="") {
+              $leUser->password = bcrypt($request->get('password'));       
+        }
+        
         $leUser->joueur = $joueur;
         $leUser->admin = $admin;
         $leUser->valider = $valider;

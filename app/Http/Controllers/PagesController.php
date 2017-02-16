@@ -9,7 +9,14 @@ use App\Models\Contenu;
 
 class PagesController extends Controller {
 
-    function index() {
+    
+       
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
+    public function index() {
         $lesArticles = Article::all()->sortByDesc("created_at");
 
         return view('site.index')

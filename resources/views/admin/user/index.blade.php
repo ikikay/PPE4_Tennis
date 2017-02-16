@@ -20,7 +20,7 @@
                 {!! Form::close() !!}
                 <!-- /.box-header -->
                 <div class="box-body">
-                    
+
                     <!-- search form (Optional) -->
                     <form action="#" method="get">
                         <div class="input-group margin">
@@ -32,42 +32,71 @@
                         </div>
                     </form>
 
-                    <table class="table table-bordered">
-                        <thead class="thead-inverse">
+                    <table class="table table-bordered" >
+                        <thead class="thead-inverse" >
                             <tr>
-                                <th style="width: 10px">#</th>
-                                <th>Noms d'utilisateur</th>
-                                <th>Statut </th>
-                                <th>Action</th>
+                                
+                                <th class="text-center">Noms d'utilisateur</th>
+                                <th class="text-center">Valider</th>
+                                <th class="text-center">Statut</th>
+                                <th class="text-center">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($tab_users as $unUser)
                             <tr>
-                                <td class="col-md-1">
-                                    {{ $unUser["id"] }}
+                               
+                                <td class="col-md-6 text-center"  id="td{{ $unUser["id"] }}">
+                                    <h4> {{ $unUser["nom"] }}  {{ $unUser["prenom"] }} </h4>
                                 </td>
-                                <td class="col-md-9" id="td{{ $unUser["id"] }}">
-                                    {{ $unUser["nom"] }}
-                                </td>
-                                <td class="col-md-1"> 
+                                <td class="col-md-1 text-center"> 
                                     @if ( $unUser->valider == 1)
-                                     
-                                          
-                                          
-                                    
+
+
+
+
                                     <button  class="btn  btn-success btn-circle" checked ><i class="fa fa-check  "></i></button>
-                                    
+
                                     @else
 
-                                    
-                                        {!! Form::open(['route' => ["user.edit", $unUser->id], 'method' => 'get']) !!}
-                                        <button type="submit" class="btn btn-danger btn-circle" ><i class="fa fa-times"></i></button>
-                                        {!! Form::close() !!}
-                                        @endif           
-                                
-                                
-                                <td class="col-md-1">
+
+                                    {!! Form::open(['route' => ["user.edit", $unUser->id], 'method' => 'get']) !!}
+                                    <button type="submit" class="btn btn-danger btn-circle" ><i class="fa fa-times"></i></button>
+                                    {!! Form::close() !!}
+                                    @endif           
+                                </td>
+
+
+                                <td class="col-md-4 text-center"> 
+                                    @if ( $unUser->admin == 1 and  $unUser->joueur == 1)
+
+                                    <h4>   Joueur et Administrateur </h4>
+
+
+                                    @elseif ($unUser->admin == 1) 
+
+                                    <h4> Administrateur </h4>
+
+
+                                    @elseif ($unUser->joueur ==1)
+
+                                    <h4> Joueur </h4>
+
+
+                                    @else
+
+
+
+                                    <h4> Membre </h4>
+
+
+                                    @endif
+                                </td>
+
+
+
+
+                                <td class="col-md-2 text-center">
                                     <div class="row">
                                         <div class="col-md-6">
                                             {!! Form::open(['route' => ["user.edit", $unUser->id], 'method' => 'get']) !!}
@@ -81,7 +110,7 @@
                                         </div>
                                     </div>
                                 </td>
-                               
+
                             </tr>
                             @endforeach
                         </tbody> 
