@@ -90,7 +90,9 @@
                                 </li>                            
                             </ul>
                         </li>
-                       
+                       <li>
+                                    <a href="{{ route('contact') }}">Contact</a>
+                                </li>
                         @if(Auth::check())
                       
                         <li class="dropdown">
