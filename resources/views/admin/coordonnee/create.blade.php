@@ -2,7 +2,7 @@
 
 @section('title')
 <h1>
-    Liste des différents statut des 
+    Liste des différents statuts
 </h1>
 @stop
 
@@ -34,6 +34,9 @@
                                 {!! Form::close() !!}  
                             </tr>
                         </table>
+                        {!! Form::open(['route' => "coordonnee.index", 'method' => 'get']) !!}
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">Remplir les status</button>
+                        {!! Form::close() !!}
                     </div>                
                 </div>
             </div>
