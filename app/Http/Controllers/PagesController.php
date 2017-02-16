@@ -11,10 +11,7 @@ class PagesController extends Controller {
 
     
        
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+   
     
     public function index() {
         $lesArticles = Article::all()->sortByDesc("created_at");
