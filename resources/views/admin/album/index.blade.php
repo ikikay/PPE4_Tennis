@@ -39,6 +39,7 @@
                                 <th>nombre de photos</th>
                                 <th>nom album</th>
                                 <th>image de couverture</th>
+                                <th>afficher l'album</th>
                                 <th>action</th>
                             </tr>
                         </thead>
@@ -52,10 +53,19 @@
                                     {{count($unAlbum->Photos)}}
                                 </td>
                                 <td class="col-md-3" id="td{{ $unAlbum["id"] }}">
-                                    {{ $unAlbum["name_album"] }}
+                                    {{ $unAlbum["titre"] }}
                                 </td>
-                                <td class="col-md-4">
-                                    <center><img src="{{ url('img/galerie/miniature') ."/". $unAlbum["name_cover_image"] }}" alt="img{{ $unAlbum["id"] }}"></center>
+                                <td class="col-md-3">
+                                    <center><img src="{{ url('img/galerie/miniature') ."/". $unAlbum->Photos->first()->fichier }}" alt="img{{ $unAlbum["id"] }}"></center>
+                                </td>
+                                <td class="col-md-1" id="td{{ $unAlbum["id"] }}">
+                                    <div class="checkbox">
+                                        @if($unAlbum->actif == true)
+                                        <input checked data-toggle="toggle" type="checkbox" data-onstyle="success" name="actif" > 
+                                        @else
+                                        <input data-toggle="toggle" type="checkbox" data-onstyle="success" name="actif" >
+                                        @endif
+                                    </div>
                                 </td>
                                 <td class="col-md-3">
                                     <div class="row">

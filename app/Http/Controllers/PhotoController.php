@@ -78,7 +78,7 @@ class PhotoController extends Controller {
 
         $lImage->delete();
 
-        return redirect()->route("photo.index");
+        return redirect()->route("album.show");
     }
 
 }
