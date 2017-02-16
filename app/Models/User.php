@@ -42,7 +42,7 @@ class User extends Authenticatable
     }
     public function rencontres()
     {
-        return $this->belongsToMany('App\Models\Rencontre');
+        return $this->belongsToMany('App\Models\Rencontre')->withPivot('confirmation');
     }
 }
 

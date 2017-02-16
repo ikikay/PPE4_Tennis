@@ -5,6 +5,7 @@ use App\Models\Rencontre;
 use App\Models\Equipe;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class RencontreController extends Controller
 {
@@ -38,6 +39,16 @@ class RencontreController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'date' => 'required',
+            'lieu' => 'required',
+            'adversaire' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect(route('rencontre.create'))
+                        ->withErrors($validator)
+                        ->withInput();
+        }
         $request->session()->flash('success', 'La rencontre à été ajoutée !');
         $rencontre = new Rencontre();
 
@@ -121,16 +132,16 @@ class RencontreController extends Controller
     
     public function convoquerstore($id,Request $request)
     {
-         $request->session()->flash('success', 'Les joueurs sont notifiés de la rencontre !');
+        $request->session()->flash('success', 'Les joueurs sont notifiés de la rencontre !');
         $rencontre = Rencontre::find($id);
       
         $lesUser = User::all();
         
         foreach($lesUser as $user){
-            var_dump($request->get('confirmation'.$user->id));
+            $request->get('confirmation'.$user->id); 
             if ($request->get('confirmation'.$user->id)=='on')
             {
-                $rencontre->users()->attach($user,['confirmation'=>false]);
+                $rencontre->users()->attach($user,['confirmation'=>true]);
             }
         }
   

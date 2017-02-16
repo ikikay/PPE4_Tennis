@@ -3,7 +3,7 @@
 @section('title')
 <h1>
     Administration des rencontres
-    <small>- Rechercher, Modifier et supprimer des rencontres</small>
+    <small>- Créer, Modifier et supprimer des rencontres</small>
 </h1>
 @stop
 
@@ -16,7 +16,7 @@
         <div class="box">
             <div class="box-header with-border">
                 {!! Form::open(['route' => "rencontre.create", 'method' => 'get']) !!}
-                <button type="submit" class="btn btn-success btn-lg btn-block">Ajouter</button>
+                <button type="submit" class="btn btn-success btn-lg btn-block">Créer une rencontre</button>
                 {!! Form::close() !!}
                 <!-- /.box-header -->
                 <div class="box-body">

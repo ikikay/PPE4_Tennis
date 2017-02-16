@@ -8,7 +8,15 @@
 @stop
 
 @section('content')
-
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 <!-- Main content -->
 <div class="row">
@@ -26,15 +34,6 @@
                         <label>Division de l'équipe :  </label>
                         <input class="form-control" placeholder="Division :" name="division"> 
                     </div>
-
-                    <!-- tools box -->
-                    <div class="pull-right box-tools">
-                        <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Réduire">
-                            <i class="fa fa-minus"></i></button>
-                        <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Supprimer">
-                            <i class="fa fa-times"></i></button>
-                    </div>
-                    <!-- /. tools -->
                 </div>
                 <!-- /.box-header -->
                 

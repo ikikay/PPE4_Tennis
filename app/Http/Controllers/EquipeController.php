@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Equipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class EquipeController extends Controller
 {
@@ -35,6 +36,15 @@ class EquipeController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'nom' => 'required',
+            'division' => 'required'
+        ]);
+        if ($validator->fails()) {
+            return redirect(route('equipe.create'))
+                        ->withErrors($validator)
+                        ->withInput();
+        }
         $request->session()->flash('success', 'L\'équipe à été ajoutée !');
         $equipe = new Equipe();
 

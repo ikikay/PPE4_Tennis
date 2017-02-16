@@ -2,7 +2,7 @@
 
 @section('title')
 <h1>
-    Modifier une rencontre
+    Modifier la rencontre qui a lieu à : {{ $rencontre->lieu }}
     <small>- Page de modification de la rencontre</small>
 </h1>
 @stop
