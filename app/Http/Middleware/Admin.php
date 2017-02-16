@@ -25,13 +25,24 @@ class Admin {
      * @param  \Illuminate\Http\Request  $request 
      * @param  \Closure  $next 
      * @return mixed 
-     */
-    public function handle($request, Closure $next) {
-        if ($this->auth->guest() || $this->auth->user()->admin == false) {
-            if ($request->ajax()) {
-                return response('Unauthorized.', 401);
-            } else {
-                $request->session()->flash('error', 'Il faut être administrateur !');
+     */ 
+    public function handle($request, Closure $next) 
+    { 
+    if ($this->auth->guest() || $this->auth->user()->admin==false) 
+        { 
+                if ($request->ajax()) 
+                { 
+                        return response('Unauthorized.', 401); 
+                } 
+                else 
+                { 
+                        $request->session()->flash('error', 'Il faut être admin !'); 
+                       
+                        return redirect()->route('index');
+                        
+                        
+                } 
+        } 
 
                 return redirect()->route('login');
             }

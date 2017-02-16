@@ -90,27 +90,37 @@
                                 </li>                            
                             </ul>
                         </li>
+                       
                         @if(Auth::check())
-                        @if ( Auth::user()->valider)
+                      
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                                <i class="fa fa-user fa-fw"></i>{!!Auth::user()->name!!}&nbsp<i class="fa fa-caret-down"></i>
+                                {!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}&nbsp <i class="fa fa-caret-down"></i>
                             </a>
 
                             <ul class="dropdown-menu dropdown-user">
-
+                        
+                                @if ( Auth::user()->valider)
                                 <li>
-                                    <a href="{{ route('document.index') }}">Profil</a>
+                                    <a href="{{ route('document.index') }}"><i class="fa fa-user fa-fw"></i>Profil</a>
                                 </li> 
+                               
                                 @if (Auth::user()->admin)         
                                 <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-gear fa-fw"></i> Administration</a>
                                 </li>
                                 @endif
+                                 
+                                @else 
+                                <li>
+                                    <a> En attente de validation </a>
+                                </li>
                                 <li class="divider"></li>
+                                @endif
+                                
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                        onclick="event.preventDefault();
-                                               document.getElementById('logout-form').submit();">
+                                               document.getElementById('logout-form').submit();" ><i class="fa fa-sign-out "></i>
                                         Logout
                                     </a>
                                     <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
@@ -122,7 +132,7 @@
                         </li>  
                         <!-- /.navbar-top-links -->
 
-                        @endif
+                    
                         @else
                         <li>
                             <a href="{{ route('login') }}">Connexion</a>
