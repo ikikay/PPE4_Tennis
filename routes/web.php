@@ -29,7 +29,7 @@ Route::resource('document', 'DocumentController');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
 
     Route::get('/', function () {
-                return view('Admin.page.dashboard');
+                return view('admin.page.dashboard');
             })
             ->name('admin.dashboard');
 
