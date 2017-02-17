@@ -72,7 +72,7 @@
                                     <a href="{{ route('documentation') }}">Documentation</a>
                                 </li>
                                 <li>
-                                    <a href="#">Gallerie</a>
+                                    <a href="#">Galerie</a>
                                 </li>
                             </ul>
                         </li>

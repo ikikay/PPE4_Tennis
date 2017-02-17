@@ -33,6 +33,7 @@ footer {
 body {
     color: #001122;
     background-image:url(../img/background.png);
+    margin-top: 21px;
 }
 
 .contenu {
