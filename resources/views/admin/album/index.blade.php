@@ -56,7 +56,11 @@
                                     {{ $unAlbum["titre"] }}
                                 </td>
                                 <td class="col-md-3">
+                                    @if(count($unAlbum->Photos) === 0)
+                                    <center>il n'y a pas d'image dans l'album</center>
+                                    @else
                                     <center><img src="{{ url('img/galerie/miniature') ."/". $unAlbum->Photos->first()->fichier }}" alt="img{{ $unAlbum["id"] }}"></center>
+                                    @endif
                                 </td>
                                 <td class="col-md-1" id="td{{ $unAlbum["id"] }}">
                                     <div class="checkbox">

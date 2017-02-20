@@ -38,7 +38,10 @@ class PhotoController extends Controller {
         
         $imagename = time().'.'.$fichier->getClientOriginalExtension(); 
         $destinationPath = public_path('img/galerie/miniature/');
-        Image::make($fichier->getRealPath())->resize(100, 100)->save($destinationPath.'/'.$imagename);
+        Image::make($fichier->getRealPath())->resize(null, 200, function ($constraint){
+            $constraint->aspectRatio();
+            
+        })->save($destinationPath.'/'.$imagename);
      
         $destinationPath = public_path('img/galerie/');
         $fichier->move($destinationPath, $imagename);              
