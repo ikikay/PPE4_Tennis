@@ -15,13 +15,12 @@
                 </a>
             </div>
             <center>{{$unAlbum["titre"]}}</center>
-        </div>    
+        </div> 
         @endif    
         @endforeach
 
-        <hr>
 
-        <hr>
+          
     </div>
 </div>
 
