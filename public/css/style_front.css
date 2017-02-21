@@ -73,10 +73,10 @@ h2 > a {
 }
 
 .pic {
-    border: 10px solid #fff;
+    
     float: left;
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     margin: 20px;
     overflow: hidden;
     
@@ -85,8 +85,8 @@ h2 > a {
 }
 
 .grow img{
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     
     -webkit-transition: all 1s ease;
        -moz-transition: all 1s ease;
@@ -96,7 +96,9 @@ h2 > a {
 }
 
 .grow img:hover{
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
+
+
 
