@@ -1,3 +1,19 @@
+@font-face{
+    font-family: 'banner';
+    src: url('../css/font/yorkwhiteletter.otf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'pirate';
+    src: url('../css/font/Pieces of Eight.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Décallage du logo en haut à gauche */
 .navbar-brand > img {
     all: none;
@@ -98,6 +114,19 @@ h2 > a {
 .grow img:hover{
     width: 300px;
     height: 300px;
+}
+
+.baniere{
+    font-family:'banner', sans-serif;
+    font-size:2em;  
+}
+.pirate{
+    font-family:'pirate', sans-serif;
+    font-size:3em; 
+}
+
+.gtitre{
+    font-size: 7em;
 }
 
 

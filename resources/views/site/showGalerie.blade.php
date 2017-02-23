@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-        <h1>Galerie </h1> <!-- Bootstrap 3 Lightbox image gallery using Modal -->
+        <h1 class="pirate gtitre">{{$album["titre"]}} </h1> <!-- Bootstrap 3 Lightbox image gallery using Modal -->
         @foreach ($album->Photos as $uneImage)
         <div class="thumbnail col-md-3">
             <a href="{{ url('img/galerie') ."/". $uneImage["fichier"] }}" data-lightbox="roadtrip"><img src="{{ url('img/galerie/miniature') ."/". $uneImage["fichier"] }}" ></a>           
