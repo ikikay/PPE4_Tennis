@@ -73,9 +73,6 @@
                                 <li>
                                     <a href="{{ route('documentation') }}">Documentation</a>
                                 </li>
-                                <li>
-                                    <a href="#">Galerie</a>
-                                </li>
                             </ul>
                         </li>
                         <li class="dropdown">

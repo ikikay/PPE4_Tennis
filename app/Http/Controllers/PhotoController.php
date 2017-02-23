@@ -19,6 +19,8 @@ class PhotoController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create($album_id) {
+        
+        
         $album = Album::find($album_id);
         
         //dd($album);
@@ -76,12 +78,12 @@ class PhotoController extends Controller {
 
         $lImage = Photo::find($id);
         
-        File::delete("img/galerie/" . $lImage->name_image, "img/galerie/miniature" . $lImage->name_image);
+        File::delete("img/galerie/" . $lImage->fichier, "img\miniature" . $lImage->fichier);
         
 
         $lImage->delete();
 
-        return redirect()->route("album.show");
+        return redirect()->route("album.index");
     }
 
 }

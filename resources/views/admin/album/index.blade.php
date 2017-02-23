@@ -34,10 +34,9 @@
 
                     <table class="table table-bordered">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th style="width: 10px">#</th>
+                            <tr>                              
+                                <th>titre de l'album</th>
                                 <th>nombre de photos</th>
-                                <th>nom album</th>
                                 <th>image de couverture</th>
                                 <th>afficher l'album</th>
                                 <th>action</th>
@@ -45,15 +44,12 @@
                         </thead>
                         <tbody>
                             @foreach ($lesAlbums as $unAlbum)
-                            <tr>
-                                <td class="col-md-1">
-                                    {{ $unAlbum["id"] }}
-                                </td>
-                                <td class="col-md-1" id="td{{ $unAlbum["id"] }}">
-                                    {{count($unAlbum->Photos)}}
-                                </td>
+                            <tr>                                                                
                                 <td class="col-md-3" id="td{{ $unAlbum["id"] }}">
                                     {{ $unAlbum["titre"] }}
+                                </td>
+                                <td class="col-md-2" id="td{{ $unAlbum["id"] }}">
+                                    {{count($unAlbum->Photos)}}
                                 </td>
                                 <td class="col-md-3">
                                     @if(count($unAlbum->Photos) === 0)
