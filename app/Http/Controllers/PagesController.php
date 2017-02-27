@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Article;
 use App\Models\Photo;
+use App\Models\Album;
 use App\Models\Contenu;
 
 class PagesController extends Controller {
@@ -29,9 +30,14 @@ class PagesController extends Controller {
     }
 
     function galerie() {
-        $lesImages = Photo::all();
-        return view('site.galerie')
-                        ->with("tab_images", $lesImages);
+        $lesAlbums = Album::with('photos')->get();
+        return view('site.galerie', compact('lesAlbums'));
+    }
+    
+    function showGalerie($id){
+        
+       $album = Album::with('photos')->find($id);
+       return view('site.showGalerie', compact('album'));
     }
     
     function coordonnee() {

@@ -19,6 +19,8 @@ class PhotoController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create($album_id) {
+        
+        
         $album = Album::find($album_id);
         
         //dd($album);
@@ -38,7 +40,10 @@ class PhotoController extends Controller {
         
         $imagename = time().'.'.$fichier->getClientOriginalExtension(); 
         $destinationPath = public_path('img/galerie/miniature/');
-        Image::make($fichier->getRealPath())->resize(100, 100)->save($destinationPath.'/'.$imagename);
+        Image::make($fichier->getRealPath())->resize(null, 200, function ($constraint){
+            $constraint->aspectRatio();
+            
+        })->save($destinationPath.'/'.$imagename);
      
         $destinationPath = public_path('img/galerie/');
         $fichier->move($destinationPath, $imagename);              
@@ -73,12 +78,12 @@ class PhotoController extends Controller {
 
         $lImage = Photo::find($id);
         
-        File::delete("img/galerie/" . $lImage->name_image, "img/galerie/miniature" . $lImage->name_image);
+        File::delete("img/galerie/" . $lImage->fichier, "img\miniature" . $lImage->fichier);
         
 
         $lImage->delete();
 
-        return redirect()->route("photo.index");
+        return redirect()->route("album.index");
     }
 
 }

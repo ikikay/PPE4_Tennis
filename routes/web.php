@@ -21,6 +21,7 @@ Route::get('documentation', 'PagesController@documentation')->name('documentatio
 //Route::get('/home', 'HomeController@index');
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
 Route::get('galerie', 'PagesController@galerie')->name('galerie');
+Route::get('showGalerie/{album_id}', 'PagesController@showGalerie')->name('showGalerie')->where('album_id', '[0-9]+');
 Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
 Route::get('profil', 'PagesController@profil')->name('profil');
 Route::resource('document', 'DocumentController');
@@ -40,10 +41,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     
     //    Route::get('contenu/coordonnee/edit', 'ContenuController@coordonnee_edit')->name('coordonnee_edit');
     //    Route::put('contenu/coordonnee', 'ContenuController@coordonnee_update')->name('coordonnee_update');
-
+    
+    // route pour la creation de photo 
     Route::get('photo/create/{album_id}', 'PhotoController@create')->name('photo.create')->where('album_id', '[0-9]+');
     Route::post('photo', 'PhotoController@store')->name('photo.store');
-Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->where('id', '[0-9]+');
+    Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->where('id', '[0-9]+');
     
     Route::resource('user', 'UserController');
     Route::resource('article', 'ArticleController');

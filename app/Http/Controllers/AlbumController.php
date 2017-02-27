@@ -41,8 +41,8 @@ class AlbumController extends Controller
     {
        /* $rules = array(
 
-      'name_album' => 'required',
-      'name_cover_image'=>'required|image'
+      'titre' => 'required',
+      
 
         );
         $validator = Validator::make(Input::all(), $rules);
@@ -103,28 +103,9 @@ class AlbumController extends Controller
         
         $album = Album::find($id);
 
-        $album->tire = $request->get('name');
-        $album->descrition = "description";
-        $album->actif = true;
-        /*$fichier = $request->file('image');
-        
-        $imagename = time().$fichier->getClientOriginalName(); 
-         
-        if($imagename == $album->name_cover_image ){
-            $album->save();
-            return redirect()->route("album.index");
-        }
-        else{
-        File::delete("img/galerie/" . $album->name_cover_image, "img/galerie/miniature" . $album->name_cover_image);
-        
-        $destinationPath = public_path('img/galerie/miniature');
-        Image::make($fichier->getRealPath())->resize(100, 100)->save($destinationPath.'/'.$imagename);        
-        $destinationPath = public_path('img/galerie/');
-        $fichier->move($destinationPath, $imagename);        
-        $album->name_cover_image = $imagename;
-        }*/
-       
-                
+        $album->titre = $request->get('name');
+        $album->description->get('description');
+        $album->actif = true;             
 
         $album->save();
         return redirect()->route("album.index");

@@ -2,8 +2,8 @@
 
 @section('title')
 <h1>
-    Administration des albums
-    <small>- Rechercher, ajoute, modifier et supprimer des albums</small>
+    Administration des photos d'un album
+    <small>- Rechercher, ajoute et supprimer des photos</small>
 </h1>
 @stop
 
@@ -34,29 +34,21 @@
 
                     <table class="table table-bordered">
                         <thead class="thead-inverse">
-                            <tr>
-                                <th style="width: 10px">#</th>
+                            <tr>                                
                                 <th>Image</th>
                                 <th>Titre</th>
-                                <th>Description</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($album->Photos as $uneImage)
-                            <tr>
-                                <td class="col-md-1">
-                                    {{ $uneImage["id"] }}
-                                </td>
+                            <tr>                                
                                 <td>
                                     <center><img src="{{ url('img/galerie/miniature') ."/". $uneImage["fichier"] }}" alt="img{{ $uneImage["id"] }}"></center>
                                 </td>
                                 <td class="col-md-2" id="td{{ $uneImage["id"] }}">
-                                    {{ $uneImage["name_user"] }}
-                                </td>
-                                <td class="col-md-4">
-                                    {{ $uneImage["description"] }}
-                                </td>
+                                    {{ $uneImage["titre"] }}
+                                </td>                               
                                 <td class="col-md-1">
                                     {!! Form::open(['route' => ["photo.destroy", $uneImage->id], 'method' => 'delete', 'id' => "form".$uneImage->id]) !!}
                                         <button type="submit" id="{{ $uneImage->id }}" class="btn btn-danger btn-circle jsDeleteButton"><i class="fa fa-times"></i></button>

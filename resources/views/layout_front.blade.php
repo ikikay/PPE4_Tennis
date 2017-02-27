@@ -22,6 +22,8 @@
 
         <!-- Custom Fonts -->
         <link href="{{ url ('font-awesome_front/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+        <!-- lightbox -->
+        <link href="{{ url('css/lightbox.min.css')}}" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -70,9 +72,6 @@
                             <ul class="dropdown-menu">
                                 <li>
                                     <a href="{{ route('documentation') }}">Documentation</a>
-                                </li>
-                                <li>
-                                    <a href="#">Gallerie</a>
                                 </li>
                             </ul>
                         </li>
@@ -182,7 +181,8 @@
     <script src="{{url('js/bootbox.min.js')}}"></script>
     <!-- Mon JavaScript -->
     <script src="{{url('js/perso.js')}}"></script>
-
+    
+@yield('script')
 
     <!-- Script to Activate the Carousel -->
     <script>
