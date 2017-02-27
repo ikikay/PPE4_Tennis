@@ -5,6 +5,7 @@ use App\Models\Document;
 use Illuminate\Http\Request;
 use Image;
 Use File;
+use Auth;
 
 class DocumentController extends Controller
 {
@@ -15,20 +16,26 @@ class DocumentController extends Controller
      */
     public function index()
     {
-       $lesDocs = Document::all();
+     
+      
+        $lesDocs = Document::Where("user_id", "=",Auth::user()->id)->get();
+
 
         return view('site.document.index')
-                        ->with('tab_docs', $lesDocs);
+                        ->with('tab_docs',$lesDocs);
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
-     */
+     * @return \Illuminate\Http\Response */
+     
     public function create()
     {
-         return view('site.document.create'); //
+       $user = Document::all();
+        
+        //dd($user);
+        return view('site.document.create');
     }
 
     /**
@@ -43,9 +50,11 @@ class DocumentController extends Controller
         
         $image = new Document();
 
-        $image->nom = $request->get('nom');
         
+        $image->user_id = $request->get('user_id');
        
+        $image->nom = $request->get('nom');
+               
         $fichier = $request->file('document');
         
         $imagename = time().'.'.$fichier->getClientOriginalName(); 
@@ -69,9 +78,12 @@ class DocumentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($user_id)
     {
-        //
+        $tab_docs = Document::find($user_id);
+        
+    
+        return view('site.document.show', compact('tab_docs'));
     }
 
     /**
@@ -85,10 +97,7 @@ class DocumentController extends Controller
         //
     }
   
-    public function demande($id)
-    {
-        //
-    }
+   
     /**
      * Update the specified resource in storage.
      *

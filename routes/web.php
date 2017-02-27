@@ -22,6 +22,7 @@ Route::get('documentation', 'PagesController@documentation')->name('documentatio
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
 Route::get('galerie', 'PagesController@galerie')->name('galerie');
 Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
+Route::get('profil', 'PagesController@profil')->name('profil');
 Route::resource('document', 'DocumentController');
 
 
@@ -56,5 +57,5 @@ Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->w
     Route::resource('coordonnee', 'CoordonneeController');
     Route::post('coordonnee/addUserStatut/{id}', 'CoordonneeController@addUserStatut')->name('add_user_statut');
     Route::delete('coordonnee/deleteStatut/{id}', 'CoordonneeController@deleteStatut')->name('deleteStatut');
-    Route::resource('document', 'DocumentController');
+    
 });

@@ -104,7 +104,7 @@
                         
                                 @if ( Auth::user()->valider)
                                 <li>
-                                    <a href="{{ route('document.index') }}"><i class="fa fa-user fa-fw"></i>Profil</a>
+                                    <a href="{{ route('profil') }}"><i class="fa fa-user fa-fw"></i>Profil</a>
                                 </li> 
                                
                                 @if (Auth::user()->admin)         

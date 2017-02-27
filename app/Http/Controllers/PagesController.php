@@ -38,6 +38,8 @@ class PagesController extends Controller {
         $contenu = Contenu::where('page', "coordonnee")->get()->first();
         return view('site.coordonnee')
                         ->with("contenu", $contenu);
+    } 
+    function profil() {
+        return view('site.profil');
     }
-
 }

@@ -179,7 +179,7 @@ table {
 
 td,
 th {
-  padding: 0; }
+  padding: 3px; }
 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {
@@ -5636,3 +5636,34 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
+
+
+/* menu vertical */
+
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+}
+/* Changement de couleur par ligne du tableau Document */
+.odd {
+    background-color: #FFFFFF !important;    
+}
+.even {
+    background-color: #FDF5E6 !important;
+}

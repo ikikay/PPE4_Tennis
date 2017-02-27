@@ -2,30 +2,46 @@
 
 @section('title')
 <h1>
-   DOC
+    DOC
     <small>- ajoute des documents</small>
 </h1>
 
 
+</br> 
+</br>
+</br> 
+
 
 @section('content')
 
+
+
 {!! Form::open(['route' => "document.store",'files' => true, 'method' => 'post']) !!}
 
-<div class="form-group">
+<div class="form-group  col-md-offset-4">
     <label>Nom de l'image : </label>
-    <input class="form-control" placeholder="Mon image" name="nom">
+   
+    <div class="col-md-5">
+        <input class="form-control" placeholder="Mon image" name="nom">
+    </div>
 </div>
 
 
 
+@if(Auth::check())
 
-<div class="form-group">
+
+
+
+
+
+ <input type="hidden" name="user_id" value="{{ $user_id = Auth::User()->id }}" />
+ <div class="form-group col-md-offset-4">
     <label>Parcourir image :</label>
     <input type="file" name="document">
-</div>
-<button type="submit" class="btn btn-success">Créer</button>
-<button type="reset" class="btn btn-danger">Effacer le formulaire</button>
+</div> 
+<button type="submit" class="btn btn-success col-md-offset-4">Créer</button>
+<button type="reset" class="btn btn-danger col-md-offset-4 ">Effacer le formulaire</button>
 {!! Form::close() !!}
 <!--<div class="container">
         <div class="row">
@@ -39,9 +55,8 @@
             </div>
         </div>
     </div>-->
-                          
 
-
+@endif
 
 
 
