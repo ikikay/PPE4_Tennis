@@ -1,10 +1,10 @@
 @extends('layout_front')
 @section('content')
 
-<div class="container">
+<div class="container ">
     <div class="row col-md-12">
         <center><h1 class="baniere gtitre">ÎgalerieÏ </h1></center> <!-- Bootstrap 3 Lightbox image gallery using Modal -->
-        <div class="row">
+        <div class="row contenu">
         @foreach ($lesAlbums as $unAlbum)
         @if($unAlbum->actif == true)
         <div class="col-md-3">
@@ -20,8 +20,5 @@
         </div>   
     </div>
 </div>
-
-
-
 
 @stop
