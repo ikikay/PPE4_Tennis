@@ -7,6 +7,7 @@ use App\Models\Article;
 use App\Models\Photo;
 use App\Models\Album;
 use App\Models\Contenu;
+use App\Models\Comite;
 
 class PagesController extends Controller {
 
@@ -22,7 +23,9 @@ class PagesController extends Controller {
     }
 
     function contact() {
-        return view('site.contact');
+        $leComite = Comite::with('Users')->get();
+        //dd($leComite);
+        return view('site.contact')->with("leComite", $leComite);        
     }
 
     function documentation() {
@@ -42,8 +45,7 @@ class PagesController extends Controller {
     
     function coordonnee() {
         $contenu = Contenu::where('page', "coordonnee")->get()->first();
-        return view('site.coordonnee')
-                        ->with("contenu", $contenu);
+        return view('site.coordonnee')->with("contenu", $contenu);
     } 
     function profil() {
         return view('site.profil');
