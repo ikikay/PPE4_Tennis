@@ -8,13 +8,10 @@ use App\Models\Photo;
 use App\Models\Album;
 use App\Models\Contenu;
 use App\Models\Comite;
+use App\Models\Message;
 
 class PagesController extends Controller {
 
-    
-       
-   
-    
     public function index() {
         $lesArticles = Article::all()->sortByDesc("created_at");
 
@@ -24,8 +21,7 @@ class PagesController extends Controller {
 
     function contact() {
         $leComite = Comite::with('Users')->get();
-        //dd($leComite);
-        return view('site.contact')->with("leComite", $leComite);        
+        return view('site.contact')->with("leComite", $leComite);
     }
 
     function documentation() {
@@ -36,18 +32,34 @@ class PagesController extends Controller {
         $lesAlbums = Album::with('photos')->get();
         return view('site.galerie', compact('lesAlbums'));
     }
-    
-    function showGalerie($id){
-        
-       $album = Album::with('photos')->find($id);
-       return view('site.showGalerie', compact('album'));
+
+    function showGalerie($id) {
+
+        $album = Album::with('photos')->find($id);
+        return view('site.showGalerie', compact('album'));
     }
-    
+
     function coordonnee() {
         $contenu = Contenu::where('page', "coordonnee")->get()->first();
         return view('site.coordonnee')->with("contenu", $contenu);
-    } 
+    }
+
     function profil() {
         return view('site.profil');
     }
+
+    function message(Request $request) {
+        $request->session()->flash('success', 'Merci! Votre message à bien été envoyer');
+        
+        $message = new Message();
+        $message->auteur = $request->get('nom') . " " .$request->get('prenom');
+        $message->email = $request->get('email');
+        $message->titre = $request->get('titre');
+        $message->contenu = $request->get('contenu');
+        $message->tel = $request->get('telephone');
+        
+        $message->save();
+        return redirect()->route("contact");
+    }
+
 }

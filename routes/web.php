@@ -25,6 +25,7 @@ Route::get('showGalerie/{album_id}', 'PagesController@showGalerie')->name('showG
 Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
 Route::get('profil', 'PagesController@profil')->name('profil');
 Route::resource('document', 'DocumentController');
+Route::post('message', 'PagesController@message')->name('message');
 
 
 // Routes pour le Back-office

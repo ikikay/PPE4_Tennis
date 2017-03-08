@@ -21,49 +21,71 @@
             <!-- Embedded Google Map -->
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.4491686554734!2d5.411436451145834!3d47.05103863408057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f2b5002043e913%3A0xf8c71eccb638f6c4!2sTennis+Club+Tavaux!5e0!3m2!1sfr!2sfr!4v1484229314658" width="100%" height="300px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" allowfullscreen></iframe>
 
+            @if(Session::has('success'))
+            <div class="row">
+                <div class="alert alert-success">
+                    <center>{{Session::get('success')}}</center>
+                </div>
+            </div>
+            @endif
+            @if(Session::has('error'))
+            <div class="row">
+                <div class="alert alert-danger">
+                    <center><strong>Erreur : </strong> Désolé... Réésayez plus tard</center>
+                </div>
+            </div>
+            @endif
+
             <h3>Envoyez nous un Message</h3>
-            <form name="sentMessage" id="contactForm" novalidate>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Votre nom :</label>
-                        <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
-                        <p class="help-block"></p>
-                    </div>
+            {!! Form::open(['route' => "message", 'method' => 'post']) !!}
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>Votre nom :</label>
+                    <input type="text" class="form-control" id="nom" name="nom" required data-validation-required-message="Renseignez votre nom">
+                    <p class="help-block"></p>
                 </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Votre prénom :</label>
-                        <input type="text" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
-                        <p class="help-block"></p>
-                    </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>Votre prénom :</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom" required data-validation-required-message="Renseignez votre prénom">
+                    <p class="help-block"></p>
                 </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Votre numéro de téléphone :</label>
-                        <input type="tel" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
-                    </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>Votre numéro de téléphone :</label>
+                    <input type="tel" class="form-control" id="telephone" name="telephone" required data-validation-required-message="Please enter your phone number.">
                 </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Votre email :</label>
-                        <input type="email" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
-                    </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>Votre email :</label>
+                    <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
                 </div>
-                <div class="control-group form-group">
-                    <div class="controls">
-                        <label>Message:</label>
-                        <textarea rows="10" cols="100" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
-                    </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>Titre de la demande :</label>
+                    <input type="text" class="form-control" id="titre" name="titre" required data-validation-required-message="Renseignez votre prénom">
+                    <p class="help-block"></p>
                 </div>
-                <div id="success"></div>
-                <!-- For success/fail messages -->
-                <button type="submit" class="btn btn-primary">Envoyer Message</button>
-            </form>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <label>Message:</label>
+                    <textarea rows="10" cols="100" class="form-control" id="contenu"  name="contenu" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                </div>
+            </div>
+            <div id="success"></div>
+            <!-- For success/fail messages -->
+            <button type="submit" class="btn btn-primary">Envoyer Message</button>
+            {!! Form::close() !!}
         </div>
         <!-- Contact Details Column -->
         <div class="col-md-4">  
             <div class="text-center">
-                <h1>Contact</h1>
+                <h1>Comité</h1>
                 <p>
                     Tennis CLub Tavaux
                 <p>
@@ -74,10 +96,10 @@
                 </p> 
                 </br>
             </div>   
-            
-            
+
+
             @foreach ($leComite as $unStatut)
-            @if(count($unStatut->users) != 0))            
+            @if(count($unStatut->users) != 0)            
             <div class="text-center">
                 <p><b>{{$unStatut->fonction}}</b></p>
             </div>
