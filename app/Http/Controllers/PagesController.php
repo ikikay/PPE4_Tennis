@@ -8,6 +8,7 @@ use App\Models\Photo;
 use App\Models\Album;
 use App\Models\Contenu;
 use App\Models\Comite;
+use App\Models\User;
 
 class PagesController extends Controller {
 
@@ -48,6 +49,38 @@ class PagesController extends Controller {
         return view('site.coordonnee')->with("contenu", $contenu);
     } 
     function profil() {
-        return view('site.profil');
+       $lesUsers = User::all();
+
+        return view('site.profil')
+                        ->with('tab_users', $lesUsers);
+        
+    }
+    
+    function editprofil($id) {
+         $leUser = User::find($id);
+        return view('site.profil.edit')
+                        ->with("leUser", $leUser);
+    }
+    
+     public function updateprofil(Request $request, $id) {
+        $leUser = User::find($id);
+
+
+     
+     
+        
+        
+     
+        if ($request->get('password') !="") {
+              $leUser->password = bcrypt($request->get('password'));       
+        }
+        
+     
+
+
+
+        $leUser->save();
+
+        return redirect()->route("profil");
     }
 }
