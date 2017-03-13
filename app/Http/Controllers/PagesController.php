@@ -23,7 +23,6 @@ class PagesController extends Controller {
     function contact() {
         $leComite = Comite::with('Users')->get();
         return view('site.contact')->with("leComite", $leComite);
-        return view('site.contact')->with("leComite", $leComite);        
     }
 
     function documentation() {
