@@ -47,7 +47,9 @@
                                     {{ $unArticle["id"] }}
                                 </td>
                                 <td class="col-md-10" id="td{{ $unArticle["id"] }}">
+                                    <a href="..." style="display:block;width:100%;height:100%;">
                                     {{ $unArticle["titre"] }}
+                                    </a>
                                 </td>
                                 <td class="col-md-1">
                                     <div class="row">

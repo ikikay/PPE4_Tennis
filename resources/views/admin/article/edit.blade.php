@@ -24,11 +24,25 @@
                         <input class="form-control" value="{{ $article["titre"] }}" name="titre"> 
                     </div>
 
-                    <div class="form-group">
-                        <label>Image de présentation :</label>
-                        <input type="file" name="image">
-                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label>Image de présentation :</label>
+                                <input type="file" name="image">
+                            </div>
+                        </div>
 
+                        <div class="col-md-9">
+                            <p style="font-weight:bold">Image actuel :</p>
+                            @if (!empty($article["photo"]))
+                            <img src="{{url('/img/articles') . '/' . $article["photo"] }}" alt="Image de l'article" width="450" height="150">
+
+                            @else
+                            <p> Aucune image actuellement</p>
+
+                            @endif
+                        </div>
+                    </div>
                     <!-- tools box -->
                     <div class="pull-right box-tools">
                         <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="Réduire">

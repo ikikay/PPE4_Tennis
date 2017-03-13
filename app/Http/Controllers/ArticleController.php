@@ -47,7 +47,7 @@ class ArticleController extends Controller {
             $fichier = $request->file('image');
             $imagename = time() . '.' . $fichier->getClientOriginalExtension();
             $destinationPath = public_path('img\articles');
-            Image::make($fichier->getRealPath())->resize(900, 300)->save($destinationPath . '\\' . $imagename);
+            Image::make($fichier->getRealPath())->resize(900, 300)->save($destinationPath . '/' . $imagename);
             $article->photo = $imagename;
         } else {
             $article->photo = null;
