@@ -25,7 +25,6 @@ class PagesController extends Controller {
 
     function contact() {
         $leComite = Comite::with('Users')->get();
-        //dd($leComite);
         return view('site.contact')->with("leComite", $leComite);        
     }
 
@@ -58,7 +57,7 @@ class PagesController extends Controller {
     
     function editprofil($id) {
          $leUser = User::find($id);
-        return view('site.profil.edit')
+        return view('site.profil.editmdp')
                         ->with("leUser", $leUser);
     }
     
