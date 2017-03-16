@@ -39,8 +39,7 @@
                         <input class="form-control" placeholder="Adversaire :" name="adversaire"> 
                     </div>
                     <div class="form-group">
-                    {!! Form::label('equipe_id', 'Choisir une équipe : ') !!}
-                    {!! Form::select('equipe_id', $lesEquipes, null, ['class'=>'form-control']) !!}
+                    {{ $uneEquipe->nom }}
                     </div>
                 </div>
                 <!-- /.box-header -->
