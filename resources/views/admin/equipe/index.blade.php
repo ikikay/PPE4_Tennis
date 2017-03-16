@@ -66,7 +66,7 @@
                                             {!! Form::close() !!}
                                         </div>
                                         <div class="col-md-6">
-                                            <a class="btn btn-primary btn-circle" href="{{ route("rencontre.index") }}">Ajouter Rencontre</a>
+                                            <a class="btn btn-primary btn-circle" href="{{ route("rencontre.index",$uneEquipe->id) }}">Ajouter Rencontre</a>
                                         </div>
                                     </div>
                                 </td>
