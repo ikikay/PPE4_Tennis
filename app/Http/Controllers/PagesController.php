@@ -49,7 +49,7 @@ class PagesController extends Controller {
     }
 
     function message(Request $request) {
-        $request->session()->flash('success', 'Merci! Votre message à bien été envoyer');
+        $request->session()->flash('success', 'Merci! Votre message a bien été envoyé');
         
         $message = new Message();
         $message->auteur = $request->get('nom') . " " .$request->get('prenom');
