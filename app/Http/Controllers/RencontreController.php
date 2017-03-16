@@ -14,10 +14,11 @@ class RencontreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($equipe_id)
     {
+        $uneEquipe = Equipe::Find($equipe_id);
         $lesRencontres = Rencontre::all();
-        return view('admin.rencontre.index')->with('tab_rencontres', $lesRencontres);
+        return view('admin.rencontre.index')->with('tab_rencontres', $lesRencontres)->with('uneEquipe', $uneEquipe);
     }
 
     /**
@@ -25,10 +26,11 @@ class RencontreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($equipe_id)
     {
-        $lesEquipes = Equipe::pluck('nom', 'id');
-        return view('admin.rencontre.create', compact('lesEquipes'));
+        $uneEquipe = Equipe::Find($equipe_id);
+        dd($uneEquipe);
+        return view('admin.rencontre.create')->with('uneEquipe', $uneEquipe);
     }
 
     /**

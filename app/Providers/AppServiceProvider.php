@@ -3,17 +3,22 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Message;
 
-class AppServiceProvider extends ServiceProvider
-{
+class AppServiceProvider extends ServiceProvider {
+
     /**
      * Bootstrap any application services.
      *
      * @return void
      */
-    public function boot()
-    {
-        //
+    public function boot() {
+        view()->composer('*', function($view) {
+            $messages = Message::all();          
+            $view->with('messages', $messages);            
+        });
+        
+        
     }
 
     /**
@@ -21,8 +26,8 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
-    {
+    public function register() {
         //
     }
+
 }
