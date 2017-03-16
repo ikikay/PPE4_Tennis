@@ -1,3 +1,4 @@
+/* Déclaration de la police */
 @font-face{
     font-family: 'banner';
     src: url('../css/font/yorkwhiteletter.otf') format('truetype');
@@ -9,6 +10,62 @@
 @font-face{
     font-family: 'pirate';
     src: url('../css/font/Stahlbetontraeger-Compressed.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "merienda";
+    src: url('../css/font/Merienda-Regular.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "yatraone";
+    src: url('../css/font/YatraOne-Regular.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "courgette";
+    src: url('../css/font/Courgette-Regular.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "oregano";
+    src: url('../css/font/Oregano-Regular.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "architects";
+    src: url('../css/font/ArchitectsDaughter.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "gloria";
+    src: url('../css/font/GloriaHallelujah.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "titillium";
+    src: url('../css/font/TitilliumWeb-Regular.ttf') format('truetype');
 
     font-weight: normal;
     font-style: normal;
@@ -37,8 +94,8 @@ footer {
 .navbar-inverse .navbar-nav > li > a {
     color: #ffffff;
     Font-Weight: Bold;
-    font-size: 16px;
-    font-family: 'Open Sans', Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-family: titillium, 'Open Sans', Tahoma, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .navbar-inverse .navbar-nav > li > a:hover { 
     color: #333399;
@@ -82,10 +139,10 @@ h2 > a {
 
 /*effet sur image*/
 *{
-     -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-         -ms-box-sizing: border-box;
-             box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .pic {
@@ -95,20 +152,20 @@ h2 > a {
     width: 200px;
     margin: 20px;
     overflow: hidden;
-    
+
     -webkit-box-shadow: 5px 5px 5px #111;
-            box-shadow: 5px 5px 5px #111;
+    box-shadow: 5px 5px 5px #111;
 }
 
 .grow img{
     height: 200px;
     width: 200px;
-    
+
     -webkit-transition: all 1s ease;
-       -moz-transition: all 1s ease;
-         -o-transition: all 1s ease;
-        -ms-transition: all 1s ease;
-            transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
 }
 
 .grow img:hover{

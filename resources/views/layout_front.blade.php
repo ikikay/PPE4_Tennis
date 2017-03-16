@@ -66,15 +66,7 @@
                         </li>
                         <li>
                             <a href="{{ route('galerie') }}">Galerie</a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Divers<b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="{{ route('documentation') }}">Documentation</a>
-                                </li>
-                            </ul>
-                        </li>
+                        </li>         
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">L'enseignement <b class="caret"></b></a>
                             <ul class="dropdown-menu">
