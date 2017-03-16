@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-
+Use File;
+use Intervention\Image\ImageManager;
+use Illuminate\Filesystem\Filesystem;
 use App\Http\Requests;
 
 class UserController extends Controller {
@@ -53,7 +55,13 @@ class UserController extends Controller {
         }
       
         
+        $avatar = $request->file('avatar');
         
+        $imagename = time().'.'.$avatar->getClientOriginalExtension(); 
+        $destinationPath = public_path('img/galerie/miniature/');
+        Image::make($avatar->getRealPath())->resize(500, 400)
+            
+        ->save($destinationPath.'/'.$imagename);
         
         User::create([
             'nom' => $request->get('nom'),
@@ -64,7 +72,8 @@ class UserController extends Controller {
             'admin' => $admin,
             'joueur' => $joueur,
             'valider'=> true,   
-            
+            'avatar'=> $avatar
+        
         ]);
 
         return redirect()->route("user.index");

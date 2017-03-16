@@ -8,6 +8,7 @@ use App\Models\Photo;
 use App\Models\Album;
 use App\Models\Contenu;
 use App\Models\Comite;
+use App\Models\User;
 use App\Models\Message;
 
 class PagesController extends Controller {
@@ -45,11 +46,43 @@ class PagesController extends Controller {
     }
 
     function profil() {
-        return view('site.profil');
+       $lesUsers = User::all();
+
+        return view('site.profil')
+                        ->with('tab_users', $lesUsers);
+        
+    }
+    
+    function editprofil($id) {
+         $leUser = User::find($id);
+        return view('site.profil.editmdp')
+                        ->with("leUser", $leUser);
+    }
+    
+     public function updateprofil(Request $request, $id) {
+        $leUser = User::find($id);
+
+
+     
+     
+        
+        
+     
+        if ($request->get('password') !="") {
+              $leUser->password = bcrypt($request->get('password'));       
+        }
+        
+     
+
+
+
+        $leUser->save();
+
+        return redirect()->route("profil");
     }
 
     function message(Request $request) {
-        $request->session()->flash('success', 'Merci! Votre message à bien été envoyer');
+        $request->session()->flash('success', 'Merci! Votre message a bien été envoyé');
         
         $message = new Message();
         $message->auteur = $request->get('nom') . " " .$request->get('prenom');

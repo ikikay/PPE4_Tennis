@@ -23,6 +23,8 @@ Route::get('galerie', 'PagesController@galerie')->name('galerie');
 Route::get('showGalerie/{album_id}', 'PagesController@showGalerie')->name('showGalerie')->where('album_id', '[0-9]+');
 Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
 Route::get('profil', 'PagesController@profil')->name('profil');
+Route::get('editprofil/{id}', 'PagesController@editprofil')->name('editprofil');
+Route::put('updateprofil/{id}', 'PagesController@updateprofil')->name('updateprofil');
 Route::resource('document', 'DocumentController');
 Route::post('message', 'PagesController@message')->name('message');
 

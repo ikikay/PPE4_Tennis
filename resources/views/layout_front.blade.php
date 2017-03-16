@@ -56,9 +56,6 @@
                             <a href="#">Le club</a>
                         </li>
                         <li>
-                            <a href="#">L'enseignement</a>
-                        </li>
-                        <li>
                             <a href="#">La compétition</a>
                         </li>
                         <li>
