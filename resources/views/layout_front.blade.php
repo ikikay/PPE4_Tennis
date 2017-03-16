@@ -53,13 +53,13 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">Le club</a>
+                            <a href="{{ route("contenu.show", ['id' => 'TODO']) }}">Le club</a>
                         </li>
                         <li>
-                            <a href="#">La compétition</a>
+                            <a href="{{ route("contenu.show", ['contenu' => 'TODO']) }}">La compétition</a>
                         </li>
                         <li>
-                            <a href="#">Infos Adhérents</a>
+                            <a href="{{ route("contenu.show", ['page' => 'TODO']) }}">Infos Adhérents</a>
                         </li>
                         <li>
                             <a href="{{ route('galerie') }}">Galerie</a>
@@ -68,13 +68,13 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">L'enseignement <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#">L'équipe pédagogique</a>
+                                    <a href="{{ route("contenu.show", ['contenu' => 'TODO']) }}">L'équipe pédagogique</a>
                                 </li>
                                 <li>
-                                    <a href="#">L'école de tennis</a>
+                                    <a href="{{ route("contenu.show", ['contenu' => 'TODO']) }}">L'école de tennis</a>
                                 </li>
                                 <li>
-                                    <a href="#">Les cours collectifs adultes</a>
+                                    <a href="{{ route("contenu.show", ['contenu' => 'TODO']) }}">Les cours collectifs adultes</a>
                                 </li>                            
                             </ul>
                         </li>

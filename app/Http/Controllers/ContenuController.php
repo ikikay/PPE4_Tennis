@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Contenu;
 
 class ContenuController extends Controller {
@@ -33,7 +34,7 @@ class ContenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        //
+        // Pas de listing de contenus, utilisation de Show
     }
 
     /**
@@ -42,7 +43,7 @@ class ContenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        //
+        // Pas besoin de create, chaque "contenus" est créer par un dev, puis édité par l'utilisateur
     }
 
     /**
@@ -52,7 +53,7 @@ class ContenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        //
+        // Pas besoin de store, chaque "contenus" est créer par un dev, puis édité par l'utilisateur
     }
 
     /**
@@ -62,7 +63,9 @@ class ContenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+        $leContenu = Contenu::where('page', $page);
+        return view('site.contenu')
+                        ->with("contenu", $leContenu);
     }
 
     /**
@@ -71,8 +74,10 @@ class ContenuController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id) {
-        //
+    public function edit($page) {
+        $leContenu = Contenu::where('page', $page);
+        return view('site.contenu')
+                        ->with("contenu", $leContenu);
     }
 
     /**
@@ -82,8 +87,14 @@ class ContenuController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
-        //
+    public function update(Request $request, $page) {
+        $leContenu = Contenu::where('page', $page);
+
+        $leContenu->ckeditor = $request->get('editor');
+
+        $leContenu->save();
+
+        return redirect()->route("admin.dashboard");
     }
 
     /**
@@ -93,7 +104,7 @@ class ContenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-        //
+        // Pas besoin de suppression, chaque "contenus" est créer par un dev, puis édité par l'utilisateur
     }
 
 }
