@@ -96,7 +96,6 @@
                                                 <table>
                                                     <thead class="panel-body">
                                                         <tr>
-
                                                             <th style="text-align:center" >Titre</th>
                                                             <th style="text-align:center">Fichier</th>
                                                             <th style="text-align:center">Action</th>

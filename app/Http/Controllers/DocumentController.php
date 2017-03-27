@@ -25,6 +25,16 @@ class DocumentController extends Controller
                         ->with('tab_docs',$lesDocs);
     }
 
+     public function home()
+    {
+     
+      
+        $lesDocs = Document::Where("user_id", "=",null)->get();
+
+
+        return view('admin.document.index')
+                        ->with('tab_docs',$lesDocs);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -38,6 +48,14 @@ class DocumentController extends Controller
         return view('site.document.create');
     }
 
+    
+     public function acreate()
+    {
+       $user = Document::all();
+        
+        //dd($user);
+        return view('admin.document.create');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -72,6 +90,35 @@ class DocumentController extends Controller
         return redirect()->route("document.index");
     }
 
+     public function astore(Request $request)
+    {
+         $request->session()->flash('success', 'Le fichier à été Ajouté !');
+        
+        $image = new Document();
+
+        
+        $image->user_id = $request->get('user_id');
+       
+        $image->nom = $request->get('nom');
+               
+        $fichier = $request->file('document');
+        
+        $imagename = time().'.'.$fichier->getClientOriginalName(); 
+      
+          
+     
+        $destinationPath = public_path('doc/');
+           
+        $fichier->move($destinationPath, $imagename);              
+      
+        $image->fichier = $imagename;
+
+        $image->save();
+        
+        return redirect()->route("admin.document");
+    }
+    
+   
     /**
      * Display the specified resource.
      *
