@@ -276,6 +276,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             </ul>
                         </li>
+                         <li class="treeview">
+                            <a href="#"><i class="fa fa-link"></i> <span>Documents</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{ route("document.create") }}">Ajouter</a></li>
+                                <li><a href="{{ route("document.home") }}">Administrer</a></li>
+
+                            </ul>
+                        </li>
                         <li class="treeview">
                             <a href="{{ route("equipe.index") }}"><i class="fa fa-users"></i> <span>Equipes</span></a>
                         </li>
