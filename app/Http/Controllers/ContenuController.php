@@ -77,7 +77,8 @@ class ContenuController extends Controller {
      */
     public function edit($page) {
         $leContenu = Contenu::where('page', $page);
-        return view('site.contenu')
+        dd($leContenu);
+        return view('admin.contenu.edit')
                         ->with("contenu", $leContenu);
     }
 

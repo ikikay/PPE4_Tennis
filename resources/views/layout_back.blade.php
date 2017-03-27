@@ -283,15 +283,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="{{ route("album.index") }}"><i class="fa fa-link"></i> <span>Messages</span>  </a>
                         </li>
 
-                        <li class="header">Modification Site</li>
+                        <li class="header">Modification contenu du site</li>
                         <li class="treeview">
-                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-link"></i> <span>Le club</span>  </a>
+                            <a href="{{ route("contenu.edit", ['page' => 'Le_club']) }}"><i class="fa fa-link"></i> <span>Le club</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("contenu.show", ['page' => 'La_competition']) }}"><i class="fa fa-link"></i> <span>La compétition</span>  </a>
+                            <a href="{{ route("contenu.edit", ['page' => 'La_competition']) }}"><i class="fa fa-link"></i> <span>La compétition</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("contenu.show", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-link"></i> <span>Infos Adhérents</span>  </a>
+                            <a href="{{ route("contenu.edit", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-link"></i> <span>Infos Adhérents</span>  </a>
                         </li>
                         <li class="treeview">
                             <a href="#"><i class="fa fa-link"></i> <span>L'enseignement</span>
@@ -300,9 +300,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ route("contenu.show", ['page' => 'L_equipe_pedagogique']) }}">L'équipe pédagogique</a></li>
-                                <li><a href="{{ route("contenu.show", ['page' => 'L_ecole_de_tennis']) }}">L'école de tennis</a></li>
-                                <li><a href="{{ route("contenu.show", ['page' => 'Les_cours_collectifs_adultes']) }}">Les cours collectifs adultes</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'L_equipe_pedagogique']) }}">L'équipe pédagogique</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'L_ecole_de_tennis']) }}">L'école de tennis</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'Les_cours_collectifs_adultes']) }}">Les cours collectifs adultes</a></li>
                             </ul>
                         </li>
 
