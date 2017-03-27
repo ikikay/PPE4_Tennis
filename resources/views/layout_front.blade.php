@@ -47,34 +47,34 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ route('index') }}"><img src="img/logo_tavaux.jpg"></a>
+                    <a class="navbar-brand" href="{{ route('index') }}"><img src="{{ url('img/logo_tavaux.jpg') }}"></a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <a href="#">Le club</a>
+                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}">Le club</a>
                         </li>
                         <li>
-                            <a href="#">La compétition</a>
+                            <a href="{{ route("contenu.show", ['page' => 'La_competition']) }}">La compétition</a>
                         </li>
                         <li>
-                            <a href="#">Infos Adhérents</a>
+                            <a href="{{ route("contenu.show", ['page' => 'Infos_Adherents']) }}">Infos Adhérents</a>
                         </li>
                         <li>
                             <a href="{{ route('galerie') }}">Galerie</a>
-                        </li>
+                        </li>         
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">L'enseignement <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="#">L'équipe pédagogique</a>
+                                    <a href="{{ route("contenu.show", ['page' => 'L_equipe_pedagogique']) }}">L'équipe pédagogique</a>
                                 </li>
                                 <li>
-                                    <a href="#">L'école de tennis</a>
+                                    <a href="{{ route("contenu.show", ['page' => 'L_ecole_de_tennis']) }}">L'école de tennis</a>
                                 </li>
                                 <li>
-                                    <a href="#">Les cours collectifs adultes</a>
+                                    <a href="{{ route("contenu.show", ['page' => 'Les_cours_collectifs_adultes']) }}">Les cours collectifs adultes</a>
                                 </li>                            
                             </ul>
                         </li>
