@@ -1,11 +1,12 @@
 @extends('layout_back')
-
-@section('content')
-
+@section('title')
 <h1>
     Administration des Docs
     <small>- Rechercher, Modifier et supprimer des docs</small>
 </h1>
+@stop
+@section('content')
+
 
 
 <div class="row">
@@ -72,3 +73,4 @@
     </div>
 
 </div>
+@endsection

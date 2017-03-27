@@ -18,7 +18,7 @@ class DocumentController extends Controller
     {
      
       
-        $lesDocs = Document::Where("user_id", "=",Auth::user()->id)->get();
+        $lesDocs = Document::Where("user_id", "=",Auth::user()->id)->orWhere("user_id", "=",null)->get();
 
 
         return view('site.document.index')
@@ -69,7 +69,7 @@ class DocumentController extends Controller
         $image = new Document();
 
         
-        $image->user_id = $request->get('user_id');
+       
        
         $image->nom = $request->get('nom');
                
