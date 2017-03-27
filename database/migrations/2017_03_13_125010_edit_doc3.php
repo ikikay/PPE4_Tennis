@@ -13,14 +13,11 @@ class EditDoc3 extends Migration
      */
     public function up()
     {
-<<<<<<< OURS
-        //
-=======
         Schema::table('users', function (Blueprint $table) {
-         $table->string('avatar');
+         $table->string('avatar')->nullable();
          
         });
->>>>>>> THEIRS
+
     }
 
     /**
