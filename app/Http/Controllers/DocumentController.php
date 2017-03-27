@@ -176,4 +176,18 @@ class DocumentController extends Controller
 
         return redirect()->route("document.index");
     }
+    
+    public function adestroy(Request $request, $id)
+    {
+         $request->session()->flash('success', 'Le doc à été Supprimé !');
+
+        $doc = Document::find($id);
+        
+        File::delete("doc/" . $doc->fichier);
+        
+
+        $doc->delete();
+
+        return redirect()->route("document.home");
+    }
 }

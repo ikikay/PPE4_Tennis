@@ -70,6 +70,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('document', 'DocumentController@home')->name('document.home');
     Route::get('document/create', 'DocumentController@acreate')->name('document.acreate');
     Route::post('document/store', 'DocumentController@astore')->name('document.astore');
+    Route::delete('document/destroy','DocumentController@adestroy')->name('document.adestroy');
 
     // Articles
     //
