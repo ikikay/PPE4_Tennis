@@ -185,14 +185,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- The user image in the navbar-->
-                                    <img src="{{url('img/profil-default.jpg') }}" class="user-image" alt="User Image">
+                                    <img src="{{url('img/profil-default.png') }}" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <span class="hidden-xs">{!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="{{url('img/profil-default.jpg') }}" class="img-circle" alt="User Image">
+                                        <img src="{{url('img/profil-default.png') }}" class="img-circle" alt="User Image">
 
                                         <p>
                                             {!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}
@@ -225,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="{{url('img/profil-default.jpg') }}" class="img-circle" alt="User Image">
+                            <img src="{{url('img/profil-default.png') }}" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>{!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}</p>
@@ -292,7 +292,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="{{ route("equipe.index") }}"><i class="fa fa-users"></i> <span>Equipes</span></a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("album.index") }}"><i class="fa fa-envelope-o"></i> <span>Messages</span>  </a>
+                            <a href="{{ route("message.index") }}"><i class="fa fa-envelope-o"></i> <span>Messages</span>  </a>
                         </li>
 
                       
@@ -301,24 +301,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="header">modification du site</li>
                         <li>
-                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-link"></i> <span>Le club</span>  </a>
+                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-home"></i> <span>Le club</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("contenu.show", ['page' => 'La_competition']) }}"><i class="fa fa-link"></i> <span>La compétition</span>  </a>
+                            <a href="{{ route("contenu.edit", ['page' => 'La_competition']) }}"><i class="fa fa-trophy"></i> <span>La compétition</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("contenu.show", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-link"></i> <span>Infos Adhérents</span>  </a>
+                            <a href="{{ route("contenu.edit", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-info"></i> <span>Infos Adhérents</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="#"><i class="fa fa-link"></i> <span>L'enseignement</span>
+                            <a href="#"><i class="fa fa-graduation-cap"></i> <span>L'enseignement</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ route("contenu.show", ['page' => 'L_equipe_pedagogique']) }}">L'équipe pédagogique</a></li>
-                                <li><a href="{{ route("contenu.show", ['page' => 'L_ecole_de_tennis']) }}">L'école de tennis</a></li>
-                                <li><a href="{{ route("contenu.show", ['page' => 'Les_cours_collectifs_adultes']) }}">Les cours collectifs adultes</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'L_equipe_pedagogique']) }}">L'équipe pédagogique</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'L_ecole_de_tennis']) }}">L'école de tennis</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'Les_cours_collectifs_adultes']) }}">Les cours collectifs adultes</a></li>
                             </ul>
                         </li>
 
