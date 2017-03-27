@@ -185,14 +185,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- The user image in the navbar-->
-                                    <img src="{{url('img/userp-160x160.jpg') }}" class="user-image" alt="User Image">
+                                    <img src="{{url('img/profil-default.jpg') }}" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <span class="hidden-xs">{!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="{{url('img/userp-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                        <img src="{{url('img/profil-default.jpg') }}" class="img-circle" alt="User Image">
 
                                         <p>
                                             {!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}
@@ -225,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="{{url('img/userp-160x160.jpg') }}" class="img-circle" alt="User Image">
+                            <img src="{{url('img/profil-default.jpg') }}" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>{!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}</p>
@@ -249,7 +249,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="header">Menu principal</li>
                         <!-- Optionally, you can add icons to the links -->
                         <li class="treeview">
-                            <a href="#"><i class="fa fa-link"></i> <span>Articles</span>
+                            <a href="#"><i class="fa fa-list-alt"></i> <span>Articles</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
@@ -262,10 +262,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
                         <li class="treeview">
-                            <a href="{{ route("album.index") }}"><i class="fa fa-link"></i> <span>Galerie album</span>  </a>
+                            <a href="{{ route("album.index") }}"><i class="fa fa-picture-o"></i> <span>Galerie album</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="#"><i class="fa fa-link"></i> <span>Utilisateurs</span>
+                            <a href="#"><i class="fa fa-user"></i> <span>Utilisateurs</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
@@ -277,14 +277,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </ul>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("equipe.index") }}"><i class="fa fa-link"></i> <span>Equipes</span></a>
+                            <a href="{{ route("equipe.index") }}"><i class="fa fa-users"></i> <span>Equipes</span></a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("album.index") }}"><i class="fa fa-link"></i> <span>Messages</span>  </a>
+                            <a href="{{ route("album.index") }}"><i class="fa fa-envelope-o"></i> <span>Messages</span>  </a>
                         </li>
 
-                        <li class="header">Modification Site</li>
+                      
                         <li class="treeview">
+                            <a href="{{ route("coordonnee.index") }}"><i class="fa fa-globe"></i> <span>Coordonnées</span>  </a>
+                        </li>
+                        <li class="header">modification du site</li>
+                        <li>
                             <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-link"></i> <span>Le club</span>  </a>
                         </li>
                         <li class="treeview">
