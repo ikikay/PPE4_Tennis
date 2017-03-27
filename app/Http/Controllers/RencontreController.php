@@ -16,9 +16,8 @@ class RencontreController extends Controller
      */
     public function index($equipe_id)
     {
-        $uneEquipe = Equipe::Find($equipe_id);
-        $lesRencontres = Rencontre::all();
-        return view('admin.rencontre.index')->with('tab_rencontres', $lesRencontres)->with('uneEquipe', $uneEquipe);
+        $uneEquipe = Equipe::find($equipe_id);
+        return view('admin.rencontre.index')->with('uneEquipe', $uneEquipe);
     }
 
     /**
@@ -26,10 +25,10 @@ class RencontreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($equipe_id)
+    public function createR($equipe_id)
     {
-        $uneEquipe = Equipe::Find($equipe_id);
-        dd($uneEquipe);
+        
+        $uneEquipe = Equipe::find($equipe_id);
         return view('admin.rencontre.create')->with('uneEquipe', $uneEquipe);
     }
 
@@ -47,7 +46,7 @@ class RencontreController extends Controller
             'adversaire' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect(route('rencontre.create'))
+            return redirect(route('rencontre.createR'))
                         ->withErrors($validator)
                         ->withInput();
         }
@@ -59,7 +58,7 @@ class RencontreController extends Controller
         $rencontre->adversaire = $request->get('adversaire');
         $rencontre->equipe_id = $request->get('equipe_id');
         $rencontre->save();
-        return redirect()->route("rencontre.index");
+        return redirect()->route("equipe.index");
     }
 
     /**
@@ -84,7 +83,6 @@ class RencontreController extends Controller
         $rencontre = Rencontre::find($id);
         $lesEquipes = Equipe::pluck('nom', 'id');
         return view('admin.rencontre.edit', compact('rencontre', 'lesEquipes'));
-        //->with("rencontre", $rencontre)
     }
 
     /**
@@ -105,7 +103,7 @@ class RencontreController extends Controller
 
         $rencontre->save();
 
-        return redirect()->route("rencontre.index");
+        return redirect()->route("equipe.index");
     }
 
     /**
@@ -122,14 +120,14 @@ class RencontreController extends Controller
 
         $rencontre->delete();
 
-        return redirect()->route("rencontre.index");
+        return redirect()->route("equipe.index");
     }
     
         public function convoquer($rencontre_id)
     {
        $rencontre = Rencontre::find($rencontre_id);
-       $lesUsers = User::all();
-       return view('admin.rencontre.convoquer')->with('tab_joueurs', $lesUsers)->with('rencontre', $rencontre);
+       $lesUsers = User::where("joueur","=",1);
+      return view('admin.rencontre.convoquer')->with('tab_joueurs', $lesUsers)->with('rencontre', $rencontre);
     }
     
     public function convoquerstore($id,Request $request)
@@ -149,6 +147,6 @@ class RencontreController extends Controller
   
       
         $rencontre->save();
-        return redirect()->route("rencontre.index");
+        return redirect()->route("equipe.index");
     }
 }

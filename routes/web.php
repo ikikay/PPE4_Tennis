@@ -55,6 +55,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::resource('contenu', 'ContenuController');
     Route::resource('equipe', 'EquipeController');
     Route::resource('rencontre', 'RencontreController');
+    Route::get('rencontre/index/{id}', 'RencontreController@index')->name('rencontre.index')->where('id', '[0-9]+');
+    Route::get('rencontre/createR/{id}', 'RencontreController@createR')->name('rencontre.createR')->where('id', '[0-9]+');
     Route::get('rencontre/convoquer/{id}', 'RencontreController@convoquer')->name('rencontre.convoquer')->where('id', '[0-9]+');
     Route::post('rencontre/convoquerstore/{id}', 'RencontreController@convoquerstore')->name('rencontre.convoquerstore');
     Route::resource('coordonnee', 'CoordonneeController');

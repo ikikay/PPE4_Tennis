@@ -16,7 +16,37 @@
         <div class="box box-info">
             {!! Form::open(['route' =>[ "rencontre.convoquerstore",$rencontre->id], 'method' => 'post']) !!}
                 <div class="box-header">
-                    <h3 class="box-title">  </h3>
+                    
+                    <h3 class="box-title">Liste des joueurs déjà convoqué</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>Nom</th>
+                                <th>Prénom</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($tab_joueurs as $unJoueur)
+                            <tr>
+                                <td class="col-md-1">
+                                    {{ $unJoueur["id"] }}
+                                </td>
+                                <td class="col-md-4">
+                                    {{ $unJoueur["nom"] }}
+                                </td>
+                                <td class="col-md-4">
+                                    {{ $unJoueur["prenom"] }}
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody> 
+                    </table>
+                    </div>
+                    
+                    
+                    <h3 class="box-title">Liste des joueurs disponibles</h3>
                     <div class="table-responsive">
                         <table class="table table-bordered">
                         <thead class="thead-inverse">
@@ -40,13 +70,13 @@
                                     {{ $unJoueur["prenom"] }}
                                 </td>
                                 <td class="col-md-4">
-                                @if ( $unJoueur->confirmation == 1)
-                                    <div class="checkbox" style="text-align:center">
-                                    <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation{{$unJoueur["id"]}}" checked>
+                                <!--@if ( $unJoueur->pivot->confirmation == 1 )
+                                    <div class="checkbox"  style="text-align:center">
+                                    <input data-toggle="toggle" type="checkbox" checked data-onstyle="success" name="confirmation{{$unJoueur["id"]}}">
                                 @else
                                     <div class="checkbox" style="text-align:center">
                                     <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation{{$unJoueur["id"]}}">
-                                @endif   
+                                @endif   -->
                                 </td>
                             </tr>
                             @endforeach

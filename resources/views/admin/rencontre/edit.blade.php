@@ -31,8 +31,9 @@
                         <input class="form-control" value="{{ $rencontre["adversaire"] }}" name="adversaire"> 
                     </div>
                     <div class="form-group">
-                    {!! Form::label('equipe_id', 'Choisir une équipe : ') !!}
-                    {!! Form::select('equipe_id', $lesEquipes, null, ['class'=>'form-control']) !!}
+                        <input type="hidden" value="{{ $rencontre["equipe_id"] }}" name="equipe_id">
+                    <!--{!! Form::label('equipe_id', 'Choisir une équipe : ') !!}
+                    {!! Form::select('equipe_id', $lesEquipes, null, ['class'=>'form-control']) !!}-->
                     </div>
 
                     <!-- tools box -->
