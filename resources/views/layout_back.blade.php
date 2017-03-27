@@ -301,16 +301,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="header">modification du site</li>
                         <li>
-                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-link"></i> <span>Le club</span>  </a>
+                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-home"></i> <span>Le club</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("contenu.show", ['page' => 'La_competition']) }}"><i class="fa fa-link"></i> <span>La compétition</span>  </a>
+                            <a href="{{ route("contenu.show", ['page' => 'La_competition']) }}"><i class="fa fa-trophy"></i> <span>La compétition</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("contenu.show", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-link"></i> <span>Infos Adhérents</span>  </a>
+                            <a href="{{ route("contenu.show", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-info"></i> <span>Infos Adhérents</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="#"><i class="fa fa-link"></i> <span>L'enseignement</span>
+                            <a href="#"><i class="fa fa-graduation-cap"></i> <span>L'enseignement</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
