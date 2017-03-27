@@ -10,7 +10,7 @@ class ContenuRows extends Seeder {
      * @return void
      */
     public function run() {
-        DB::table('contenu')->insert(
+        DB::table('contenu')->insert([
         ['page' => 'Le_club',
         'titre' => 'Le club'],
         ['page' => 'La_competition',
@@ -23,7 +23,7 @@ class ContenuRows extends Seeder {
         'titre' => "L'école de tennis"],
         ['page' => 'Les_cours_collectifs_adultes',
         'titre' => 'Les cours collectifs adultes']
-        );
+        ]);
 
     }
 
