@@ -88,11 +88,15 @@
                 <h1>Comité</h1>
                 <p>
                     Tennis CLub Tavaux
-                <p>
+                </p>
                 <p>
                     94 Avenue de la République
                 </p>
-                39500 Tavaux
+                <p>
+                    39500 Tavaux
+                </p> 
+                <p> 
+                    03 84 81 13 26 (répondeur)
                 </p> 
                 </br>
             </div>   

@@ -14,8 +14,7 @@ class Editdoc extends Migration
     public function up()
     {
         Schema::table('documents', function (Blueprint $table) {
-         $table->boolean('licence')->default(false);
-         $table->boolean('certification')->default(false);
+         $table->enum('typedoc', ['license', 'certificat','general']);
         });
         
        

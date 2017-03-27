@@ -3,13 +3,6 @@
 
 
 
-</br>
-</br>
-</br>
-</br>
-</br>
-
-
 <!-- Page Content -->
 <div class="container">
 
@@ -29,7 +22,8 @@
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
-                        <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+                        <!--faire condition if photo existe-->
+                        <img src="{{ url('img/profil-default.png')}}" alt="imgDefault" class="img-responsive">
 
 
                 </div>

@@ -122,77 +122,77 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!-- /.messages-menu -->
 
                             <!-- Notifications Menu -->
-<!--                            <li class="dropdown notifications-menu">
-                                 Menu toggle button 
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning">10</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">Vous avez 10 notifications</li>
-                                    <li>
-                                         Inner Menu: contains the notifications 
-                                        <ul class="menu">
-                                            <li> start notification 
-                                                <a href="#">
-                                                    <i class="fa fa-users text-aqua"></i> 5 nouvelles inscriptions aujourd'hui
-                                                </a>
-                                            </li>
-                                             end notification 
-                                        </ul>
-                                    </li>
-                                    <li class="footer"><a href="#">Tout voir</a></li>
-                                </ul>
-                            </li>-->
+                            <!--                            <li class="dropdown notifications-menu">
+                                                             Menu toggle button 
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                <i class="fa fa-bell-o"></i>
+                                                                <span class="label label-warning">10</span>
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li class="header">Vous avez 10 notifications</li>
+                                                                <li>
+                                                                     Inner Menu: contains the notifications 
+                                                                    <ul class="menu">
+                                                                        <li> start notification 
+                                                                            <a href="#">
+                                                                                <i class="fa fa-users text-aqua"></i> 5 nouvelles inscriptions aujourd'hui
+                                                                            </a>
+                                                                        </li>
+                                                                         end notification 
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="footer"><a href="#">Tout voir</a></li>
+                                                            </ul>
+                                                        </li>-->
                             <!-- Tasks Menu -->
-<!--                            <li class="dropdown tasks-menu">
-                                 Menu Toggle Button 
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-flag-o"></i>
-                                    <span class="label label-danger">9</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">Vous avez 9 tâches</li>
-                                    <li>
-                                         Inner menu: contains the tasks 
-                                        <ul class="menu">
-                                            <li> Task item 
-                                                <a href="#">
-                                                     Task title and progress text 
-                                                    <h3>
-                                                        Créer le panel admin
-                                                        <small class="pull-right">5%</small>
-                                                    </h3>
-                                                     The progress bar 
-                                                    <div class="progress xs">
-                                                         Change the css width attribute to simulate progress 
-                                                        <div class="progress-bar progress-bar-aqua" style="width: 5%" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">5% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                             end task item 
-                                        </ul>
-                                    </li>
-                                    <li class="footer">
-                                        <a href="#">Voir toutes les tâches</a>
-                                    </li>
-                                </ul>
-                            </li>-->
+                            <!--                            <li class="dropdown tasks-menu">
+                                                             Menu Toggle Button 
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                <i class="fa fa-flag-o"></i>
+                                                                <span class="label label-danger">9</span>
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li class="header">Vous avez 9 tâches</li>
+                                                                <li>
+                                                                     Inner menu: contains the tasks 
+                                                                    <ul class="menu">
+                                                                        <li> Task item 
+                                                                            <a href="#">
+                                                                                 Task title and progress text 
+                                                                                <h3>
+                                                                                    Créer le panel admin
+                                                                                    <small class="pull-right">5%</small>
+                                                                                </h3>
+                                                                                 The progress bar 
+                                                                                <div class="progress xs">
+                                                                                     Change the css width attribute to simulate progress 
+                                                                                    <div class="progress-bar progress-bar-aqua" style="width: 5%" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
+                                                                                        <span class="sr-only">5% Complete</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                         end task item 
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="footer">
+                                                                    <a href="#">Voir toutes les tâches</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>-->
                             <!-- User Account Menu -->
                             <li class="dropdown user user-menu">
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- The user image in the navbar-->
-                                    <img src="{{url('img/userp-160x160.jpg') }}" class="user-image" alt="User Image">
+                                    <img src="{{url('img/profil-default.png') }}" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <span class="hidden-xs">{!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="{{url('img/userp-160x160.jpg') }}" class="img-circle" alt="User Image">
+                                        <img src="{{url('img/profil-default.png') }}" class="img-circle" alt="User Image">
 
                                         <p>
                                             {!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}
@@ -225,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="{{url('img/userp-160x160.jpg') }}" class="img-circle" alt="User Image">
+                            <img src="{{url('img/profil-default.png') }}" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>{!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}</p>
@@ -249,7 +249,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="header">Menu principal</li>
                         <!-- Optionally, you can add icons to the links -->
                         <li class="treeview">
-                            <a href="#"><i class="fa fa-link"></i> <span>Articles</span>
+                            <a href="#"><i class="fa fa-list-alt"></i> <span>Articles</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
@@ -262,30 +262,50 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
 
                         <li class="treeview">
-                            <a href="{{ route("album.index") }}"><i class="fa fa-link"></i> <span>Galerie album</span>  </a>
+                            <a href="{{ route("album.index") }}"><i class="fa fa-picture-o"></i> <span>Galerie album</span>  </a>
+                        </li>
+                       <li class="treeview">
+                            <a href="{{ route ("user.index") }}"><i class="fa fa-picture-o"></i> <span>Utilisateurs</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="#"><i class="fa fa-link"></i> <span>Utilisateurs</span>
+                            <a href="{{ route("document.home") }}"><i class="fa fa-picture-o"></i> <span>Documents</span>  </a>
+                        </li>
+                        
+                        
+                        
+                        
+                        <li class="treeview">
+                            <a href="{{ route("equipe.index") }}"><i class="fa fa-users"></i> <span>Equipes</span></a>
+                        </li>
+                        <li class="treeview">
+                            <a href="{{ route("message.index") }}"><i class="fa fa-envelope-o"></i> <span>Messages</span>  </a>
+                        </li>
+
+                      
+                        <li class="treeview">
+                            <a href="{{ route("coordonnee.index") }}"><i class="fa fa-globe"></i> <span>Coordonnées</span>  </a>
+                        </li>
+                        <li class="header">modification du site</li>
+                        <li>
+                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-home"></i> <span>Le club</span>  </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="{{ route("contenu.edit", ['page' => 'La_competition']) }}"><i class="fa fa-trophy"></i> <span>La compétition</span>  </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="{{ route("contenu.edit", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-info"></i> <span>Infos Adhérents</span>  </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#"><i class="fa fa-graduation-cap"></i> <span>L'enseignement</span>
                                 <span class="pull-right-container">
                                     <i class="fa fa-angle-left pull-right"></i>
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ route("user.create") }}">Ajouter</a></li>
-                                <li><a href="{{ route("user.index") }}">Administrer</a></li>
-
+                                <li><a href="{{ route("contenu.edit", ['page' => 'L_equipe_pedagogique']) }}">L'équipe pédagogique</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'L_ecole_de_tennis']) }}">L'école de tennis</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'Les_cours_collectifs_adultes']) }}">Les cours collectifs adultes</a></li>
                             </ul>
-                        </li>
-                        <li class="treeview">
-                            <a href="{{ route("equipe.index") }}"><i class="fa fa-link"></i> <span>Equipes</span></a>
-                        </li>
-                        <li class="treeview">
-                            <a href="{{ route("album.index") }}"><i class="fa fa-link"></i> <span>Messages</span>  </a>
-                        </li>
-
-                        <li class="header">Modification Site</li>
-                        <li class="treeview">
-                            <a href="{{ route("coordonnee.index") }}"><i class="fa fa-link"></i> <span>Coordonnées</span>  </a>
                         </li>
 
                     </ul>
@@ -336,7 +356,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Default to the left -->
                 <strong>Copyright &copy; 2016 <a href="{{ route("admin.dashboard") }}">Club de tennis de Tavaux</a>.</strong> tous droits reservés.
             </footer>
-            
+
             <!-- /.control-sidebar -->
             <!-- Add the sidebar's background. This div must be placed
                  immediately after the control sidebar -->
