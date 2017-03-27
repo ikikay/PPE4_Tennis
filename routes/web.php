@@ -93,6 +93,10 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     //
     Route::get('contenu/edit/{page}', 'ContenuController@edit')->name('contenu.edit');
 
+    // Message 
+    //
+    Route::resource('message', 'MessageController');
+
     // Unknow 
     //
     //    Route::get('contenu/coordonnee/edit', 'ContenuController@coordonnee_edit')->name('coordonnee_edit');
