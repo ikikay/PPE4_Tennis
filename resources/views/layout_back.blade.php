@@ -304,10 +304,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-home"></i> <span>Le club</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("contenu.show", ['page' => 'La_competition']) }}"><i class="fa fa-trophy"></i> <span>La compétition</span>  </a>
+                            <a href="{{ route("contenu.edit", ['page' => 'La_competition']) }}"><i class="fa fa-trophy"></i> <span>La compétition</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("contenu.show", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-info"></i> <span>Infos Adhérents</span>  </a>
+                            <a href="{{ route("contenu.edit", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-info"></i> <span>Infos Adhérents</span>  </a>
                         </li>
                         <li class="treeview">
                             <a href="#"><i class="fa fa-graduation-cap"></i> <span>L'enseignement</span>
@@ -316,9 +316,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="{{ route("contenu.show", ['page' => 'L_equipe_pedagogique']) }}">L'équipe pédagogique</a></li>
-                                <li><a href="{{ route("contenu.show", ['page' => 'L_ecole_de_tennis']) }}">L'école de tennis</a></li>
-                                <li><a href="{{ route("contenu.show", ['page' => 'Les_cours_collectifs_adultes']) }}">Les cours collectifs adultes</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'L_equipe_pedagogique']) }}">L'équipe pédagogique</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'L_ecole_de_tennis']) }}">L'école de tennis</a></li>
+                                <li><a href="{{ route("contenu.edit", ['page' => 'Les_cours_collectifs_adultes']) }}">Les cours collectifs adultes</a></li>
                             </ul>
                         </li>
 

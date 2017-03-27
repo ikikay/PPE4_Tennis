@@ -44,24 +44,17 @@ Route::resource('contenu', 'ContenuController');
 //
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
 //Route::get('/home', 'HomeController@index');
-
-
-
 // Routes pour le Back-office
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('/', function () {
                 return view('admin.page.dashboard');
             })
             ->name('admin.dashboard');
-
     Route::get('dashboard', function () {
         route('admin.dashboard');
     });
-    
-    //    Route::get('contenu/coordonnee/edit', 'ContenuController@coordonnee_edit')->name('coordonnee_edit');
-    //    Route::put('contenu/coordonnee', 'ContenuController@coordonnee_update')->name('coordonnee_update');
-    
-    // route pour la creation de photo 
+
+    // Galerie
     Route::get('photo/create/{album_id}', 'PhotoController@create')->name('photo.create')->where('album_id', '[0-9]+');
     Route::post('photo', 'PhotoController@store')->name('photo.store');
     Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->where('id', '[0-9]+');
@@ -71,14 +64,37 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::resource('user', 'UserController');
     Route::resource('article', 'ArticleController');
     //Route::resource('photo', 'PhotoController');
+    Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->where('id', '[0-9]+');
     Route::resource('album', 'AlbumController');
+
+    // Utilisateurs / Profil
+    //
+    Route::resource('user', 'UserController');
+
+    // Articles
+    //
+    Route::resource('article', 'ArticleController');
+
+    // Equipes et Rencontres
+    //
     Route::resource('equipe', 'EquipeController');
     Route::resource('rencontre', 'RencontreController');
     
     Route::get('rencontre/convoquer/{id}', 'RencontreController@convoquer')->name('rencontre.convoquer')->where('id', '[0-9]+');
     Route::post('rencontre/convoquerstore/{id}', 'RencontreController@convoquerstore')->name('rencontre.convoquerstore');
+
+    // Coordonnees
+    //
     Route::resource('coordonnee', 'CoordonneeController');
     Route::post('coordonnee/addUserStatut/{id}', 'CoordonneeController@addUserStatut')->name('add_user_statut');
     Route::delete('coordonnee/deleteStatut/{id}', 'CoordonneeController@deleteStatut')->name('deleteStatut');
-    
+
+    // Contenu
+    //
+    Route::get('contenu/edit/{page}', 'ContenuController@edit')->name('contenu.edit');
+
+    // Unknow 
+    //
+    //    Route::get('contenu/coordonnee/edit', 'ContenuController@coordonnee_edit')->name('coordonnee_edit');
+    //    Route::put('contenu/coordonnee', 'ContenuController@coordonnee_update')->name('coordonnee_update');
 });
