@@ -62,8 +62,9 @@ class ContenuController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) {
+    public function show($page) {
         $leContenu = Contenu::where('page', $page);
+        
         return view('site.contenu')
                         ->with("contenu", $leContenu);
     }

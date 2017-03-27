@@ -122,64 +122,64 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!-- /.messages-menu -->
 
                             <!-- Notifications Menu -->
-<!--                            <li class="dropdown notifications-menu">
-                                 Menu toggle button 
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning">10</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">Vous avez 10 notifications</li>
-                                    <li>
-                                         Inner Menu: contains the notifications 
-                                        <ul class="menu">
-                                            <li> start notification 
-                                                <a href="#">
-                                                    <i class="fa fa-users text-aqua"></i> 5 nouvelles inscriptions aujourd'hui
-                                                </a>
-                                            </li>
-                                             end notification 
-                                        </ul>
-                                    </li>
-                                    <li class="footer"><a href="#">Tout voir</a></li>
-                                </ul>
-                            </li>-->
+                            <!--                            <li class="dropdown notifications-menu">
+                                                             Menu toggle button 
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                <i class="fa fa-bell-o"></i>
+                                                                <span class="label label-warning">10</span>
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li class="header">Vous avez 10 notifications</li>
+                                                                <li>
+                                                                     Inner Menu: contains the notifications 
+                                                                    <ul class="menu">
+                                                                        <li> start notification 
+                                                                            <a href="#">
+                                                                                <i class="fa fa-users text-aqua"></i> 5 nouvelles inscriptions aujourd'hui
+                                                                            </a>
+                                                                        </li>
+                                                                         end notification 
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="footer"><a href="#">Tout voir</a></li>
+                                                            </ul>
+                                                        </li>-->
                             <!-- Tasks Menu -->
-<!--                            <li class="dropdown tasks-menu">
-                                 Menu Toggle Button 
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-flag-o"></i>
-                                    <span class="label label-danger">9</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">Vous avez 9 tâches</li>
-                                    <li>
-                                         Inner menu: contains the tasks 
-                                        <ul class="menu">
-                                            <li> Task item 
-                                                <a href="#">
-                                                     Task title and progress text 
-                                                    <h3>
-                                                        Créer le panel admin
-                                                        <small class="pull-right">5%</small>
-                                                    </h3>
-                                                     The progress bar 
-                                                    <div class="progress xs">
-                                                         Change the css width attribute to simulate progress 
-                                                        <div class="progress-bar progress-bar-aqua" style="width: 5%" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">5% Complete</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                             end task item 
-                                        </ul>
-                                    </li>
-                                    <li class="footer">
-                                        <a href="#">Voir toutes les tâches</a>
-                                    </li>
-                                </ul>
-                            </li>-->
+                            <!--                            <li class="dropdown tasks-menu">
+                                                             Menu Toggle Button 
+                                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                                <i class="fa fa-flag-o"></i>
+                                                                <span class="label label-danger">9</span>
+                                                            </a>
+                                                            <ul class="dropdown-menu">
+                                                                <li class="header">Vous avez 9 tâches</li>
+                                                                <li>
+                                                                     Inner menu: contains the tasks 
+                                                                    <ul class="menu">
+                                                                        <li> Task item 
+                                                                            <a href="#">
+                                                                                 Task title and progress text 
+                                                                                <h3>
+                                                                                    Créer le panel admin
+                                                                                    <small class="pull-right">5%</small>
+                                                                                </h3>
+                                                                                 The progress bar 
+                                                                                <div class="progress xs">
+                                                                                     Change the css width attribute to simulate progress 
+                                                                                    <div class="progress-bar progress-bar-aqua" style="width: 5%" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100">
+                                                                                        <span class="sr-only">5% Complete</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </a>
+                                                                        </li>
+                                                                         end task item 
+                                                                    </ul>
+                                                                </li>
+                                                                <li class="footer">
+                                                                    <a href="#">Voir toutes les tâches</a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>-->
                             <!-- User Account Menu -->
                             <li class="dropdown user user-menu">
                                 <!-- Menu Toggle Button -->
@@ -285,7 +285,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                         <li class="header">Modification Site</li>
                         <li class="treeview">
-                            <a href="{{ route("coordonnee.index") }}"><i class="fa fa-link"></i> <span>Coordonnées</span>  </a>
+                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-link"></i> <span>Le club</span>  </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="{{ route("contenu.show", ['page' => 'La_competition']) }}"><i class="fa fa-link"></i> <span>La compétition</span>  </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="{{ route("contenu.show", ['page' => 'Infos_Adherents']) }}"><i class="fa fa-link"></i> <span>Infos Adhérents</span>  </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#"><i class="fa fa-link"></i> <span>L'enseignement</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="{{ route("contenu.show", ['page' => 'L_equipe_pedagogique']) }}">L'équipe pédagogique</a></li>
+                                <li><a href="{{ route("contenu.show", ['page' => 'L_ecole_de_tennis']) }}">L'école de tennis</a></li>
+                                <li><a href="{{ route("contenu.show", ['page' => 'Les_cours_collectifs_adultes']) }}">Les cours collectifs adultes</a></li>
+                            </ul>
                         </li>
 
                     </ul>
@@ -336,7 +354,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <!-- Default to the left -->
                 <strong>Copyright &copy; 2016 <a href="{{ route("admin.dashboard") }}">Club de tennis de Tavaux</a>.</strong> tous droits reservés.
             </footer>
-            
+
             <!-- /.control-sidebar -->
             <!-- Add the sidebar's background. This div must be placed
                  immediately after the control sidebar -->

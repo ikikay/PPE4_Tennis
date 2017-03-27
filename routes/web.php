@@ -12,21 +12,39 @@
  */
 
 // Routes pour le front-office
-
 Auth::routes();
 Route::get('/', 'PagesController@index')->name('index');
-Route::get('contact', 'PagesController@contact')->name('contact');
-Route::get('documentation', 'PagesController@documentation')->name('documentation');
 
-//Route::get('/home', 'HomeController@index');
+// Galerie
+// 
 Route::get('galerie', 'PagesController@galerie')->name('galerie');
 Route::get('showGalerie/{album_id}', 'PagesController@showGalerie')->name('showGalerie')->where('album_id', '[0-9]+');
+
+// Coordonnee
+//
 Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
+
+// Profil
+//
 Route::get('profil', 'PagesController@profil')->name('profil');
 Route::get('editprofil/{id}', 'PagesController@editprofil')->name('editprofil');
 Route::put('updateprofil/{id}', 'PagesController@updateprofil')->name('updateprofil');
 Route::resource('document', 'DocumentController');
+
+// Contact 
+//
+Route::get('contact', 'PagesController@contact')->name('contact');
 Route::post('message', 'PagesController@message')->name('message');
+
+// Contenu
+//
+Route::resource('contenu', 'ContenuController');
+
+// Unknow 
+//
+Route::get('documentation', 'PagesController@documentation')->name('documentation');
+//Route::get('/home', 'HomeController@index');
+
 
 
 // Routes pour le Back-office
@@ -52,7 +70,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::resource('article', 'ArticleController');
     //Route::resource('photo', 'PhotoController');
     Route::resource('album', 'AlbumController');
-    Route::resource('contenu', 'ContenuController');
     Route::resource('equipe', 'EquipeController');
     Route::resource('rencontre', 'RencontreController');
     Route::get('rencontre/convoquer/{id}', 'RencontreController@convoquer')->name('rencontre.convoquer')->where('id', '[0-9]+');
