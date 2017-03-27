@@ -10,12 +10,6 @@
 
 {!! Form::open(['url' =>route('updateprofil',$leUser->id),'method' =>'put']) !!}
 
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
 
 <div class="container">
     <div class="row profile">

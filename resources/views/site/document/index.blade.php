@@ -1,11 +1,6 @@
 @extends('layout_front')
 @section('content')
 
-</br>
-</br>
-</br>
-</br>
-</br>
 
 <!-- Page Content -->
 <div class="container">
@@ -105,7 +100,7 @@
                                                     </thead>
                                                     <tbody>
 
-                                                        {{ $c = true}} 
+                                                        <?php $c = true ?> 
 
                                                         @foreach ($tab_docs as $unDoc)
 
