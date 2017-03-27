@@ -16,6 +16,7 @@ class EditDoc3 extends Migration
 
         Schema::table('users', function (Blueprint $table) {
          $table->string('avatar')->nullable();
+         
         });
 
     }
