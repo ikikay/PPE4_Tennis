@@ -47,7 +47,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('photo/create/{album_id}', 'PhotoController@create')->name('photo.create')->where('album_id', '[0-9]+');
     Route::post('photo', 'PhotoController@store')->name('photo.store');
     Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->where('id', '[0-9]+');
-    
+    Route::get('document', 'DocumentController@home')->name('document.home');
+    Route::get('document/create', 'DocumentController@acreate')->name('document.acreate');
+    Route::post('document/store', 'DocumentController@astore')->name('document.astore');
     Route::resource('user', 'UserController');
     Route::resource('article', 'ArticleController');
     //Route::resource('photo', 'PhotoController');
@@ -55,6 +57,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::resource('contenu', 'ContenuController');
     Route::resource('equipe', 'EquipeController');
     Route::resource('rencontre', 'RencontreController');
+    
     Route::get('rencontre/convoquer/{id}', 'RencontreController@convoquer')->name('rencontre.convoquer')->where('id', '[0-9]+');
     Route::post('rencontre/convoquerstore/{id}', 'RencontreController@convoquerstore')->name('rencontre.convoquerstore');
     Route::resource('coordonnee', 'CoordonneeController');
