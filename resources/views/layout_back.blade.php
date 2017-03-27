@@ -185,14 +185,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!-- Menu Toggle Button -->
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                     <!-- The user image in the navbar-->
-                                    <img src="{{url('img/profil-default.jpg') }}" class="user-image" alt="User Image">
+                                    <img src="{{url('img/profil-default.png') }}" class="user-image" alt="User Image">
                                     <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                     <span class="hidden-xs">{!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}</span>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <!-- The user image in the menu -->
                                     <li class="user-header">
-                                        <img src="{{url('img/profil-default.jpg') }}" class="img-circle" alt="User Image">
+                                        <img src="{{url('img/profil-default.png') }}" class="img-circle" alt="User Image">
 
                                         <p>
                                             {!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}
@@ -225,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- Sidebar user panel (optional) -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="{{url('img/profil-default.jpg') }}" class="img-circle" alt="User Image">
+                            <img src="{{url('img/profil-default.png') }}" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
                             <p>{!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}</p>
@@ -292,7 +292,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="{{ route("equipe.index") }}"><i class="fa fa-users"></i> <span>Equipes</span></a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("album.index") }}"><i class="fa fa-envelope-o"></i> <span>Messages</span>  </a>
+                            <a href="{{ route("message.index") }}"><i class="fa fa-envelope-o"></i> <span>Messages</span>  </a>
                         </li>
 
                       
