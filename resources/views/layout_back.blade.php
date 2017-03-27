@@ -287,7 +287,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="header">modification du site</li>
                         <li>
-                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-home"></i> <span>Le club</span>  </a>
+                            <a href="{{ route("contenu.edit", ['page' => 'Le_club']) }}"><i class="fa fa-home"></i> <span>Le club</span>  </a>
                         </li>
                         <li class="treeview">
                             <a href="{{ route("contenu.edit", ['page' => 'La_competition']) }}"><i class="fa fa-trophy"></i> <span>La compétition</span>  </a>

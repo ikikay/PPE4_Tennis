@@ -20,7 +20,7 @@ class ContenuController extends Controller {
 
     public function coordonnee_update(Request $request) {
         $contenu = Contenu::where('page', "coordonnee")->get()->first();
-        
+
         $contenu->ckeditor = $request->get('editor');
 
         $contenu->save();
@@ -63,8 +63,8 @@ class ContenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function show($page) {
-        $leContenu = Contenu::where('page', $page);
-        
+        $leContenu = Contenu::where('page', "=", $page)->get()->first();
+
         return view('site.contenu')
                         ->with("contenu", $leContenu);
     }
@@ -76,8 +76,8 @@ class ContenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function edit($page) {
-        $leContenu = Contenu::where('page', $page);
-        dd($leContenu);
+        $leContenu = Contenu::where('page', "=", $page)->get()->first();
+
         return view('admin.contenu.edit')
                         ->with("contenu", $leContenu);
     }
@@ -90,8 +90,9 @@ class ContenuController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $page) {
-        $leContenu = Contenu::where('page', $page);
+        $leContenu = Contenu::where('page', "=", $page)->get()->first();
 
+        $leContenu->ckeditor = $request->get('titre');
         $leContenu->ckeditor = $request->get('editor');
 
         $leContenu->save();
