@@ -27,12 +27,12 @@ class CreateAllForeign extends Migration
         });
         
             Schema::table('rencontres', function (Blueprint $table) {
-        $table->foreign('equipe_id')->references('id')->on('equipes');
+        $table->foreign('equipe_id')->references('id')->on('equipes')->onDelete("CASCADE")->onUpdate('CASCADE');
         });
         
             Schema::table('rencontre_user', function (Blueprint $table) {
-        $table->foreign('user_id')->references('id')->on('users');
-        $table->foreign('rencontre_id')->references('id')->on('rencontres');
+        $table->foreign('user_id')->references('id')->on('users')->onDelete("CASCADE")->onUpdate('CASCADE');
+        $table->foreign('rencontre_id')->references('id')->on('rencontres')->onDelete("CASCADE")->onUpdate('CASCADE');
         });
 
     }

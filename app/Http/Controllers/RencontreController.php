@@ -6,6 +6,7 @@ use App\Models\Equipe;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class RencontreController extends Controller
 {
@@ -126,26 +127,23 @@ class RencontreController extends Controller
         public function convoquer($rencontre_id)
     {
        $rencontre = Rencontre::find($rencontre_id);
-       $lesUsers = User::where("joueur","=",1);
-      return view('admin.rencontre.convoquer')->with('tab_joueurs', $lesUsers)->with('rencontre', $rencontre);
+       $lesJoueurs = User::where("joueur", "=", 1)->whereNotIn('id',[$rencontre_id])->get();
+       return view('admin.rencontre.convoquer')->with('tab_joueurs', $lesJoueurs)->with('rencontre', $rencontre);
     }
     
     public function convoquerstore($id,Request $request)
     {
         $request->session()->flash('success', 'Les joueurs sont notifiés de la rencontre !');
         $rencontre = Rencontre::find($id);
-      
         $lesUser = User::all();
         
         foreach($lesUser as $user){
             $request->get('confirmation'.$user->id); 
             if ($request->get('confirmation'.$user->id)=='on')
             {
-                $rencontre->users()->attach($user,['confirmation'=>true]);
+                $rencontre->users()->attach($user,['confirmation'=>1]);
             }
         }
-  
-      
         $rencontre->save();
         return redirect()->route("equipe.index");
     }
