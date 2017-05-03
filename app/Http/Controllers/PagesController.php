@@ -95,12 +95,8 @@ class PagesController extends Controller {
         return redirect()->route("contact");
     }
     
-   function redirectMotdePasse 
-   {
-        $leUser = User::find($id);
-        return view('site.profil.editmdp')
-                        ->with("leUser", $leUser);
-       
-   }
+   
+    
+    
 
 }
