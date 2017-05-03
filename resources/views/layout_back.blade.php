@@ -264,30 +264,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <li class="treeview">
                             <a href="{{ route("album.index") }}"><i class="fa fa-picture-o"></i> <span>Galerie album</span>  </a>
                         </li>
+                       <li class="treeview">
+                            <a href="{{ route ("user.index") }}"><i class="fa fa-picture-o"></i> <span>Utilisateurs</span>  </a>
+                        </li>
                         <li class="treeview">
-                            <a href="#"><i class="fa fa-user"></i> <span>Utilisateurs</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="{{ route("user.create") }}">Ajouter</a></li>
-                                <li><a href="{{ route("user.index") }}">Administrer</a></li>
-
-                            </ul>
+                            <a href="{{ route("document.home") }}"><i class="fa fa-picture-o"></i> <span>Documents</span>  </a>
                         </li>
-                         <li class="treeview">
-                            <a href="#"><i class="fa fa-link"></i> <span>Documents</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="{{ route("document.create") }}">Ajouter</a></li>
-                                <li><a href="{{ route("document.home") }}">Administrer</a></li>
-
-                            </ul>
-                        </li>
+                        
+                        
+                        
+                        
                         <li class="treeview">
                             <a href="{{ route("equipe.index") }}"><i class="fa fa-users"></i> <span>Equipes</span></a>
                         </li>
@@ -301,7 +287,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </li>
                         <li class="header">modification du site</li>
                         <li>
-                            <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}"><i class="fa fa-home"></i> <span>Le club</span>  </a>
+                            <a href="{{ route("contenu.edit", ['page' => 'Le_club']) }}"><i class="fa fa-home"></i> <span>Le club</span>  </a>
                         </li>
                         <li class="treeview">
                             <a href="{{ route("contenu.edit", ['page' => 'La_competition']) }}"><i class="fa fa-trophy"></i> <span>La compétition</span>  </a>

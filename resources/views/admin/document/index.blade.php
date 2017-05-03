@@ -8,20 +8,17 @@
 @section('content')
 
 
-
+<!-- Main content -->
 <div class="row">
-    <!-- /.box-header -->
-    <div class="box-body">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 ">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"> 
+    <div class="col-md-12">
+        <div class="box">
+            <div class="box-header with-border">
 
                             {!! Form::open(['route' => "document.acreate", 'method' => 'get']) !!}
                             <button type="submit" class=" btn btn-success ">Nouveau document</button>
                             {!! Form::close() !!}</div>
-                        <div class="panel-body">
+            
+                     <div class="box-body">
                             <table>
                                 <thead class="panel-body">
                                     <tr>
@@ -34,7 +31,7 @@
                                 </thead>
                                 <tbody>
 
-                                    {{ $c = true}} 
+                                    <?php  $c = true ?>
 
                                     @foreach ($tab_docs as $unDoc)
 
@@ -69,8 +66,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-</div>
+      
 @endsection

@@ -35,7 +35,7 @@
                     <!-- SIDEBAR USERPIC -->
                     <div class="profile-userpic">
                         <!--faire condition if photo existe-->
-                        <img src="{{ url('img/profil-default.jpg')}}" alt="imgDefault" class="img-responsive">
+                        <img src="{{ url('img/profil-default.png')}}" alt="imgDefault" class="img-responsive">
 
 
                     </div>

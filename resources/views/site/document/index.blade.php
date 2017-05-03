@@ -20,11 +20,12 @@
             <div class="col-md-3">
                 <div class="profile-sidebar">
                     <!-- SIDEBAR USERPIC -->
-                    <div class="profile-userpic">
-                        <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+                     <div class="profile-userpic">
+                        <!--faire condition if photo existe-->
+                        <img src="{{ url('img/profil-default.png')}}" alt="imgDefault" class="img-responsive">
 
 
-                    </div>
+                </div>
                     <!-- END SIDEBAR USERPIC -->
                     <!-- SIDEBAR USER TITLE -->
                     <div class="profile-usertitle">

@@ -29,7 +29,7 @@
                 <div class="box-body pad">
 
                     <div class="form-group">
-                        {{ Form::textarea('editor', $contenu["description"],['id'=>'editor','class'=>'form-control','placeholder'=>'CkEditor']) }}
+                        {{ Form::textarea('editor', $contenu["ckeditor"],['id'=>'editor','class'=>'form-control','placeholder'=>'CkEditor']) }}
                     </div>
 
                 </div>

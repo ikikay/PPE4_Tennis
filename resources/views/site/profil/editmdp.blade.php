@@ -17,7 +17,9 @@
             <div class="profile-sidebar">
                 <!-- SIDEBAR USERPIC -->
                 <div class="profile-userpic">
-                    <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
+                      <!--faire condition if photo existe-->
+                        <img src="{{ url('img/profil-default.png')}}" alt="imgDefault" class="img-responsive">
+
 
 
                 </div>
@@ -67,6 +69,8 @@
                 <!-- END MENU -->
             </div>
         </div>
+        
+        
         <div class="col-md-9">
 
 
