@@ -83,7 +83,7 @@
                     </table>
                     </br>
                     {!! Form::open(['route' => "coordonnee.create", 'method' => 'get']) !!}
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Modifier les statuts</button>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Créer ou supprimer les statuts</button>
                     {!! Form::close() !!}
                 </div>
             </div>
