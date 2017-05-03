@@ -45,6 +45,8 @@ Route::resource('contenu', 'ContenuController');
 //
 Route::get('documentation', 'PagesController@documentation')->name('documentation');
 //Route::get('/home', 'HomeController@index');
+
+
 // Routes pour le Back-office
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::get('/', function () {
@@ -100,8 +102,5 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     //
     Route::resource('message', 'MessageController');
 
-    // Unknow 
-    //
-    //    Route::get('contenu/coordonnee/edit', 'ContenuController@coordonnee_edit')->name('coordonnee_edit');
-    //    Route::put('contenu/coordonnee', 'ContenuController@coordonnee_update')->name('coordonnee_update');
+    
 });

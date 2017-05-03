@@ -8,7 +8,7 @@ Use File;
 use Intervention\Image\ImageManager;
 use Illuminate\Filesystem\Filesystem;
 use App\Http\Requests;
-use Image;
+
 
 class UserController extends Controller {
 

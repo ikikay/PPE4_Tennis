@@ -100,5 +100,9 @@ class PagesController extends Controller {
         $message->save();
         return redirect()->route("contact");
     }
+    
+   
+    
+    
 
 }

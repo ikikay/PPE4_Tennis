@@ -283,7 +283,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                       
                         <li class="treeview">
-                            <a href="{{ route("coordonnee.index") }}"><i class="fa fa-globe"></i> <span>Coordonnées</span>  </a>
+                            <a href="{{ route("coordonnee.index") }}"><i class="fa fa-globe"></i> <span>Le comité</span>  </a>
                         </li>
                         <li class="header">modification du site</li>
                         <li>
