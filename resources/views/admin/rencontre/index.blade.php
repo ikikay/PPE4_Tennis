@@ -2,7 +2,7 @@
 
 @section('title')
 <h1>
-    Administration des rencontres
+    Administration des rencontres pour l'équipe : {{ $uneEquipe->nom }}
     <small>- Créer, Modifier et supprimer des rencontres</small>
 </h1>
 @stop

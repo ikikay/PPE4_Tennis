@@ -20,25 +20,13 @@ class RencontreController extends Controller
         $uneEquipe = Equipe::find($equipe_id);
         return view('admin.rencontre.index')->with('uneEquipe', $uneEquipe);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function createR($equipe_id)
     {
-        
         $uneEquipe = Equipe::find($equipe_id);
         return view('admin.rencontre.create')->with('uneEquipe', $uneEquipe);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -53,7 +41,6 @@ class RencontreController extends Controller
         }
         $request->session()->flash('success', 'La rencontre à été ajoutée !');
         $rencontre = new Rencontre();
-
         $rencontre->date = $request->get('date');
         $rencontre->lieu = $request->get('lieu');
         $rencontre->adversaire = $request->get('adversaire');
@@ -62,23 +49,6 @@ class RencontreController extends Controller
         return redirect()->route("equipe.index");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $rencontre = Rencontre::find($id);
@@ -86,13 +56,6 @@ class RencontreController extends Controller
         return view('admin.rencontre.edit', compact('rencontre', 'lesEquipes'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $rencontre = Rencontre::find($id);
@@ -107,20 +70,11 @@ class RencontreController extends Controller
         return redirect()->route("equipe.index");
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Request $request, $id)
     {
         $request->session()->flash('success', 'La rencontre à été supprimée !');
-
         $rencontre = Rencontre::find($id);
-
         $rencontre->delete();
-
         return redirect()->route("equipe.index");
     }
     
