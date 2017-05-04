@@ -60,6 +60,12 @@ class PagesController extends Controller {
                         ->with("leUser", $leUser);
     }
     
+    function convocation($id) {
+         $leUser = User::find($id);
+        return view('site.profil.convoc')
+                        ->with("leUser", $leUser);
+    }
+    
      public function updateprofil(Request $request, $id) {
         $leUser = User::find($id);
 

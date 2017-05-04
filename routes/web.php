@@ -28,6 +28,7 @@ Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
 //
 Route::get('profil', 'PagesController@profil')->name('profil');
 Route::get('editprofil/{id}', 'PagesController@editprofil')->name('editprofil');
+Route::get('convocation/{id}', 'PagesController@editprofil')->name('convocation');
 Route::put('updateprofil/{id}', 'PagesController@updateprofil')->name('updateprofil');
 Route::resource('document', 'DocumentController');
 
@@ -82,7 +83,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     //
     Route::resource('equipe', 'EquipeController');
     Route::resource('rencontre', 'RencontreController');
-
+    Route::get('rencontre/index/{id}', 'RencontreController@index')->name('rencontre.index')->where('id', '[0-9]+');
+    Route::get('rencontre/createR/{id}', 'RencontreController@createR')->name('rencontre.createR')->where('id', '[0-9]+');
     Route::get('rencontre/convoquer/{id}', 'RencontreController@convoquer')->name('rencontre.convoquer')->where('id', '[0-9]+');
     Route::post('rencontre/convoquerstore/{id}', 'RencontreController@convoquerstore')->name('rencontre.convoquerstore');
 

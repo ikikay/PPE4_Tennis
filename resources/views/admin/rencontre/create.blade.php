@@ -3,7 +3,7 @@
 @section('title')
 <h1>
     Créer une rencontre
-    <small>- Page de création de rencontres</small>
+    <small>- Page de création de rencontres pour l'équipe {{ $uneEquipe->nom }}</small>
 </h1>
 @stop
 
@@ -39,7 +39,7 @@
                         <input class="form-control" placeholder="Adversaire :" name="adversaire"> 
                     </div>
                     <div class="form-group">
-                    {{ $uneEquipe->nom }}
+                        <input type="hidden" value="{{ $uneEquipe->id }}" name="equipe_id">
                     </div>
                 </div>
                 <!-- /.box-header -->

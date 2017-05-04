@@ -2,7 +2,7 @@
 
 @section('title')
 <h1>
-    Administration des rencontres
+    Administration des rencontres pour l'équipe : {{ $uneEquipe->nom }}
     <small>- Créer, Modifier et supprimer des rencontres</small>
 </h1>
 @stop
@@ -15,7 +15,7 @@
     <div class="col-md-12">
         <div class="box">
             <div class="box-header with-border">
-                {!! Form::open(['route' => "rencontre.create", $uneEquipe->id, 'method' => 'get']) !!}
+                {!! Form::open(['url' => route("rencontre.createR", $uneEquipe->id), 'method' => 'get']) !!}
                 <button type="submit" class="btn btn-success btn-lg btn-block">Créer une rencontre</button>
                 {!! Form::close() !!}
                 <!-- /.box-header -->
@@ -44,7 +44,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($tab_rencontres as $uneRencontre)
+                            @foreach ($uneEquipe->rencontres as $uneRencontre)
                             <tr>
                                 <td class="col-md-1">
                                     {{ $uneRencontre["id"] }}

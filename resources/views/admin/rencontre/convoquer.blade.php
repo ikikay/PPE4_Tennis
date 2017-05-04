@@ -16,7 +16,7 @@
         <div class="box box-info">
             {!! Form::open(['route' =>[ "rencontre.convoquerstore",$rencontre->id], 'method' => 'post']) !!}
                 <div class="box-header">
-                    <h3 class="box-title">  </h3>
+                    <h3 class="box-title">Liste des joueurs disponibles</h3>
                     <div class="table-responsive">
                         <table class="table table-bordered">
                         <thead class="thead-inverse">
@@ -31,22 +31,17 @@
                             @foreach ($tab_joueurs as $unJoueur)
                             <tr>
                                 <td class="col-md-1">
-                                    {{ $unJoueur["id"] }}
+                                    {{ $unJoueur->id }}
                                 </td>
                                 <td class="col-md-4">
-                                    {{ $unJoueur["nom"] }}
+                                    {{ $unJoueur->nom }}
                                 </td>
                                 <td class="col-md-4">
-                                    {{ $unJoueur["prenom"] }}
+                                    {{ $unJoueur->prenom }}
                                 </td>
                                 <td class="col-md-4">
-                                @if ( $unJoueur->confirmation == 1)
-                                    <div class="checkbox" style="text-align:center">
-                                    <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation{{$unJoueur["id"]}}" checked>
-                                @else
-                                    <div class="checkbox" style="text-align:center">
-                                    <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation{{$unJoueur["id"]}}">
-                                @endif   
+                                <div class="checkbox" style="text-align:center">
+                                <input data-toggle="toggle" type="checkbox"   data-onstyle="success" name="confirmation{{$unJoueur["id"]}}">
                                 </td>
                             </tr>
                             @endforeach
