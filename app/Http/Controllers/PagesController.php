@@ -10,6 +10,7 @@ use App\Models\Contenu;
 use App\Models\Comite;
 use App\Models\User;
 use App\Models\Message;
+use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller {
 
@@ -82,6 +83,9 @@ class PagesController extends Controller {
     }
 
     function message(Request $request) {
+      //  var_dump($request->get('contenu'));
+       // dd($request->get('contenu'));
+        
         $request->session()->flash('success', 'Merci! Votre message a bien été envoyé');
         
         $message = new Message();
@@ -92,6 +96,15 @@ class PagesController extends Controller {
         $message->tel = $request->get('telephone');
         
         $message->save();
+       
+        
+        
+        
+        Mail::send('admin.message.mail', ['titre'=>$request->get('titre'),'contenu'=>$request->get('contenu'),'auteur'=>$request->get('nom') . " " .$request->get('prenom')], function ($mail){
+            $mail->from('ppetennis@gmail.com','Tennis Club Tavaux');
+            $mail->to('benoit.plaideau@gmail.com');
+            $mail->subject('titre de la demande');
+        });
         return redirect()->route("contact");
     }
     
