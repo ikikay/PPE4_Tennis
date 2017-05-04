@@ -10,6 +10,7 @@ use App\Models\Contenu;
 use App\Models\Comite;
 use App\Models\User;
 use App\Models\Message;
+use App\Models\Rencontre;   
 
 class PagesController extends Controller {
 
@@ -102,7 +103,19 @@ class PagesController extends Controller {
     }
     
    
-    
+    public function accepter($id,$idJoueur,Request $request)
+    {
+        $request->session()->flash('success', 'Les convocations sont acceptées !');
+        $rencontre = Rencontre::find($id);
+        $leJoueur = User::find($idJoueur);
+        $request->get('confirmation'.$leJoueur->id); 
+        if ($request->get('confirmation'.$leJoueur->id)=='on')
+        {
+            $leJoueur->rencontres()->attach($rencontre,['confirmation'=>1]);
+        }
+        $leJoueur->save();
+        return redirect()->route("profil");
+    }
     
 
 }

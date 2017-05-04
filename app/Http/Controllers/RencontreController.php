@@ -95,10 +95,12 @@ class RencontreController extends Controller
             $request->get('confirmation'.$user->id); 
             if ($request->get('confirmation'.$user->id)=='on')
             {
-                $rencontre->users()->attach($user,['confirmation'=>1]);
+                $rencontre->users()->attach($user,['confirmation'=>0]);
             }
         }
         $rencontre->save();
         return redirect()->route("equipe.index");
     }
+    
+    
 }
