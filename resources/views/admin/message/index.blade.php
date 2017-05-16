@@ -23,8 +23,13 @@
                                 <td>{{$unMessage->auteur}}</td>
                                 <td>{{$unMessage->titre}}</td>
                                 <td>{{$unMessage->created_at->format('d/m/Y')}}</td>
-                                <td>traité ou non</td>
+                                @if($unMessage->validation == 1)
+                                <td>Oui</td>
+                                @else
+                                <td>non</td>
+                                @endif
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
@@ -33,6 +38,6 @@
     </div>
 </div>
 
-@endforeach
+
 @endsection
 

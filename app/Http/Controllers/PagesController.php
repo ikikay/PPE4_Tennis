@@ -101,12 +101,9 @@ class PagesController extends Controller {
         $message->contenu = $request->get('contenu');
         $message->tel = $request->get('telephone');
         
-        $message->save();
-       
+        $message->save();        
         
-        
-        
-        Mail::send('admin.message.mail', ['titre'=>$request->get('titre'),'contenu'=>$request->get('contenu'),'auteur'=>$request->get('nom') . " " .$request->get('prenom')], function ($mail){
+        Mail::send('admin.message.mail', ['titre'=>$request->get('titre'),'contenu'=>$request->get('contenu'),'auteur'=>$request->get('nom') . " " . $request->get('prenom')], function ($mail){
             $mail->from('ppetennis@gmail.com','Tennis Club Tavaux');
             $mail->to('benoit.plaideau@gmail.com');
             $mail->subject('titre de la demande');
