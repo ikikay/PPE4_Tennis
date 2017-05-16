@@ -61,7 +61,7 @@
                         
                            @if(Auth::User()->joueur)
                         <li>
-                            <a href="#">
+                            <a href="{{ route('convocation', Auth::User()->id) }}">
                                 <i class="glyphicon glyphicon-flag"></i>
                                 Convocation </a>
                         </li>

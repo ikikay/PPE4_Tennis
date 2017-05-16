@@ -28,9 +28,10 @@ Route::get('coordonnee', 'PagesController@coordonnee')->name('coordonnee');
 //
 Route::get('profil', 'PagesController@profil')->name('profil');
 Route::get('editprofil/{id}', 'PagesController@editprofil')->name('editprofil');
-Route::get('convocation/{id}', 'PagesController@editprofil')->name('convocation');
+Route::get('convocation/{id}', 'PagesController@convocation')->name('convocation');
 Route::put('updateprofil/{id}', 'PagesController@updateprofil')->name('updateprofil');
 Route::resource('document', 'DocumentController');
+Route::post('accepter/{id},{idJoueur}', 'PagesController@accepter')->name('accepter');
 
 // Contact 
 //
