@@ -16,7 +16,9 @@
         <!-- Bootstrap Core CSS -->
         <link href="{{ url('css/starter-template.css')}}" rel="stylesheet">
         <!-- Custom CSS -->
-        <link href="{{ url('css/modern-business_front.css')}}" rel="stylesheet">        
+        <link href="{{ url('css/modern-business_front.css')}}" rel="stylesheet">   
+        <!-- surchouche -->
+        <link href="{{ url('css/surcouche.css')}}" rel="stylesheet">
         <!-- CSS du site -->
         <link href="{{ url('css/style_front.css')}}" rel="stylesheet">
 
@@ -51,7 +53,7 @@
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav">
                         <li>
                             <a href="{{ route("contenu.show", ['page' => 'Le_club']) }}">Le club</a>
                         </li>
@@ -78,35 +80,35 @@
                                 </li>                            
                             </ul>
                         </li>
-                       <li>
-                                    <a href="{{ route('contact') }}">Contact</a>
-                                </li>
+                        <li>
+                            <a href="{{ route('contact') }}">Contact</a>
+                        </li>
                         @if(Auth::check())
-                      
+
                         <li class="dropdown">
                             <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                                 {!!Auth::user()->nom!!}&nbsp {!!Auth::user()->prenom!!}&nbsp <i class="fa fa-caret-down"></i>
                             </a>
 
                             <ul class="dropdown-menu dropdown-user">
-                        
+
                                 @if ( Auth::user()->valider)
                                 <li>
                                     <a href="{{ route('profil') }}"><i class="fa fa-user fa-fw"></i>Profil</a>
                                 </li> 
-                               
+
                                 @if (Auth::user()->admin)         
                                 <li><a href="{{ route('admin.dashboard') }}"><i class="fa fa-gear fa-fw"></i> Administration</a>
                                 </li>
                                 @endif
-                                 
+
                                 @else 
                                 <li>
                                     <a> En attente de validation </a>
                                 </li>
                                 <li class="divider"></li>
                                 @endif
-                                
+
                                 <li>
                                     <a href="{{ url('/logout') }}"
                                        onclick="event.preventDefault();
@@ -122,7 +124,7 @@
                         </li>  
                         <!-- /.navbar-top-links -->
 
-                    
+
                         @else
                         <li>
                             <a href="{{ route('login') }}">Connexion</a>
@@ -130,8 +132,8 @@
                         @endif
 
 
-                       
-                        
+
+
 
                     </ul>
                 </div>
@@ -170,8 +172,8 @@
     <script src="{{url('js/bootbox.min.js')}}"></script>
     <!-- Mon JavaScript -->
     <script src="{{url('js/perso.js')}}"></script>
-    
-@yield('script')
+
+    @yield('script')
 
     <!-- Script to Activate the Carousel -->
     <script>

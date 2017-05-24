@@ -71,6 +71,7 @@
     font-style: normal;
 }
 
+/* - - - - -  MENU - - - - - */
 /* Décallage du logo en haut à gauche */
 .navbar-brand > img {
     all: none;
@@ -80,27 +81,23 @@
     left: 20px;
 }
 
-/* Application d'un margin au footer */
-footer {
-    margin-top: 50px;
-}
-
-.navbar-inverse {
-    background-color: #333399;
-    border-color: #666688;
-    padding: 10px;
-}
-
 .navbar-inverse .navbar-nav > li > a {
     color: #ffffff;
     Font-Weight: Bold;
     font-size: 18px;
+    padding-top: 25px;
+    padding-bottom: 25px;
     font-family: titillium, 'Open Sans', Tahoma, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
 .navbar-inverse .navbar-nav > li > a:hover { 
-    color: #333399;
     Font-Weight: Bold;
-    background: #ddff00;
+}
+
+/* - - - - - * - - - - - */
+/* Application d'un margin au footer */
+footer {
+    margin-top: 50px;
 }
 
 body {
