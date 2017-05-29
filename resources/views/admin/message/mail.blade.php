@@ -235,7 +235,7 @@
                                                                                         <div class="contentEditableContainer contentTextEditable">
                                                                                             <div class="contentEditable" align='center'>
                                                                                                 <p >                                                                                                   
-                                                                                                    {{$contenu}}
+                                                                                                    {!!nl2br($contenu)!!}
                                                                                                     <br>
                                                                                                         <span style='color:#222222;'>{{$auteur}}</span>
                                                                                                 </p>

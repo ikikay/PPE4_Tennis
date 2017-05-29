@@ -17,16 +17,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <tbody>
                             @foreach($lesMessages as $unMessage)
                             <tr>
                                 <td>{{$unMessage->auteur}}</td>
                                 <td>{{$unMessage->titre}}</td>
                                 <td>{{$unMessage->created_at->format('d/m/Y')}}</td>
                                 @if($unMessage->validation == 1)
-                                <td>Oui</td>
+                                <td>
+                                    {!! Form::open(['route' => ["message.show", $unMessage->id], 'method' => 'get']) !!}
+                                    <button type="submit" class="btn btn-primary">Déjà Traité</button>
+                                    {!! Form::close() !!}</td>
                                 @else
-                                <td>non</td>
+                                <td>
+                                    {!! Form::open(['route' => ["message.show", $unMessage->id], 'method' => 'get']) !!}
+                                    <button type="submit" class="btn btn-success">Répondre</button>
+                                    {!! Form::close() !!}
+                                </td>
                                 @endif
                             </tr>
                             @endforeach

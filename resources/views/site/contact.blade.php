@@ -55,13 +55,13 @@
             <div class="control-group form-group">
                 <div class="controls">
                     <label>Votre numéro de téléphone :</label>
-                    <input type="tel" class="form-control" id="telephone" name="telephone" required data-validation-required-message="Please enter your phone number.">
+                    <input type="tel" class="form-control" id="telephone" name="telephone" required data-validation-required-message="Renseigner votre numéro de téléphone">
                 </div>
             </div>
             <div class="control-group form-group">
                 <div class="controls">
                     <label>Votre email :</label>
-                    <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+                    <input type="email" class="form-control" id="email" name="email" required data-validation-required-message="Renseigner votre adresse email">
                 </div>
             </div>
             <div class="control-group form-group">
@@ -74,7 +74,7 @@
             <div class="control-group form-group">
                 <div class="controls">
                     <label>Message:</label>
-                    <textarea rows="10" cols="100" class="form-control" id="contenu"  name="contenu" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                    <textarea rows="10" cols="100" class="form-control" id="contenu"  name="contenu" required data-validation-required-message="Renseignez votre message" maxlength="999" style="resize:none"></textarea>
                 </div>
             </div>
             <div id="success"></div>

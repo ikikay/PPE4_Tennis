@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider {
      */
     public function boot() {
         view()->composer('*', function($view) {
-            $messages = Message::all();          
+            $messages = Message::all()->where("validation","=",0)->sortByDesc('created_at');          
             $view->with('messages', $messages);            
         });
         

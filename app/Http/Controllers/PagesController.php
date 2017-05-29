@@ -99,15 +99,17 @@ class PagesController extends Controller {
         $message->auteur = $request->get('nom') . " " .$request->get('prenom');
         $message->email = $request->get('email');
         $message->titre = $request->get('titre');
-        $message->contenu = $request->get('contenu');
+        $message->contenu = stripslashes(nl2br(htmlentities($request->get('contenu'))));
         $message->tel = $request->get('telephone');
         
-        $message->save();        
+        $message->save(); 
         
-        Mail::send('admin.message.mail', ['titre'=>$request->get('titre'),'contenu'=>$request->get('contenu'),'auteur'=>$request->get('nom') . " " . $request->get('prenom')], function ($mail){
+        $data = array('sujet' => $request->get('titre'));
+        
+        Mail::send('admin.message.mail', ['titre'=>$request->get('titre'),'contenu'=>$request->get('contenu'),'auteur'=>$request->get('nom') . " " . $request->get('prenom')], function ($mail) use ($data){
             $mail->from('ppetennis@gmail.com','Tennis Club Tavaux');
             $mail->to('benoit.plaideau@gmail.com');
-            $mail->subject('titre de la demande');
+            $mail->subject($data['sujet']);
         });
         return redirect()->route("contact");
     }

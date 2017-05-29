@@ -100,11 +100,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                         <!-- inner menu: contains the messages -->
                                         <ul class="menu">
                                             @foreach ($messages as $unMessage)
-                                            <li><!-- start message -->
-                                                <a href="#">
+                                            <li><!-- start message -->    
+                                                <a href="{{action('MessageController@show', $unMessage->id ) }}">
                                                     <!-- Message title and timestamp -->
                                                     <h4>
-
                                                         <small><i class="fa fa-clock-o"></i> {{$unMessage->created_at->format('d/m/Y')}}</small>
                                                     </h4>
                                                     <!-- The message -->
