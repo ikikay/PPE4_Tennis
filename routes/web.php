@@ -64,6 +64,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function() {
     Route::delete('photo/{id}', 'PhotoController@destroy')->name('photo.destroy')->where('id', '[0-9]+');
     //Route::resource('photo', 'PhotoController');
     Route::resource('album', 'AlbumController');
+    Route::resource('partenaire', 'PartenaireController');
 
     // Utilisateurs / Profil
     //
