@@ -119,6 +119,7 @@ class PartenaireController extends Controller
         $partenaire->twitter = $request->get('twitter');
         $logo = $request->file('logo');
         
+        $oldLogo =
         //if($logo = $logo)
         $imagename = time().'.'.$logo->getClientOriginalExtension();    
         $destinationPath = public_path('img/partenaire/');
