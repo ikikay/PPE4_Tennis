@@ -41,7 +41,7 @@ class PartenaireController extends Controller
      */
     public function store(Request $request)
     {
-        $request->session()->flash('success', 'L\'image à été Ajouté !');
+        $request->session()->flash('success', 'Le partenaire à été Ajouté !');
         
         $partenaire = new Partenaire();
 
@@ -104,7 +104,7 @@ class PartenaireController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->session()->flash('success', 'L\'album à été Ajouté !');
+        $request->session()->flash('success', 'Le partenaire à été modifié !');
         
         $partenaire = Partenaire::find($id);
 
@@ -158,7 +158,7 @@ class PartenaireController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $request->session()->flash('success', 'L\'album à été Supprimé !');
+        $request->session()->flash('success', 'Le partenaire à été Supprimé !');
 
         $partenaire = Partenaire::find($id);
 

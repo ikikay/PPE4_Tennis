@@ -19,47 +19,47 @@
                 <h3 class="box-title">  </h3>
 
                 <div class="form-group">
-                    <label>Titre de l'album :  </label>
+                    <label>Nom du parenaire : </label>
                     <input class="form-control" value="{{ $partenaire["nom"] }}" name="name"> 
                 </div>
                 
                  <div class="form-group">
-                    <label>Titre de l'album :  </label>
+                    <label>Description du parenaire : </label>
                     <input class="form-control" value="{{ $partenaire["description"] }}" name="description"> 
                 </div>
                 
                  <div class="form-group">
-                    <label>Titre de l'album :  </label>
+                    <label>Ville du parenaire :  </label>
                     <input class="form-control" value="{{ $partenaire["ville"] }}" name="ville"> 
                 </div>
                 
                  <div class="form-group">
-                    <label>Titre de l'album :  </label>
+                    <label>Code postal du parenaire : </label>
                     <input class="form-control" value="{{ $partenaire["cp"] }}" name="cp"> 
                 </div>
                 
                  <div class="form-group">
-                    <label>Titre de l'album :  </label>
+                    <label>Adresse du parenaire :  </label>
                     <input class="form-control" value="{{ $partenaire["adresse"] }}" name="adresse"> 
                 </div>
                 
                  <div class="form-group">
-                    <label>Titre de l'album :  </label>
+                    <label>Telephone du parenaire :  </label>
                     <input class="form-control" value="{{ $partenaire["tel"] }}" name="tel"> 
                 </div>
                 
                  <div class="form-group">
-                    <label>Titre de l'album :  </label>
+                    <label>Lien du site du parenaire :  </label>
                     <input class="form-control" value="{{ $partenaire["site"] }}" name="site"> 
                 </div>
                 
                  <div class="form-group">
-                    <label>Titre de l'album :  </label>
+                    <label>Lien de la page Facebook du parenaire :  </label>
                     <input class="form-control" value="{{ $partenaire["facebook"] }}" name="fb"> 
                 </div>
                 
                  <div class="form-group">
-                    <label>Titre de l'album :  </label>
+                    <label>Lien du Twitter du parenaire :  </label>
                     <input class="form-control" value="{{ $partenaire["twitter"] }}" name="twitter"> 
                 </div>
                 
