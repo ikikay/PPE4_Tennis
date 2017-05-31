@@ -33,12 +33,9 @@
         <span class="icon-next"></span>
     </a>
 </header>
-<!-- Page Content -->
-<div class="container">
 
 
 
-    <div class="col-md-12">
         <div class="col-md-8 contenu">
 
             @foreach ($tab_articles as $unArticle)
@@ -79,8 +76,7 @@
             </li>
         </ul> -->
 
-    </div>
-</div>
+    
 
 
 @stop
