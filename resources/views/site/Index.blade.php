@@ -41,23 +41,23 @@
     <div class="col-md-12">
         <div class="col-md-8 contenu">
 
-        @foreach ($tab_articles as $unArticle)
-        <!-- First Blog Post -->
-        <h2>
-            <a href="#">{{ $unArticle["titre"] }}</a>
-        </h2>
-        <p><i class="fa fa-clock-o"></i> Posté le {{ $unArticle["created_at"]->format('d/m/Y à H:i') }}</p>
-        
-        @if (is_null($unArticle["photo"]) == false)
-        <a href="#"> <!-- Futur lien du "voir plus" -->
-           <img class="img-responsive img-hover" src="img/articles/{{ $unArticle["photo"]}}" alt="">
-        </a>
-        @endif
-   
-        <br>
-        {!! $unArticle["description"] !!}
-        <hr>
-        @endforeach
+            @foreach ($tab_articles as $unArticle)
+            <!-- First Blog Post -->
+            <h2>
+                <a href="#">{{ $unArticle["titre"] }}</a>
+            </h2>
+            <p><i class="fa fa-clock-o"></i> Posté le {{ $unArticle["created_at"]->format('d/m/Y à H:i') }}</p>
+
+            @if (is_null($unArticle["photo"]) == false)
+            <a href="#"> <!-- Futur lien du "voir plus" -->
+                <img class="img-responsive img-hover" src="img/articles/{{ $unArticle["photo"]}}" alt="">
+            </a>
+            @endif
+
+            <br>
+            {!! $unArticle["description"] !!}
+            <hr>
+            @endforeach
         </div>
         <div class="col-md-4">
             <!-- Side Widget Well -->
@@ -80,6 +80,7 @@
         </ul> -->
 
     </div>
+</div>
 
 
-    @stop
+@stop

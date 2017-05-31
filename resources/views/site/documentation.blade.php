@@ -2,9 +2,9 @@
 @section('content')
 
 
-    <!-- Page Content -->
-    <div class="container">
-
+<!-- Page Content -->
+<div class="container">
+    <div class="col-md-12 contenu">
         <!-- Page Heading/Breadcrumbs -->
         <div class="row">
             <div class="col-lg-12">
@@ -51,5 +51,6 @@
                 <br><img src="img\dl.png"></img><a href="" download="Ag_2016">Inscription championat individuel 30/1 et 30/2</a>
             </div>
         </div>
-
-     @stop
+    </div>>
+</div>
+@stop
