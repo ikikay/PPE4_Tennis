@@ -104,7 +104,7 @@ class AlbumController extends Controller
         $album = Album::find($id);
 
         $album->titre = $request->get('name');
-        $album->description->get('description');
+        $album->description = "description";
         $album->actif = true;             
 
         $album->save();

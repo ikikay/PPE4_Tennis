@@ -41,7 +41,7 @@ class PartenaireController extends Controller
      */
     public function store(Request $request)
     {
-        $request->session()->flash('success', 'L\'image à été Ajouté !');
+        $request->session()->flash('success', 'Le partenaire à été Ajouté !');
         
         $partenaire = new Partenaire();
 
@@ -104,7 +104,7 @@ class PartenaireController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->session()->flash('success', 'L\'album à été Ajouté !');
+        $request->session()->flash('success', 'Le partenaire à été modifié !');
         
         $partenaire = Partenaire::find($id);
 
@@ -117,20 +117,36 @@ class PartenaireController extends Controller
         $partenaire->site = $request->get('site');
         $partenaire->facebook = $request->get('fb');
         $partenaire->twitter = $request->get('twitter');
+ 
+        $oldLogo = $partenaire->logo;
         $logo = $request->file('logo');
         
-        //if($logo = $logo)
-        $imagename = time().'.'.$logo->getClientOriginalExtension();    
+        
+        
+        
+        
+       if (File::exists($logo))
+        {
+          $imagename = time().'.'.$logo->getClientOriginalExtension();    
         $destinationPath = public_path('img/partenaire/');
         Image::make($logo->getRealPath())->resize(320, null, function ($constraint) {
         $constraint->aspectRatio();
         })
                 ->save($destinationPath.'/'.$imagename);
         $logo->move($destinationPath, $imagename);              
-      
-        $partenaire->logo = $imagename;
+        
+        $partenaire->logo = $imagename;  
+        
+        File::delete("img/partenaire/" . $oldLogo);
+        }
+        else
+        {
+            $partenaire->logo = $oldLogo;
+        }
 
         $partenaire->save();
+        
+        
         return redirect()->route("partenaire.index");
     }
 
@@ -142,7 +158,7 @@ class PartenaireController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $request->session()->flash('success', 'L\'album à été Supprimé !');
+        $request->session()->flash('success', 'Le partenaire à été Supprimé !');
 
         $partenaire = Partenaire::find($id);
 

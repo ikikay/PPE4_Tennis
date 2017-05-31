@@ -270,7 +270,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="{{ route("document.home") }}"><i class="fa fa-file-o"></i> <span>Documents</span>  </a>
                         </li>
                         <li class="treeview">
-                            <a href="{{ route("partenaire.index") }}"><i class="fa fa-picture-o"></i> <span>Partenaire</span>  </a>
+                            <a href="{{ route("partenaire.index") }}"><i class="fa fa-thumbs-up"></i> <span>Partenaire</span>  </a>
                         </li>
                         
                         

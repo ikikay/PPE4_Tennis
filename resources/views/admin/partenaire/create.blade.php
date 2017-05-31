@@ -2,7 +2,7 @@
 
 @section('title')
 <h1>
-    Creation d'un partenaire
+    Ajout d'un partenaire
     <small>- ajoute un partenaire</small>
 </h1>
 @stop
@@ -11,47 +11,47 @@
 
 {!! Form::open(['route' => "partenaire.store",'files' => true, 'method' => 'post']) !!}
 <div class="form-group">
-    <label>Nom de l'image : </label>
+    <label>Nom du parenaire : </label>
     <input class="form-control" placeholder="le nom du partenaire" name="name">
 </div>
 
 <div class="form-group">
-    <label>Description de l'image : </label>
+    <label>Description du parenaire : </label>
     <input class="form-control" placeholder="Une description du partenaire" name="description">
 </div>
 
 <div class="form-group">
-    <label>Nom de l'image : </label>
+    <label>Ville du parenaire : </label>
     <input class="form-control" placeholder="la ville du partenaire" name="ville">
 </div>
 
 <div class="form-group">
-    <label>Nom de l'image : </label>
+    <label>Code postal ddu parenaire : </label>
     <input class="form-control" placeholder="le code postal du partenaire" name="cp">
 </div>
 
 <div class="form-group">
-    <label>Nom de l'image : </label>
+    <label>Adresse du parenaire : </label>
     <input class="form-control" placeholder="l'adresse du partenaire" name="adresse">
 </div>
 
 <div class="form-group">
-    <label>Nom de l'image : </label>
+    <label>Telephone du parenaire : </label>
     <input class="form-control" placeholder="le telephone du partenaire" name="tel">
 </div>
 
 <div class="form-group">
-    <label>Nom de l'image : </label>
+    <label>Lien du site du parenaire : </label>
     <input class="form-control" placeholder="le site du partenaire si il y a" name="site">
 </div>
 
 <div class="form-group">
-    <label>Nom de l'image : </label>
+    <label>Lien de la page Facebook du parenaire : </label>
     <input class="form-control" placeholder="le facebook du partenaire si il y a " name="fb">
 </div>
 
 <div class="form-group">
-    <label>Nom de l'image : </label>
+    <label>Lien du Twitter du parenaire : </label>
     <input class="form-control" placeholder="le twitter du partenaire si il y a" name="twitter">
 </div>
 
