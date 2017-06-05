@@ -87,7 +87,7 @@ class RencontreController extends Controller
     
     public function convoquerstore($id,Request $request)
     {
-        $request->session()->flash('success', 'Les joueurs sont notifiés de la rencontre !');
+        $request->session()->flash('success', 'Les joueurs sont convqués pour la rencontre !');
         $rencontre = Rencontre::find($id);
         $lesUser = User::all();
         
@@ -102,5 +102,26 @@ class RencontreController extends Controller
         return redirect()->route("equipe.index");
     }
     
+    public function resultat($rencontre_id)
+    {
+       $rencontre = Rencontre::find($rencontre_id);
+       return view('admin.rencontre.resultat')->with('rencontre', $rencontre);
+    }
     
+    public function resultatstore($rencontre_id, Request $request)
+    {
+       $rencontre = Rencontre::find($rencontre_id);
+       $request->get('gagner');
+       if ($request->get('gagner')=='on')
+       {
+            $rencontre->users()->attach($rencontre,['gagner'=>1]);
+       }
+       else
+       {
+           $rencontre->users()->attach($rencontre,['gagner'=>0]);
+       }
+       $rencontre->users()->attach($rencontre,[$request->get('score')]);
+       $rencontre->save();
+       return redirect()->route("equipe.index");
+    }
 }

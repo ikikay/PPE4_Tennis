@@ -20,17 +20,7 @@
                 {!! Form::close() !!}
                 <!-- /.box-header -->
                 <div class="box-body">
-                    
-                    <!-- search form (Optional) -->
-                    <form action="#" method="get">
-                        <div class="input-group margin">
-                            <input type="text" name="q" class="form-control" placeholder="Rechercher . . .">
-                            <span class="input-group-btn">
-                                <button type="submit" name="search" id="search-btn" class="btn btn-info btn-flat"><i class="fa fa-search"></i>
-                                </button>
-                            </span>
-                        </div>
-                    </form>
+                  
 
                     <table class="table table-bordered">
                         <thead class="thead-inverse">
@@ -61,7 +51,7 @@
                                 <td class="col-md-2" id="td{{ $uneRencontre["equipe_id"] }}">
                                     {{ $uneRencontre->equipe->nom }}
                                 </td>
-                                <td class="col-md-3">
+                                <td class="col-md-">
                                     <div class="row">
                                         <div class="col-md-2">
                                             {!! Form::open(['route' => ["rencontre.edit", $uneRencontre->id], 'method' => 'get']) !!}
@@ -73,8 +63,11 @@
                                             <button type="submit" id="{{ $uneRencontre->id }}" class="btn btn-danger btn-circle jsDeleteButton"><i class="fa fa-times"></i></button>
                                             {!! Form::close() !!}
                                         </div>
-                                        <div class="col-md-8">
-                                            <a class="btn btn-primary btn-circle" href="{{ route("rencontre.convoquer",$uneRencontre->id) }}">Convoquer des joueurs</a>
+                                        <div class="col-md-4">
+                                            <a class="btn btn-primary btn-circle" href="{{ route("rencontre.convoquer",$uneRencontre->id) }}">Convoquer</a>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <a class="btn btn-primary btn-circle" href="{{ route("rencontre.resultat",$uneRencontre->id) }}">Résultats</a>
                                         </div>
                                     </div>
                                 </td>
