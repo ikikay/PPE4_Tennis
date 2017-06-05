@@ -10,16 +10,18 @@ use App\Models\Contenu;
 use App\Models\Comite;
 use App\Models\User;
 use App\Models\Message;
-use App\Models\Rencontre;   
+use App\Models\Rencontre;  
+use App\Models\Partenaire;
 use Illuminate\Support\Facades\Mail;
 
 class PagesController extends Controller {
 
     public function index() {
         $lesArticles = Article::all()->sortByDesc("created_at");
+        $lesPartenaires = Partenaire::all();
 
         return view('site.index')
-                        ->with("tab_articles", $lesArticles);
+                        ->with("tab_articles", $lesArticles)->with("tab_partenaires", $lesPartenaires);
     }
 
     function contact() {

@@ -13,46 +13,11 @@
 <div class="form-group">
     <label>Nom du parenaire : </label>
     <input class="form-control" placeholder="le nom du partenaire" name="name">
-</div>
-
-<div class="form-group">
-    <label>Description du parenaire : </label>
-    <input class="form-control" placeholder="Une description du partenaire" name="description">
-</div>
-
-<div class="form-group">
-    <label>Ville du parenaire : </label>
-    <input class="form-control" placeholder="la ville du partenaire" name="ville">
-</div>
-
-<div class="form-group">
-    <label>Code postal ddu parenaire : </label>
-    <input class="form-control" placeholder="le code postal du partenaire" name="cp">
-</div>
-
-<div class="form-group">
-    <label>Adresse du parenaire : </label>
-    <input class="form-control" placeholder="l'adresse du partenaire" name="adresse">
-</div>
-
-<div class="form-group">
-    <label>Telephone du parenaire : </label>
-    <input class="form-control" placeholder="le telephone du partenaire" name="tel">
-</div>
+</div> 
 
 <div class="form-group">
     <label>Lien du site du parenaire : </label>
     <input class="form-control" placeholder="le site du partenaire si il y a" name="site">
-</div>
-
-<div class="form-group">
-    <label>Lien de la page Facebook du parenaire : </label>
-    <input class="form-control" placeholder="le facebook du partenaire si il y a " name="fb">
-</div>
-
-<div class="form-group">
-    <label>Lien du Twitter du parenaire : </label>
-    <input class="form-control" placeholder="le twitter du partenaire si il y a" name="twitter">
 </div>
 
 <div class="form-group">

@@ -46,15 +46,7 @@ class PartenaireController extends Controller
         $partenaire = new Partenaire();
 
         $partenaire->nom = $request->get('name');
-        $partenaire->description = $request->get('description');
-        $partenaire->adresse = $request->get('adresse');
-        $partenaire->ville = $request->get('ville');
-        $partenaire->cp = $request->get('cp');
-        $partenaire->tel = $request->get('tel');
-        $partenaire->site = $request->get('site');
-        $partenaire->facebook = $request->get('fb');
-        $partenaire->twitter = $request->get('twitter');
-    
+        $partenaire->site = $request->get('site');   
           
         $logo = $request->file('logo');
         
@@ -109,15 +101,8 @@ class PartenaireController extends Controller
         $partenaire = Partenaire::find($id);
 
         $partenaire->nom = $request->get('name');
-        $partenaire->description = $request->get('description');
-        $partenaire->adresse = $request->get('adresse');
-        $partenaire->ville = $request->get('ville');
-        $partenaire->cp = $request->get('cp');
-        $partenaire->tel = $request->get('tel');
         $partenaire->site = $request->get('site');
-        $partenaire->facebook = $request->get('fb');
-        $partenaire->twitter = $request->get('twitter');
- 
+        
         $oldLogo = $partenaire->logo;
         $logo = $request->file('logo');
         

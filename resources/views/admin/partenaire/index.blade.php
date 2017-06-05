@@ -37,14 +37,7 @@
                             <tr> 
                                 <th>Logo du partenaire</th>
                                 <th>Nom du partenaire</th>
-                                <th>Description du partenaire</th>
-                                <th>code postal du partenaire</th>
-                                <th>Ville du partenaire</th>
-                                <th>Adresse du partenaire</th>
-                                <th>Telephone du partenaire</th>
                                 <th>Site du partenaire</th>
-                                <th>facebook du partenaire</th>
-                                <th>Twitter du partenaire</th>
                                 <th>action</th>
                             </tr>
                         </thead>
@@ -56,31 +49,9 @@
                                 </td>
                                 <td class="col-md-3" id="td{{ $unPartenaire["id"] }}">
                                     {{ $unPartenaire["nom"] }}
-                                </td>
-                                <td class="col-md-2" id="td{{ $unPartenaire["id"] }}">
-                                    {{ $unPartenaire["description"] }}
-                                </td>
-                                <td class="col-md-2" id="td{{ $unPartenaire["id"] }}">
-                                    {{ $unPartenaire["cp"] }}
-                                </td>
-                                <td class="col-md-2" id="td{{ $unPartenaire["id"] }}">
-                                    {{ $unPartenaire["ville"] }}
-                                </td>
-                                <td class="col-md-2" id="td{{ $unPartenaire["id"] }}">
-                                    {{ $unPartenaire["adresse"] }}
-                                </td>
-                                <td class="col-md-2" id="td{{ $unPartenaire["id"] }}">
-                                    {{ $unPartenaire["tel"] }}
-                                </td>
                                 <td class="col-md-2" id="td{{ $unPartenaire["id"] }}">
                                     {{ $unPartenaire["site"] }}
-                                </td>
-                                <td class="col-md-2" id="td{{ $unPartenaire["id"] }}">
-                                    {{ $unPartenaire["fb"] }}
-                                </td>
-                                <td class="col-md-2" id="td{{ $unPartenaire["id"] }}">
-                                    {{ $unPartenaire["twitter"] }}
-                                </td>
+                                </td>                                
                                
                                 <td class="col-md-3">
                                     <div class="row">
